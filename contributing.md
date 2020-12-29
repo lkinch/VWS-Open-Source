@@ -1,3 +1,8 @@
+# CONTRIBUTING
+
+Contributions are always welcome, no matter how large or small. 
+
+Some thoughts to help you contribute to this project
 ## Guidelines
 
 Before we look into how, here are the guidelines. If your Pull Requests fail
@@ -33,13 +38,6 @@ https://lab.github.com/githubtraining/create-a-release-based-workflow
 
 
 If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.	If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
-
-# CONTRIBUTING
-
-Contributions are always welcome, no matter how large or small. Before contributing,
-please read the [code of conduct](CODE_OF_CONDUCT.md).
-
-Some thoughts to help you contribute to this project
 
 ## Recommended Communication Style
 
