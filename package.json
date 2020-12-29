@@ -1,0 +1,8 @@
+{
+	"name": "VWS Open Source",
+	"version": "1.0.2",
+	"private": "false",
+	"dependencies": {
+		"@semantic-release/github": "^7.2.0"
+	}
+}
