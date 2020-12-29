@@ -1,15 +1,3 @@
-# Contributing to CodeIgniter
-
-CodeIgniter is a community driven project and accepts contributions of code and documentation from the community. These contributions are made in the form of Issues or [Pull Requests](http://help.github.com/send-pull-requests/) on the [CodeIgniter repository](https://github.com/bcit-ci/CodeIgniter) on GitHub.
-
-Issues are a quick way to point out a bug. If you find a bug or documentation error in CodeIgniter then please check a few things first:
-
-1. There is not already an open Issue
-2. The issue has already been fixed (check the develop branch, or look for closed Issues)
-3. Is it something really obvious that you can fix yourself?
-
-Reporting issues is helpful but an even better approach is to send a Pull Request, which is done by "Forking" the main repository and committing to your own copy. This will require you to use the version control system called Git.
-
 ## Guidelines
 
 Before we look into how, here are the guidelines. If your Pull Requests fail
@@ -24,7 +12,7 @@ essentially the [Allman indent style](https://en.wikipedia.org/wiki/Indent_style
 
 ### Documentation
 
-If you change anything that requires a change to documentation then you will need to add it. New classes, methods, parameters, changing default values, etc are all things that will require a change to documentation. The change-log must also be updated for every change. Also PHPDoc blocks must be maintained.
+I have started a github wiki for documentation on the project. Feel free to add to the documentation as needed.
 
 ### Compatibility
 
@@ -35,59 +23,104 @@ there must be a fallback for PHP 5.2.4.
 
 ### Branching
 
-CodeIgniter uses the [Git-Flow](https://nvie.com/posts/a-successful-git-branching-model/) branching model which requires all pull requests to be sent to the "develop" branch. This is
-where the next planned version will be developed. The "master" branch will always contain the latest stable version and is kept clean so a "hotfix" (e.g: an emergency security patch) can be applied to master to create a new version, without worrying about other features holding it up. For this reason all commits need to be made to "develop" and any sent to "master" will be closed automatically. If you have multiple changes to submit, please place all changes into their own branch on your fork.
+If you're interested in learning github, a basic starter is here: 
+https://lab.github.com/githubtraining/introduction-to-github
 
-One thing at a time: A pull request should only contain one change. That does not mean only one commit, but one change - however many commits it took. The reason for this is that if you change X and Y but send a pull request for both at the same time, we might really want X but disagree with Y, meaning we cannot merge the request. Using the Git-Flow branching model you can create new branches for both of these features and send two requests.
+Also this (more advanced) tutorial takes developers through the basic release workflow this repository incorporates. I have been influenced by other github sources however, so don't take this as the "one true source" of information for git flow.
+https://lab.github.com/githubtraining/create-a-release-based-workflow
 
-### Signing
+## Issues
 
-You must sign your work, certifying that you either wrote the work or otherwise have the right to pass it on to an open source project. git makes this trivial as you merely have to use `--signoff` on your commits to your CodeIgniter fork.
 
-`git commit --signoff`
+If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.	If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
 
-or simply
+# CONTRIBUTING
 
-`git commit -s`
+Contributions are always welcome, no matter how large or small. Before contributing,
+please read the [code of conduct](CODE_OF_CONDUCT.md).
 
-This will sign your commits with the information setup in your git config, e.g.
+Some thoughts to help you contribute to this project
 
-`Signed-off-by: John Q Public <john.public@example.com>`
+## Recommended Communication Style
 
-If you are using [Tower](https://www.git-tower.com/) there is a "Sign-Off" checkbox in the commit window. You could even alias git commit to use the `-s` flag so you don’t have to think about it.
+1. Always leave screenshots for visuals changes
+1. Always leave a detailed description in the Pull Request. Leave nothing ambiguous for the reviewer.
+1. Always review your code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
+1. Always communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
+## PR Validation
+Examples for valid PR titles:
 
-By signing your work in this manner, you certify to a "Developer's Certificate of Origin". The current version of this certificate is in the `DCO.txt` file in the root of this repository.
+- fix: Correct typo.
+- feat: Add support for Node 12.
+- refactor!: Drop support for Node 6.
 
-## How-to Guide
+_Note that since PR titles only have a single line, you have to use the ! syntax for breaking changes._
 
-There are two ways to make changes, the easy way and the hard way. Either way you will need to [create a GitHub account](https://github.com/signup/free).
+See [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for more examples.
 
-Easy way GitHub allows in-line editing of files for making simple typo changes and quick-fixes. This is not the best way as you are unable to test the code works. If you do this you could be introducing syntax errors, etc, but for a Git-phobic user this is good for a quick-fix.
+### Work in progress
+Github has support for draft pull requests, which will disable the merge button until the PR is marked as ready for merge.
 
-Hard way The best way to contribute is to "clone" your fork of CodeIgniter to your development area. That sounds like some jargon, but "forking" on GitHub means "making a copy of that repo to your account" and "cloning" means "copying that code to your environment so you can work on it".
+## Setup (forks are preferred).
 
 1. [Set up Git](https://help.github.com/en/articles/set-up-git) (Windows, Mac & Linux)
-2. Go to the [CodeIgniter repo](https://github.com/bcit-ci/CodeIgniter)
-3. [Fork it](https://help.github.com/en/articles/fork-a-repo)
-4. [Clone](https://help.github.com/en/articles/fetching-a-remote#clone) your forked CodeIgniter repo: git@github.com:<your-name>/CodeIgniter.git.
-5. Checkout the "develop" branch. At this point you are ready to start making changes.
-6. Fix existing bugs on the Issue tracker after taking a look to see nobody else is working on them.
-7. [Commit](https://help.github.com/en/articles/adding-a-file-to-a-repository-using-the-command-line) the files
-8. [Push](https://help.github.com/en/articles/pushing-to-a-remote) your develop branch to your fork
-9. [Send a pull request](https://help.github.com/en/articles/creating-a-pull-request)
+1. Go to the [CodeIgniter repo](https://github.com/bcit-ci/CodeIgniter)
+1. [Fork it](https://help.github.com/en/articles/fork-a-repo)
+1. [Clone](https://help.github.com/en/articles/fetching-a-remote#clone) your forked CodeIgniter repo: git@github.com:<your-name>/CodeIgniter.git.
+1. Checkout the "release-v1.0" branch. At this point you are ready to start making changes.
+1. Next create a new branch with "git checkout -b <branch_name>"
+1. Fix existing bugs on the Issue tracker after taking a look to see nobody else is working on them.
+1. [Commit](https://help.github.com/en/articles/adding-a-file-to-a-repository-using-the-command-line) the files
+1. [Push](https://help.github.com/en/articles/pushing-to-a-remote) your new branch to your fork
+1. [Send a pull request](https://help.github.com/en/articles/creating-a-pull-request)
 
-The Reactor Engineers will now be alerted about the change and at least one of the team will respond. If your change fails to meet the guidelines it will be bounced, or feedback will be provided to help you improve it.
 
-Once the Reactor Engineer handling your pull request is happy with it they will merge it into develop and your patch will be part of the next release.
+For more detailed instructions see the README.md under the install section.
 
-### Keeping your fork up-to-date
+## Spinning down the site
 
-Unlike systems like Subversion, Git can have multiple remotes. A remote is the name for a URL of a Git repository. By default your fork will have a remote named "origin" which points to your fork, but you can add another remote named "codeigniter" which points to `git://github.com/bcit-ci/CodeIgniter.git`. This is a read-only remote but you can pull from this develop branch to update your own.
+```sh
+$ docker-compose down
+```
 
-If you are using command-line you can do the following:
+## Additional Useful Commands
 
-1. `git remote add codeigniter git://github.com/bcit-ci/CodeIgniter.git`
-2. `git pull codeigniter develop`
-3. `git push origin develop`
+```sh
+$ docker-compose ps
+$ docker-compose log <container_name>
+```
 
-Now your fork is up to date. This should be done regularly, or before you send a pull request at least.
+## Pull Requests
+
+### _We actively welcome your pull requests, however linking your work to an existing issue is preferred._
+
+1. Fork the repo and create your branch from `main`.
+1. Name your branch something that is descriptive to the work you are doing. i.e. feat: new thing or fix: fix responsiveness
+1. If you've added code that should be tested, add tests.
+1. If you've changed APIs, update the documentation.
+1. If you make visual changes, screenshots are required.
+1. Ensure the test suite passes.
+1. Make sure you address any lint warnings.
+1. If you make the existing code better, please let us know in your PR description.
+1. A PR description and title are required. 
+1. [Link to an issue](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls) in the project. Unsolicited code is welcomed, but an issue is required to announce your intentions. PR's without a linked issue will be marked invalid and closed.
+
+*note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/HEAD/.github/release-drafter.yml) to guide which labels to use.*
+
+## Issues
+
+If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
+
+If you would like to contribute to the project for the first time, please consider checking the [bug](https://github.com/CodeItQuick/VWS-Open-Source/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%90%9B+bug%22) or [good first issue](https://github.com/CodeItQuick/VWS-Open-Source/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labels. 
+
+Also, all questions are welcomed.
+
+## Coding Tips
+- Ask questions if you are stuck. 
+- Use [CSS variables](https://github.com/open-sauced/open-sauced/blob/HEAD/src/styles/variables.js)
+- Always use [rel="noreferrer" on all target="_blank" links](https://web.dev/external-anchors-use-rel-noopener/). 
+
+## License
+
+By contributing to the VWS project, you agree that your contributions will be licensed
+under its [MIT license](LICENSE).
