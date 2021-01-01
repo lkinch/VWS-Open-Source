@@ -1817,12 +1817,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "22beebc547421abfc6610c70df5f28ce1dd28d20"
+                "reference": "3181afc1cda2f97a7d3f37b53f897c99944a8bd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/22beebc547421abfc6610c70df5f28ce1dd28d20",
-                "reference": "22beebc547421abfc6610c70df5f28ce1dd28d20",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/3181afc1cda2f97a7d3f37b53f897c99944a8bd9",
+                "reference": "3181afc1cda2f97a7d3f37b53f897c99944a8bd9",
                 "shasum": ""
             },
             "require": {
@@ -1880,7 +1880,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-01T09:44:44+00:00"
+            "time": "2020-12-26T23:49:32+00:00"
         },
         {
             "name": "webmozart/assert",
