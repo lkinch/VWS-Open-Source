@@ -11,7 +11,9 @@
 		"source": "https://github.com/bcit-ci/CodeIgniter"
 	},
 	"require": {
-		"php": ">=5.4.8"
+		"php": ">=5.4.8",
+		"benedmunds/codeigniter-ion-auth": "4.x-dev",
+		"codeigniter4/framework": "dev-master"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
@@ -19,5 +21,12 @@
 	"require-dev": {
 		"mikey179/vfsstream": "1.1.*",
 		"phpunit/phpunit": "4.* || 5.*"
+	},
+	"minimum-stability": "dev",
+	"repositories": {
+		"ionAuth": {
+			"type": "vcs",
+			"url": "git@github.com:benedmunds/CodeIgniter-Ion-Auth.git"
+		}
 	}
 }

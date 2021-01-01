@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             class="d-block img-fluid w-50 m-auto"
             width="600"
             height="400"
-            src="static/img/healthcare-staff-GCDW945.JPG"
+            src="/static/img/healthcare-staff-GCDW945.JPG"
             alt="image slot"
           >
         </template></b-carousel-slide>
@@ -63,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             class="d-block img-fluid w-50 m-auto"
             width="600"
             height="400"
-            src="static/img/healthcare-worker-assisting-senior-man-with-down-s-HFD7VAK.jpg"
+            src="/static/img/healthcare-worker-assisting-senior-man-with-down-s-HFD7VAK.jpg"
             alt="image slot"
           >
         </template></b-carousel-slide>
@@ -75,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <img
             class="d-block img-fluid w-25 m-auto"
             height="400"
-            src="static/img/healthcare-and-medicine-WRP6C34.jpg"
+            src="/static/img/healthcare-and-medicine-WRP6C34.jpg"
             alt="image slot"
           >
         </template></b-carousel-slide>
@@ -85,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-sm-2" ></div>
 			<b-card
 				title="Participant"
-				img-src="static/img/business-executives-actively-participating-MFLDQWT.jpg"
+				img-src="/static/img/business-executives-actively-participating-MFLDQWT.jpg"
 				img-alt="Image"
 				img-top
 				tag="article"
@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-sm-2" ></div>
 			<b-card
 				title="Researcher"
-				img-src="static/img/cute-caucasian-chemists-PFQDRJQ.jpg"
+				img-src="/static/img/cute-caucasian-chemists-PFQDRJQ.jpg"
 				img-alt="Image"
 				img-top
 				tag="article"

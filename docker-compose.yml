@@ -1,11 +1,12 @@
 version: '2'
 services:
   myapp:
-    image: 'docker.io/bitnami/codeigniter:3-debian-10'
+    build:
+      context: .
     ports:
-      - '8000:8000'
+      - '8000:80'
     volumes:
-      - './myapp:/app/myapp'
+      - './myapp:/var/www/'
     depends_on:
       - mariadb
   mariadb:
