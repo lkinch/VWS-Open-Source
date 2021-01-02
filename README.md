@@ -90,8 +90,14 @@ docker-compose down
 
 ## Usage
 
+To run the server through a simple php command, assuming all extensions are installed, 
+
 ```
+cd ./myapp/html/
+php -S localhost:8000
 ```
+
+Then visit localhost:8000 in the browser to see the webpage.
 
 ## API
 
