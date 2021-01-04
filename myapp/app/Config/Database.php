@@ -35,7 +35,7 @@ class Database extends Config
 		'hostname' => 'mariadb',
 		'username' => 'root',
 		'password' => 'QmWc6m5jdo',
-		'database' => 'CodeIgniter',
+		'database' => 'bitnami_app',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,

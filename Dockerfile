@@ -20,7 +20,7 @@ RUN apt-get -y install --fix-missing git
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer self-update --2
 
-COPY apache2.conf /etc/apache2/sites-enabled/dev.conf
+# COPY apache2.conf /etc/apache2/sites-enabled/dev.conf
 # ADD /usr/local/apache2/apache.conf /etc/apache2/sites-available/000-default.conf
 
 COPY myapp /var/www/
@@ -30,12 +30,12 @@ RUN chmod -R 0777 /var/www/
 # RUN apt-get clean \
 # 	&& rm -r /var/lib/apt/lists/*
 
-VOLUME ["/var/www/html", "/var/log/apache2", "/etc/apache2"]
+# VOLUME ["/var/www/html", "/var/log/apache2", "/etc/apache2"]
 RUN a2enmod rewrite
 
-WORKDIR /usr/sbin/
+WORKDIR /var/www/
 
 # EXPOSE 8000
 # CMD ["php", "-S localhost:80"]
 # CMD ["apachectl", "start"]
-CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
+CMD ["php", "spark",  "serve"]
