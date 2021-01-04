@@ -33,7 +33,7 @@ TODO: Fill out this long description.
 
 The Virtual Wellness System at its core is a tool for researchers to create, publish, collect, and display researcher study results. It will have additional functionality in a forum that will give participants and researchers a communication tool within the group. There will also be a chat widget for quick communication between people operating the website. Additionally, we will add a tool to allow for tracking and updating of wellness goals, and a tool for uploading an applications data that is related to wellness information. 
 
-The Virtual Wellness overall project scope is shown below in graphical form. There are two main components research and healthcare. Researchers can login, create questionnaires, edit their profiles, upload application data, and display reporting. Healthcare providers can pick a patient, enter a diagnosis, or display a diagnosis. Research participants can login and fill out a questionnaire for their participated projects. Healthcare participants can login and fill out a diagnosis or upload their device data to partake in healthcare services. There are provided a number of Webulators that act as research tools for performing statistical analysis included. There are two static pages, about us and contact detailing the provided services. There is a simple main page allowing to login for participants, healthcare providers, and researchers. Authentication is handled by auth0, a third-party provider, to successfully add properly handled user security, and password encryption. A forum will exist and be from Flarum. There will be a chat widget on the site that is from Converse.js.
+The Virtual Wellness overall project scope is shown below in graphical form. There are two main components research and healthcare. Researchers can login, create questionnaires, edit their profiles, upload application data, and display reporting. There are provided a number of Webulators that act as research tools for performing statistical analysis included. There are two static pages, about us and contact detailing the provided services. There is a simple main page allowing to login for participants, and researchers. Authentication is handled by auth0, a third-party provider, to successfully add properly handled user security, and password encryption. A forum will exist and be from Flarum. There will be a chat widget on the site that is from Converse.js.
 Out of scope items include SSL encryption (it will be provided), the server installed PHP language, Apache, a Linux or Windows operating system, and the database will be installed on the production environment. A Mysql database is preferred.
 
 ## Install
@@ -74,18 +74,34 @@ docker-compose up -d mariadb
 docker-compose up -d myapp
 ```
 
+### Step Five
+
+The database needs to be created, tables made, and created through php's Spark file. To do this run the following:
+
+```
+php spark db:create
+php spark migrate
+php spark db:seed
+```
+
 ### Other Useful Commands & Information
 To check what ports these two services are running on the following console command will run them:
 ```
 docker-compose ps
 ```
 
-Visit localhost:8000 to see the current website!
+Visit localhost:8080 to see the current website!
 
 At any time if you wish to take down the website this is done with the command:
 
 ```
 docker-compose down
+```
+
+For a list of spark commands type:
+
+```
+php spark list
 ```
 
 ## Usage
@@ -94,10 +110,10 @@ To run the server through a simple php command, assuming all extensions are inst
 
 ```
 cd ./myapp/html/
-php -S localhost:8000
+php -S localhost:8080
 ```
 
-Then visit localhost:8000 in the browser to see the webpage.
+Then visit localhost:8080 in the browser to see the webpage.
 
 ## API
 
@@ -115,4 +131,4 @@ Small note: If editing the README, please conform to the [standard-readme](https
 
 ## License
 
-MIT © 2020 Evan
+MIT © 2020 CodeItQuick
