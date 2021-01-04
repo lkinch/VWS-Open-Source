@@ -54,7 +54,7 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
-$routes->group('auth', ['namespace' => 'App\Controllers'], function ($routes) {
+$routes->group('auth', ['namespace' => 'IonAuth\Controllers'], function ($routes) {
 	$routes->add('login', 'Auth::login');
 	$routes->get('logout', 'Auth::logout');
 	$routes->add('forgot_password', 'Auth::forgot_password');

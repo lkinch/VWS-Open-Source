@@ -3,8 +3,8 @@ services:
   myapp:
     build:
       context: .
-    ports:
-      - '8000:80'
+    # ports:
+    #   - '8080:80'
     volumes:
       - './myapp:/var/www/'
     depends_on:
