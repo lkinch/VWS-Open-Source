@@ -7,15 +7,18 @@ services:
     #   - '8080:80'
     volumes:
       - './myapp:/var/www/'
+      - './conf/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini'
     depends_on:
       - mariadb
+    environment:
+      XDEBUG_MODE: ${XDEBUG_MODE}
   mariadb:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      - MYSQL_DATABASE=bitnami_app
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
       # - MYSQL_ROOT_USERNAME=bn_app
-      - MYSQL_ROOT_PASSWORD=QmWc6m5jdo
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - DB_SOCKET=/Applications/MAMP/tmp/mysql/mysql.sock
     ports:
       - "33020:3306"

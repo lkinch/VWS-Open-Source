@@ -16,6 +16,11 @@ RUN docker-php-ext-enable pdo_mysql
 RUN apt-get -y install --fix-missing zip unzip
 RUN apt-get -y install --fix-missing git
 
+#DEBUGGER DISABLE IN PRODUCTION!!!
+RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+RUN pecl install xdebug \
+	&& docker-php-ext-enable xdebug
+
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer self-update --2
