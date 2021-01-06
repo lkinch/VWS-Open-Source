@@ -91,9 +91,9 @@ docker-compose up -d myapp
 The database needs to be created, tables made, and created through php's Spark file. To do this run the following:
 
 ```
-php spark db:create
-php spark migrate
-php spark db:seed
+docker exec -it virtual-wellness-open-source_myapp_1 php spark db:create
+docker exec -it virtual-wellness-open-source_myapp_1 php spark migrate
+docker exec -it virtual-wellness-open-source_myapp_1 php spark db:seed
 ```
 
 ### 3.7 Other Useful Commands & Information
