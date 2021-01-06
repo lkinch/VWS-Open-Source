@@ -21,3 +21,5 @@ myapp/vendor/
 !**/application/logs/index.html
 !**/application/logs/.htaccess
 **/vendor/
+
+mysql-data
