@@ -86,6 +86,9 @@ docker-compose up -d mariadb
 docker-compose up -d myapp
 ```
 
+Note: You may need to create the directory mysql-data in the project folder, if you do please let me know so that I can add it to the readme (or submit a PR
+to add it yourself). Thanks.
+
 ### 3.6 Step Six
 
 The database needs to be created, tables made, and created through php's Spark file. To do this run the following:
