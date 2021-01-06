@@ -18,28 +18,29 @@ TODO: Fill out this long description.
 
 ## Table of Contents
 
-- [Security](#security)
-- [Background](#background)
-- [Install](#install)
-- [Usage](#usage)
-- [API](#api)
-- [Maintainers](#maintainers)
-- [Contributing](#contributing)
-- [License](#license)
+- [1.0 Security](#security)
+- [2.0 Background](#background)
+- [3.0 Install](#install)
+- [4.0 Usage](#usage)
+- [5.0 API](#api)
+- [6.0 Maintainers](#maintainers)
+- [7.0 Contributing](#contributing)
+- [8.0 License](#license)
 
-## Security
+## 1.0 Security
 
-## Background
+## 2.0 Background
 
 The Virtual Wellness System at its core is a tool for researchers to create, publish, collect, and display researcher study results. It will have additional functionality in a forum that will give participants and researchers a communication tool within the group. There will also be a chat widget for quick communication between people operating the website. Additionally, we will add a tool to allow for tracking and updating of wellness goals, and a tool for uploading an applications data that is related to wellness information. 
 
 The Virtual Wellness overall project scope is shown below in graphical form. There are two main components research and healthcare. Researchers can login, create questionnaires, edit their profiles, upload application data, and display reporting. There are provided a number of Webulators that act as research tools for performing statistical analysis included. There are two static pages, about us and contact detailing the provided services. There is a simple main page allowing to login for participants, and researchers. Authentication is handled by auth0, a third-party provider, to successfully add properly handled user security, and password encryption. A forum will exist and be from Flarum. There will be a chat widget on the site that is from Converse.js.
 Out of scope items include SSL encryption (it will be provided), the server installed PHP language, Apache, a Linux or Windows operating system, and the database will be installed on the production environment. A Mysql database is preferred.
 
-## Install
+## 3.0 Install
 
+Follow the below installation steps to start the site.
 
-### Step One
+### 3.1 Step One
 Install git cli locally on your development computer
 
 On Mac:
@@ -50,14 +51,14 @@ On Windows:
 Likely the easiest way to install via Windows is by installing Github Desktop, a GUI solution for git that includes git cli, it is available here: 
 [Github Desktop](https://desktop.github.com/)
 
-### Step Two
+### 3.2 Step Two
 Next go into the desired directory you wish to install git into on your machine. Then type:
 
 ```
 git clone https://github.com/CodeItQuick/VWS-Open-Source.git
 ```
 
-### Step Three
+### 3.3 Step Three
 Next install docker.
 
 On Mac:
@@ -66,7 +67,18 @@ Docker desktop for mac is available on [Get Docker Desktop for Mac on Dockerhub]
 On Windows:
 Docker desktop for mac is available on [Get Docker Desktop for Windows on Dockerhub](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
 
-### Step Four
+### 3.4 Step Four
+
+Install the environment files that hold passwords. Working env files with default passwords are given for development
+environments in '.env-example' files in two directories. Copy or rename these env files to correctly load the environment folder (that holds passwords).
+
+```
+cp .env-example .env
+cp ./myapp/.env-example ./myapp/.env
+```
+
+
+### 3.5 Step Five
 Finally, spin up the database, and then the VWS PHP CodeIgniter server with the following console commands
 
 ```
@@ -74,7 +86,7 @@ docker-compose up -d mariadb
 docker-compose up -d myapp
 ```
 
-### Step Five
+### 3.6 Step Six
 
 The database needs to be created, tables made, and created through php's Spark file. To do this run the following:
 
@@ -84,7 +96,7 @@ docker exec -it virtual-wellness-open-source_myapp_1 php spark migrate
 docker exec -it virtual-wellness-open-source_myapp_1 php spark db:seed
 ```
 
-### Other Useful Commands & Information
+### 3.7 Other Useful Commands & Information
 To check what ports these two services are running on the following console command will run them:
 ```
 docker-compose ps
@@ -104,7 +116,7 @@ For a list of spark commands type:
 php spark list
 ```
 
-## Usage
+## 4.0 Usage
 
 To run the server through a simple php command, assuming all extensions are installed, 
 
@@ -115,13 +127,13 @@ php -S localhost:8080
 
 Then visit localhost:8080 in the browser to see the webpage.
 
-## API
+## 5.0 API
 
-## Maintainers
+## 6.0 Maintainers
 
 [@CodeItQuick](https://github.com/CodeItQuick)
 
-## Contributing
+## 7.0 Contributing
 
 See [the contributing file](contributing.md)!
 
@@ -129,6 +141,6 @@ PRs accepted.
 
 Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
-## License
+## 8.0 License
 
 MIT © 2020 CodeItQuick

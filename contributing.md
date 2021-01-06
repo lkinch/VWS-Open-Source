@@ -3,30 +3,49 @@
 Contributions are always welcome, no matter how large or small. 
 
 Some thoughts to help you contribute to this project
-## Guidelines
+
+## Table Of Contents
+
+- [1.0 Guidelines](#guidelines)
+- [2.0 PHP Style](#background)
+- [3.0 Documentation](#install)
+- [4.0 Compatability](#usage)
+- [5.0 Branching](#api)
+- [6.0 Issues](#maintainers)
+- [7.0 Recommended Communication Style](#contributing)
+- [8.0 PR Validation](#license)
+- [9.0 Work in progress](#WIP)
+- [9.0 Setup](#Setup)
+- [9.0 Setup Debugger](#Debugger)
+- [10.0 Coding Tips](#CodingTips)
+- [11.0 Pull Requests](#PullRequests)
+- [12.0 Coding Tips](#CodingTips)
+- [13.0 License](#License)
+
+## 1.0 Guidelines
 
 Before we look into how, here are the guidelines. If your Pull Requests fail
 to pass these guidelines it will be declined and you will need to re-submit
 when you’ve made the changes. This might sound a bit tough, but it is required
 for us to maintain quality of the code-base.
 
-### PHP Style
+### 2.0 PHP Style
 
 All code must meet the [Style Guide](https://codeigniter.com/userguide3/general/styleguide.html), which is
 essentially the [Allman indent style](https://en.wikipedia.org/wiki/Indent_style#Allman_style), underscores and readable operators. This makes certain that all code is the same format as the existing code and means it will be as readable as possible.
 
-### Documentation
+### 3.0 Documentation
 
 I have started a github wiki for documentation on the project. Feel free to add to the documentation as needed.
 
-### Compatibility
+### 4.0 Compatibility
 
 CodeIgniter recommends PHP 5.5 or newer to be used, but it should be
 compatible with PHP 5.2.4 so all code supplied must stick to this
 requirement. If PHP 5.3 (and above) functions or features are used then
 there must be a fallback for PHP 5.2.4.
 
-### Branching
+### 5.0 Branching
 
 If you're interested in learning github, a basic starter is here: 
 https://lab.github.com/githubtraining/introduction-to-github
@@ -34,18 +53,18 @@ https://lab.github.com/githubtraining/introduction-to-github
 Also this (more advanced) tutorial takes developers through the basic release workflow this repository incorporates. I have been influenced by other github sources however, so don't take this as the "one true source" of information for git flow.
 https://lab.github.com/githubtraining/create-a-release-based-workflow
 
-## Issues
+## 6.0 Issues
 
 
 If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.	If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
 
-## Recommended Communication Style
+## 7.0 Recommended Communication Style
 
 1. Always leave screenshots for visuals changes
 1. Always leave a detailed description in the Pull Request. Leave nothing ambiguous for the reviewer.
 1. Always review your code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
 1. Always communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
-## PR Validation
+## 8.0 PR Validation
 Examples for valid PR titles:
 
 - fix: Correct typo.
@@ -59,7 +78,7 @@ See [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for m
 ### Work in progress
 Github has support for draft pull requests, which will disable the merge button until the PR is marked as ready for merge.
 
-## Setup (forks are preferred).
+## 9.0 Setup (forks are preferred).
 
 1. [Set up Git](https://help.github.com/en/articles/set-up-git) (Windows, Mac & Linux)
 1. Go to the [CodeIgniter repo](https://github.com/bcit-ci/CodeIgniter)
@@ -75,6 +94,13 @@ Github has support for draft pull requests, which will disable the merge button 
 
 For more detailed instructions see the README.md under the install section.
 
+## 10.0 Setup Debugger
+
+Right now the debugger has just been setup with PHPSTORM on my machine. Using the quick connect functions
+should enable the debugger, assuming you are looking for the IDEKEY=PHPSTORM.
+
+TODO: Detailed Instructions for debugger (needs help)
+
 ## Spinning down the site
 
 ```sh
@@ -88,7 +114,7 @@ $ docker-compose ps
 $ docker-compose log <container_name>
 ```
 
-## Pull Requests
+## 11.0 Pull Requests
 
 ### _We actively welcome your pull requests, however linking your work to an existing issue is preferred._
 
@@ -105,20 +131,12 @@ $ docker-compose log <container_name>
 
 *note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/HEAD/.github/release-drafter.yml) to guide which labels to use.*
 
-## Issues
-
-If you plan to contribute a change based on an open issue, please assign yourself by commenting on the following word `.take`. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
-
-If you would like to contribute to the project for the first time, please consider checking the [bug](https://github.com/CodeItQuick/VWS-Open-Source/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%90%9B+bug%22) or [good first issue](https://github.com/CodeItQuick/VWS-Open-Source/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labels. 
-
-Also, all questions are welcomed.
-
-## Coding Tips
+## 12.0 Coding Tips
 - Ask questions if you are stuck. 
 - Use [CSS variables](https://github.com/open-sauced/open-sauced/blob/HEAD/src/styles/variables.js)
 - Always use [rel="noreferrer" on all target="_blank" links](https://web.dev/external-anchors-use-rel-noopener/). 
 
-## License
+## 13.0 License
 
 By contributing to the VWS project, you agree that your contributions will be licensed
 under its [MIT license](LICENSE).
