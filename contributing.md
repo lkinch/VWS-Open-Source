@@ -17,10 +17,11 @@ Some thoughts to help you contribute to this project
 - [9.0 Work in progress](#WIP)
 - [9.0 Setup](#Setup)
 - [9.0 Setup Debugger](#Debugger)
-- [10.0 Coding Tips](#CodingTips)
-- [11.0 Pull Requests](#PullRequests)
-- [12.0 Coding Tips](#CodingTips)
-- [13.0 License](#License)
+- [10.0 Testing](#Testing)
+- [11.0 Coding Tips](#CodingTips)
+- [12.0 Pull Requests](#PullRequests)
+- [13.0 Coding Tips](#CodingTips)
+- [14.0 License](#License)
 
 ## 1.0 Guidelines
 
@@ -94,7 +95,15 @@ Github has support for draft pull requests, which will disable the merge button 
 
 For more detailed instructions see the README.md under the install section.
 
-## 10.0 Setup Debugger
+## 10.0 Testing
+
+PHP Unit testing is done in the "test" folder under myapp. To run the tests, in the container, type the following command:
+
+```
+docker exec -it virtual-wellness-open-source_myapp_1 ./vendor/bin/phpunit test
+```
+
+## 11.0 Setup Debugger
 
 Right now the debugger has just been setup with PHPSTORM on my machine. Using the quick connect functions
 should enable the debugger, assuming you are looking for the IDEKEY=PHPSTORM.
@@ -114,7 +123,7 @@ $ docker-compose ps
 $ docker-compose log <container_name>
 ```
 
-## 11.0 Pull Requests
+## 12.0 Pull Requests
 
 ### _We actively welcome your pull requests, however linking your work to an existing issue is preferred._
 
@@ -131,12 +140,12 @@ $ docker-compose log <container_name>
 
 *note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/HEAD/.github/release-drafter.yml) to guide which labels to use.*
 
-## 12.0 Coding Tips
+## 13.0 Coding Tips
 - Ask questions if you are stuck. 
 - Use [CSS variables](https://github.com/open-sauced/open-sauced/blob/HEAD/src/styles/variables.js)
 - Always use [rel="noreferrer" on all target="_blank" links](https://web.dev/external-anchors-use-rel-noopener/). 
 
-## 13.0 License
+## 14.0 License
 
 By contributing to the VWS project, you agree that your contributions will be licensed
 under its [MIT license](LICENSE).
