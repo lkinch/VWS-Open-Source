@@ -1,8 +1,8 @@
 <?php
 
-require_once 'app/Views/landing_page.php' ;
+require_once 'app/Controllers/helloWorldSampleTest.php' ;
 
-use landing_page\helloWorld;
+use App\Controllers\helloWorld;
 
 use PHPUnit\Framework\TestCase;
 
