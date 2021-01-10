@@ -124,12 +124,13 @@ php spark list
 To run the server through a simple php command, assuming all extensions are installed, 
 
 ```
-cd ./myapp/html/
-php -S localhost:8080
+docker-compose up 
 ```
 
 Then visit localhost:8080 in the browser to see the webpage.
 
+Note: you may have to connect to the container remotely with VSCode, and/or you could mess with the ports
+by adding ports: '8080:8080' to the config under myapp for docker-compose.yml.
 ## 5.0 API
 
 ## 6.0 Maintainers
