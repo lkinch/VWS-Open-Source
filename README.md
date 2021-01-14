@@ -52,6 +52,9 @@ Likely the easiest way to install via Windows is by installing Github Desktop, a
 [Github Desktop](https://desktop.github.com/)
 
 ### 3.2 Step Two
+You should create a fork of the repo, clone the repo down, and then add push to your fork. At the end
+you PR into the main repository.
+
 Next go into the desired directory you wish to install git into on your machine. Then type:
 
 ```
