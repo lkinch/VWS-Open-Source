@@ -10,7 +10,7 @@ services:
       context: .
       dockerfile: nginx.dockerfile
     container_name: nginx
-    depends_on: 
+    depends_on:
       - php
       - mysql
       - redis
@@ -33,15 +33,15 @@ services:
       - laravel
 
   mysql:
-    container_name: mysql
     image: mysql:5.7.32
+    container_name: mysql
     ports:
       - 4306:3306
     volumes:
-      - ./mysql-data:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: laraveldocker
-      MYSQL_USER: root
+      MYSQL_DATABASE: laraveldb
+      MYSQL_USER: laravel
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
     networks:
@@ -69,9 +69,9 @@ services:
       - laravel
 
   npm:
-    image: node:current-alpine
+    image: node:13.7
     container_name: npm
-    volumes:
+    volumes: 
       - ./src:/var/www/html
     working_dir: /var/www/html
     entrypoint: ["npm"]
