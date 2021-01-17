@@ -22,4 +22,4 @@ myapp/vendor/
 !**/application/logs/.htaccess
 **/vendor/
 
-mysql-data
+mysql

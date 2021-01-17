@@ -68,7 +68,7 @@ On Mac:
 Docker desktop for mac is available on [Get Docker Desktop for Mac on Dockerhub](https://hub.docker.com/editions/community/docker-ce-desktop-mac/)
 
 On Windows:
-Docker desktop for mac is available on [Get Docker Desktop for Windows on Dockerhub](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
+Docker desktop for Windows is available on [Get Docker Desktop for Windows on Dockerhub](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
 
 ### 3.4 Step Four
 
@@ -76,50 +76,53 @@ Install the environment files that hold passwords. Working env files with defaul
 environments in '.env-example' files in two directories. Copy or rename these env files to correctly load the environment folder (that holds passwords).
 
 ```
-cp .env-example .env
-cp ./myapp/.env-example ./myapp/.env
+cp ./src/.env-example ./src/.env
 ```
-
 
 ### 3.5 Step Five
-Finally, spin up the database, and then the VWS PHP CodeIgniter server with the following console commands
+
+We'll need to install the composer and npm packages included with the project. To install the missing required composer packages simply run:
 
 ```
-docker-compose up -d mariadb
-docker-compose up -d myapp
+docker-compose run --rm composer update
 ```
-
-Note: You may need to create the directory mysql-data in the project folder, if you do please let me know so that I can add it to the readme (or submit a PR
-to add it yourself). Thanks.
 
 ### 3.6 Step Six
-
-The database needs to be created, tables made, and created through php's Spark file. To do this run the following:
+Finally, spin up the database, and then the VWS PHP Laravel server with the following console commands
 
 ```
-docker exec -it virtual-wellness-open-source_myapp_1 php spark db:create
-docker exec -it virtual-wellness-open-source_myapp_1 php spark migrate
-docker exec -it virtual-wellness-open-source_myapp_1 php spark db:seed IonAuthSeeder
+docker-compose up -d --build nginx
 ```
 
-### 3.7 Other Useful Commands & Information
+Note: You may need to create the directory mysql in the project folder, if you do please let me know so that I can add it to the readme (or submit a PR
+to add it yourself). Thanks.
+
+### 3.7 Step Six
+
+The database needs to be created, tables made, and created through Artisan. For instance, if we wanted to create a Users table:
+
+```
+docker-compose run --rm artisan migrate:make create_users_table
+docker-compose run --rm artisan migrate
+docker-compose run --rm artisan db:seed
+```
+
+However, once migrations are created we will only ever need to run the latter two commands.
+
+For more information, please read the [Laravel documentation on migrations.](https://laravel.com/docs/4.2/migrations)
+
+### 3.8 Other Useful Commands & Information
 To check what ports these two services are running on the following console command will run them:
 ```
 docker-compose ps
 ```
 
-Visit localhost:8080 to see the current website!
+Visit localhost to see the current website!
 
 At any time if you wish to take down the website this is done with the command:
 
 ```
 docker-compose down
-```
-
-For a list of spark commands type:
-
-```
-php spark list
 ```
 
 ## 4.0 Usage
