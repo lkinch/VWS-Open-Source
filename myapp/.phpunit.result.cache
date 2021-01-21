@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":206:{a:2:{s:7:"defects";a:2:{s:7:"Warning";i:6;s:47:"Test::testHelloWorldFunctionCanOutputHelloWorld";i:4;}s:5:"times";a:2:{s:7:"Warning";d:0.026;s:47:"Test::testHelloWorldFunctionCanOutputHelloWorld";d:0.095;}}}
