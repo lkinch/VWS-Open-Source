@@ -23,5 +23,4 @@ myapp/vendor/
 **/vendor/
 
 mysql
-.env
-**/*.env
+
