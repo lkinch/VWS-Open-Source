@@ -49,6 +49,8 @@
 				</div>
 				<div>
 					<v-container class="grey lighten-5">
+						<a herf="/views/landing">Landing page</a>
+						<a herf="/views/aboutPage">About page</a>
 						<h2>Content One</h2>
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem placeat quam nostrum itaque ut cum quasi at nam quas repellat, earum rem consectetur architecto sed iure, obcaecati ab veniam, laudantium illo. Autem ullam similique praesentium fuga sed quae cupiditate, minima corporis molestias quam, labore soluta et error veniam nihil tempore a officia laudantium minus voluptatibus aut, consequuntur sunt quis! Quae numquam sit possimus aperiam. Maxime libero numquam molestias, aliquam aut reprehenderit corporis ratione eaque maiores deserunt earum cupiditate distinctio explicabo non dolorum totam ipsam magni adipisci minus veritatis fuga. Dignissimos, magnam exercitationem reiciendis odit quibusdam sint quia fugit ducimus eum.

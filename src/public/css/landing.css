@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    /*color: #ffffff;*/
+
+}
+
+#home{
+    /* darkolivergreen might change to some url if professor provide it */
+    background: #6d9d70 no-repeat 50% 50%;
+    display: table;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.landing-text{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+h1{
+    font-family: sans-serif;
+    font-size: 500%;
+    line-height: .9;
+
+}
+
+h5{
+    font-size: 260%;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.btn-default{
+    background-color: #ffffff;
+    color: #36342f;
+    font-size: 120%;
+}
+
+.btn-default:hover{
+    color: #ffffff;
+    background-color: #36342f;
+}
+
+p{
+    color: #000000;
+    padding: 3%;
+}
+
+@media (max-width: 768px){
+    h1{
+        font-size: 350%;
+    }
+    h5{
+        font-size: 150%;
+    }
+    p{
+        font-size: 120%;
+    }
+    .btn-default{
+        font-size: 120%;
+    }
+}
+
+.padding{
+    padding: 80px 0;
+}
+
+.padding img{
+    width: 100%;
+}
+
+footer{
+    width: 100%;
+    background-color: #6d9d70;
+    padding: 5% 5% 10% 5%;
+}
+
+.a{
+    color: #ffffff;
+    display:block;
+}
+
+.h2{
+    color: #000000;
+}
+.h3{
+    color: #000000;
+}
+#fixed_background{
+    background: url("image/example1.jpg") center center;
+    display: table;
+    height: 100%;
+    width: 100%;
+    position:fixed;
+}
+.h6{
+    color: #ffffff;
+}
