@@ -1,20 +1,6 @@
 # virtual-wellness-open-source
 
-[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-
-# OPTIONAL BADGES NOT DECIDED ON YET
-[![PHP Censor](http://ci.php-censor.info/build-status/image/2?branch=master&label=PHPCensor&style=flat-square)](http://ci.php-censor.info/build-status/view/2?branch=master)
-[![Travis CI](https://img.shields.io/travis/php-censor/php-censor/master.svg?label=TravisCI&style=flat-square)](https://travis-ci.org/php-censor/php-censor?branch=master)
-[![Codecov](https://img.shields.io/codecov/c/github/php-censor/php-censor.svg?label=Codecov&style=flat-square)](https://codecov.io/gh/php-censor/php-censor)
-[![Latest Version](https://img.shields.io/packagist/v/php-censor/php-censor.svg?label=Version&style=flat-square)](https://packagist.org/packages/php-censor/php-censor)
-[![Total downloads](https://img.shields.io/packagist/dt/php-censor/php-censor.svg?label=Downloads&style=flat-square)](https://packagist.org/packages/php-censor/php-censor)
-[![License](https://img.shields.io/packagist/l/php-censor/php-censor.svg?label=License&style=flat-square)](https://packagist.org/packages/php-censor/php-censor)
-   
-   
-
 This is the official open source repository for the Virtual Wellness System at UPEI.
-
-TODO: Fill out this long description.
 
 ## Table of Contents
 
@@ -79,39 +65,17 @@ environments in '.env-example' files in two directories. Copy or rename these en
 cp ./src/.env-example ./src/.env
 ```
 
+Some of the secrets need to be updated. Specifically the Auth0 keys need to be requested from Evan to have them working, I cannot include them in an open source repository in the env-example file.
+
 ### 3.5 Step Five
 
-We'll need to install the composer and npm packages included with the project. To install the missing required composer packages simply run:
+Run the docker compose up and everything should work.
 
 ```
-docker-compose run --rm composer update
+docker-compose up -d
 ```
 
-### 3.6 Step Six
-Finally, spin up the database, and then the VWS PHP Laravel server with the following console commands
-
-```
-docker-compose up -d --build nginx
-```
-
-Note: You may need to create the directory mysql in the project folder, if you do please let me know so that I can add it to the readme (or submit a PR
-to add it yourself). Thanks.
-
-### 3.7 Step Six
-
-The database needs to be created, tables made, and created through Artisan. For instance, if we wanted to create a Users table:
-
-```
-docker-compose run --rm artisan migrate:make create_users_table
-docker-compose run --rm artisan migrate
-docker-compose run --rm artisan db:seed
-```
-
-However, once migrations are created we will only ever need to run the latter two commands.
-
-For more information, please read the [Laravel documentation on migrations.](https://laravel.com/docs/4.2/migrations)
-
-### 3.8 Other Useful Commands & Information
+### 3.6 Other Useful Commands & Information
 To check what ports these two services are running on the following console command will run them:
 ```
 docker-compose ps
@@ -133,10 +97,8 @@ To run the server through a simple php command, assuming all extensions are inst
 docker-compose up 
 ```
 
-Then visit localhost:8080 in the browser to see the webpage.
+Then visit localhost:3113 in the browser to see the webpage.
 
-Note: you may have to connect to the container remotely with VSCode, and/or you could mess with the ports
-by adding ports: '8080:8080' to the config under myapp for docker-compose.yml.
 ## 5.0 API
 
 ## 6.0 Maintainers

@@ -6,7 +6,7 @@ Some thoughts to help you contribute to this project
 
 ## Table Of Contents
 
-- [1.0 Guidelines](#guidelines)
+- [1.0 Guidelines](## 1.0 Guidelines)
 - [2.0 PHP Style](#background)
 - [3.0 Documentation](#install)
 - [4.0 Compatability](#usage)
@@ -14,14 +14,11 @@ Some thoughts to help you contribute to this project
 - [6.0 Issues](#maintainers)
 - [7.0 Recommended Communication Style](#contributing)
 - [8.0 PR Validation](#license)
-- [9.0 Work in progress](#WIP)
 - [9.0 Setup](#Setup)
-- [9.0 Setup Debugger](#Debugger)
 - [10.0 Testing](#Testing)
 - [11.0 Coding Tips](#CodingTips)
 - [12.0 Pull Requests](#PullRequests)
-- [13.0 Coding Tips](#CodingTips)
-- [14.0 License](#License)
+- [13.0 License](#License)
 
 ## 1.0 Guidelines
 
@@ -103,13 +100,6 @@ PHP Unit testing is done in the "test" folder under myapp. To run the tests, in 
 docker exec -it virtual-wellness-open-source_myapp_1 ./vendor/bin/phpunit test
 ```
 
-## 11.0 Setup Debugger
-
-Right now the debugger has just been setup with PHPSTORM on my machine. Using the quick connect functions
-should enable the debugger, assuming you are looking for the IDEKEY=PHPSTORM.
-
-TODO: Detailed Instructions for debugger (needs help)
-
 ## Spinning down the site
 
 ```sh
@@ -123,7 +113,7 @@ $ docker-compose ps
 $ docker-compose log <container_name>
 ```
 
-## 12.0 Pull Requests
+## 11.0 Pull Requests
 
 ### _We actively welcome your pull requests, however linking your work to an existing issue is preferred._
 
@@ -140,12 +130,10 @@ $ docker-compose log <container_name>
 
 *note for maintainers: All pull requests need a label to assist automation. See the [template](https://github.com/open-sauced/open-sauced/blob/HEAD/.github/release-drafter.yml) to guide which labels to use.*
 
-## 13.0 Coding Tips
+## 12.0 Coding Tips
 - Ask questions if you are stuck. 
-- Use [CSS variables](https://github.com/open-sauced/open-sauced/blob/HEAD/src/styles/variables.js)
-- Always use [rel="noreferrer" on all target="_blank" links](https://web.dev/external-anchors-use-rel-noopener/). 
 
-## 14.0 License
+## 13.0 License
 
 By contributing to the VWS project, you agree that your contributions will be licensed
 under its [MIT license](LICENSE).
