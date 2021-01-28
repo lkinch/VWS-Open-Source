@@ -22,6 +22,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function(){
+    return view('aboutpage');
+});
+
+Route::get('/landing', function(){
+    return view('landing');
+});
 Route::get('/auth0/callback', [Auth0Controller::class, 'callback'])->name('auth0-callback');
 Route::get('/login', [Auth0IndexController::class, 'login'])->name('login');
 Route::get('/logout', [Auth0IndexController::class, 'logout'])->name('logout');
