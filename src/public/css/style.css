@@ -9,7 +9,33 @@
 }
 body{
     background: #ffffff;
+}
 
+.navbar .navbar-light {
+    position: -webkit-sticky; /* Safari */
+    position: sticky; /* this has issues with browser compatability, and needs to be addressed eventually */
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.landing-text {
+    background-image: url("/images/sdu_main_winter.jpg");
+    filter: grayscale(70%);
+    height: 40vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-text h1 {
+    color: var(--bs-primary);
+    filter: contrast(500%);
+    z-index: 1;
 }
 
 .wrapper{
