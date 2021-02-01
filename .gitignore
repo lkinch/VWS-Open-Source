@@ -25,3 +25,4 @@ myapp/vendor/
 mysql
 .env
 **/*.env
+mysqlFlarum/
