@@ -13,18 +13,33 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div>
+            <a class="navbar-brand" href="#">Virtual Wellness</a>
+        </div>
+        <div class="nav-links">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </div>
+    </nav>
+	<main>
 
-	<div id="home">
 		<div class="landing-text">
 			<h1>Virtual Wellness System</h1>
 			<br>
 			<h5>The landing page</h5>
 			<br>
 			<!--login and register buttom here, change link when these pages done-->
-			<a href="#" class="btn btn-default btn-lg">Login</a>
-			<a href="#" class="btn btn-default btn-lg">Register</a>
+
+            @if (Route::has('login'))
+                  @auth
+                      <a href="{{ route('logout') }}" class="btn btn-default btn-lg">Sign out</a>
+                  @else
+                      <a href="{{ route('login') }}" class="btn btn-default btn-lg">Sign in / Register</a>
+                  @endauth
+            @endif
 		</div>
-	</div>
 
 	<div class="padding">
 		<div class="container">
@@ -81,11 +96,9 @@
 				</div>
 			</div>
 		</div>
-	</div>	
-
-	<div id="fixed_background">
-		
 	</div>
+
+    </main>
 
 	<footer class="container-fluid text-center">
 		<div class="row">
@@ -117,7 +130,7 @@
 			</div>
 		</div>
 	</footer>
-	
+
 </body>
 
 </html>

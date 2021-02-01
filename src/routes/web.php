@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\GeneralWebsiteController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +17,9 @@ use App\Http\Controllers\Auth\Auth0IndexController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [GeneralWebsiteController::class, 'index'])->name('index');
+Route::get('/about', [GeneralWebsiteController::class, 'about'])->name('about');
+Route::get('/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/about', function(){
     return view('aboutpage');
@@ -33,3 +32,4 @@ Route::get('/auth0/callback', [Auth0Controller::class, 'callback'])->name('auth0
 Route::get('/login', [Auth0IndexController::class, 'login'])->name('login');
 Route::get('/logout', [Auth0IndexController::class, 'logout'])->name('logout');
 Route::get('/profile', [Auth0IndexController::class, 'profile'])->name('profile');
+
