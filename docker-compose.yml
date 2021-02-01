@@ -35,6 +35,36 @@ services:
       - ./nginx_logs/:/var/log/  
     ports:
       - '9000:9000'
+  flarum:
+    build:
+      context: .
+      dockerfile: flarum.dockerfile 
+    container_name: flarum
+    environment:
+      - DEBUG=true
+      - FORUM_URL=http://localhost:8888
+
+      # Database configuration 
+      - DB_HOST=host.docker.internal
+      - DB_NAME=flarum
+      - DB_USER=root
+      - DB_PASS=secretsecret
+      - DB_PREF=
+      - DB_PORT=3306
+
+      # User admin flarum (environment variable for first installation)
+      # /!\ admin password must contain at least 8 characters /!\
+      - FLARUM_ADMIN_USER=admin
+      - FLARUM_ADMIN_PASS=secretsecret
+      - FLARUM_ADMIN_MAIL=admin@domain.tld
+      - FLARUM_TITLE=Test flarum
+
+    volumes:
+      - ./flarum/public:/var/www/html
+    ports:
+      - 8888:8888
+    depends_on:
+      - mysql
   mysql:
     image: mysql:5.7.32
     container_name: mysql
@@ -47,4 +77,4 @@ services:
       MYSQL_USER: laravel
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
-
+  

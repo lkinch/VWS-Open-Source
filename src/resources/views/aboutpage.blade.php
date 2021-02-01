@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- CSS ORDER MATTERS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}"/>
 	<script src="https://kit.fontawesome.com/555936ed9c.js" crossorigin="anonymous"></script>
     <title>About VWS</title>
 
@@ -19,8 +19,8 @@
             <a class="navbar-brand" href="#">Virtual Wellness</a>
         </div>
         <div class="nav-links">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link active" aria-current="page" href="/VWS/">Home</a>
+            <a class="nav-link" href="/VWS/about">About</a>
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
     </nav>

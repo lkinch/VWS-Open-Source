@@ -17,19 +17,19 @@ use App\Http\Controllers\Auth\Auth0IndexController;
 |
 */
 
-Route::get('/', [GeneralWebsiteController::class, 'index'])->name('index');
-Route::get('/about', [GeneralWebsiteController::class, 'about'])->name('about');
-Route::get('/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('dashboard');
+Route::get('/VWS', [GeneralWebsiteController::class, 'index'])->name('index');
+Route::get('/VWS/about', [GeneralWebsiteController::class, 'about'])->name('about');
+Route::get('/VWS/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/about', function(){
+Route::get('/VWS/about', function(){
     return view('aboutpage');
 });
 
-Route::get('/landing', function(){
+Route::get('/VWS/landing', function(){
     return view('landing');
 });
-Route::get('/auth0/callback', [Auth0Controller::class, 'callback'])->name('auth0-callback');
-Route::get('/login', [Auth0IndexController::class, 'login'])->name('login');
-Route::get('/logout', [Auth0IndexController::class, 'logout'])->name('logout');
-Route::get('/profile', [Auth0IndexController::class, 'profile'])->name('profile');
+Route::get('/VWS/auth0/callback', [Auth0Controller::class, 'callback'])->name('auth0-callback');
+Route::get('/VWS/login', [Auth0IndexController::class, 'login'])->name('login');
+Route::get('/VWS/logout', [Auth0IndexController::class, 'logout'])->name('logout');
+Route::get('/VWS/profile', [Auth0IndexController::class, 'profile'])->name('profile');
 
