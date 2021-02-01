@@ -27,9 +27,9 @@
 
     <main>
         <div class="landing-text">
-            <div>
-                <h1>About Virtual Wellness System</h1>
-            </div>
+        </div>
+        <div class="landing-title">
+            <h1>About Virtual Wellness System</h1>
         </div>
         <div class="container-fluid">
             <h2>What is Vitual Wellness System?</h2>

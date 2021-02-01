@@ -17,10 +17,12 @@ html, body{
     background-size: cover;
 }
 
-.navbar .navbar-light {
+.navbar {
     position: -webkit-sticky; /* Safari */
     position: sticky; /* this has issues with browser compatability, and needs to be addressed eventually */
     display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .nav-links {
