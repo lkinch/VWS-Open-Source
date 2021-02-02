@@ -28,15 +28,42 @@
 		<div class="landing-text">
 			<h1>Virtual Wellness System</h1>
 			<br>
-			<h5>The landing page</h5>
+			<h5>Enter Your Email and Password Here!</h5>
 			<br>
+				<div class="mb-4">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Your email" class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}">
+
+                    @error('email')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                    @enderror
+            	</div>
+
+				<div class="mb-4">
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Your password" class="bg-gray-100 border-2 w-full p-2 rounded-lg @error('password') border-red-500 @enderror" value="">
+
+                    @error('password')
+                        <div class="text-red-500 mt-2 text-sm">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+				<div>
+                    <button type="submit" class="btn btn-primary text-white px-4 py-3 rounded font-medium w-full">Login</button>
+                </div>
+				<br>
+				<h6>If you don't have an account, register by clicking the button below:</h6>
 			<!--login and register buttom here, change link when these pages done-->
 
             @if (Route::has('login'))
                   @auth
                       <a href="{{ route('logout') }}" class="btn btn-default btn-lg">Sign out</a>
                   @else
-                      <a href="{{ route('login') }}" class="btn btn-default btn-lg">Sign in / Register</a>
+                      <a href="{{ route('register') }}" class="btn btn-default btn-lg">Register</a>
                   @endauth
             @endif
 		</div>

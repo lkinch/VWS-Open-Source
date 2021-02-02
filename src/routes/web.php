@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\GeneralWebsiteController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -17,7 +17,8 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-Route::get('/', [GeneralWebsiteController::class, 'index'])->name('landingpage');
+
+Route::get('/', [PublicController::class, 'index'])->name('landingpage');
 Route::get('/home', [GeneralWebsiteController::class, 'dashboard'])->name('home');
 Route::get('/about', [GeneralWebsiteController::class, 'about'])->name('about');
 
