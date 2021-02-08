@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "80:80"
+      - "3001:80"
     volumes:
       - ./src:/var/www
       - ./nginx/:/etc/nginx/conf.d/
@@ -35,6 +35,50 @@ services:
       - ./nginx_logs/:/var/log/  
     ports:
       - '9000:9000'
+  flarum:
+    build:
+      context: .
+      dockerfile: flarum.dockerfile 
+    container_name: flarum
+    command: >
+      /bin/sh -c "chmod -R 777 /var/www/
+      && apachectl -DFOREGROUND"
+    environment:
+      - DEBUG=true
+      - FORUM_URL=http://localhost
+
+      # Database configuration 
+      - DB_HOST=flarummysql
+      - DB_NAME=flarum3
+      - DB_USER=root
+      - DB_PASS=secret
+      - DB_PREF=
+
+      # User admin flarum (environment variable for first installation)
+      # /!\ admin password must contain at least 8 characters /!\
+      - FLARUM_ADMIN_USER=admin
+      - FLARUM_ADMIN_PASS=secretsecret
+      - FLARUM_ADMIN_MAIL=admin@domain.tld
+      - FLARUM_TITLE=Test flarum
+
+    volumes:
+      - ./flarum/public:/var/www
+    ports:
+      - 80:80
+    depends_on:
+      - flarummysql
+  flarummysql:
+    image: mysql:5.7.32
+    container_name: flarummysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysqlFlarum:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: flarum3
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
   mysql:
     image: mysql:5.7.32
     container_name: mysql
@@ -47,4 +91,12 @@ services:
       MYSQL_USER: laravel
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
-
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      PMA_HOST: host.docker.internal
+  

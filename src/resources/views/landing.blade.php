@@ -7,7 +7,7 @@
 	<!-- CSS ORDER MATTERS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}" />
     <title>Landing page</title>
 
 </head>
@@ -18,8 +18,8 @@
             <a class="navbar-brand" href="#">Virtual Wellness</a>
         </div>
         <div class="nav-links">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link active" aria-current="page" href="/VWS/">Home</a>
+            <a class="nav-link" href="/VWS/about">About</a>
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
     </nav>
