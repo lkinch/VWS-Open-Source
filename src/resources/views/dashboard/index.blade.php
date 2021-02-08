@@ -24,13 +24,26 @@
 							<li><a href="#"><i class="far fa-clipboard"></i>Survey</a></li>
 							<li><a href="#"><i class="far fa-comments"></i>Forums</a></li>
 							<li><a href="#"><i class="far fa-comment"></i>Messages</a></li>
-                            @if (Route::has('login'))
-                                @auth
-                                    <li><a href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i>Sign out</a></li>
-                                @else
-                                    <li><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i>Sign in / Register</a></li>
-                                @endauth
-                            @endif
+                            @auth
+								<li>
+									<a href="" class="p-3">{{ auth()->user()->name }}</a>
+								</li>
+								<li>
+									<form action="{{ route('logout') }}" method="post" class="p-3 inline">
+                                    @csrf
+										<button type="submit">Logout</button>
+									</form>
+								</li>
+							@endauth
+
+							@guest
+								<li>
+									<a href="{{ route('login') }}" class="p-3">Login</a>
+								</li>
+								<li>
+									<a href="{{ route('register') }}" class="p-3">Register</a>
+								</li>
+							@endguest
 						</ul>
 						<br>
 						<!--placeholder for Logo-->

@@ -75,6 +75,26 @@ Run the docker compose up and everything should work.
 docker-compose up -d
 ```
 
+### 3.5 Step Six - Install Flarum
+
+Run the following commands to create the database for flarum
+
+```
+docker-compose up -d
+```
+
+navigate to 0.0.0.0 in your browser. Fill out the following information:
+
+Forum Title: Virtual Wellness
+mysql Host: flarummysql
+MySQL Databse: flarum3
+MySQL Password: secret
+Table Prefix: (leave blank)
+Admin Email: youremail@email.com
+Admin Username: admin
+Admin Password: secretsecret
+
+
 ### 3.6 Other Useful Commands & Information
 To check what ports these two services are running on the following console command will run them:
 ```
