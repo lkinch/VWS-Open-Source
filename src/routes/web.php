@@ -17,11 +17,11 @@ use App\Http\Controllers\Auth\RegisterController;
 |
 */
 
-Route::get('/VWS', [GeneralWebsiteController::class, 'index'])->name('index');
-Route::get('/VWS/about', [GeneralWebsiteController::class, 'about'])->name('about');
-Route::get('/VWS/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('dashboard');
+Route::get('/', [GeneralWebsiteController::class, 'index'])->name('index');
+Route::get('/about', [GeneralWebsiteController::class, 'about'])->name('about');
+Route::get('/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/VWS/landing', function(){
+Route::get('/landing', function(){
     return view('landing');
 });
 
