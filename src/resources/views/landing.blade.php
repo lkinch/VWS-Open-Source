@@ -18,8 +18,8 @@
             <a class="navbar-brand" href="#">Virtual Wellness</a>
         </div>
         <div class="nav-links">
-            <a class="nav-link active" aria-current="page" href="/VWS/">Home</a>
-            <a class="nav-link" href="/VWS/about">About</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/about">About</a>
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
     </nav>
@@ -32,11 +32,38 @@
 			<br>
 			<!--login and register buttom here, change link when these pages done-->
 
+
             @if (Route::has('login'))
                   @auth
-                      <a href="{{ route('logout') }}" class="btn btn-default btn-lg">Sign out</a>
+                    <form action="{{ route('logout') }}" method="post" class="p-3 inline">
+                    @csrf
+                        <button type="submit" class="btn btn-primary mb-3">Logout</button>
+                    </form>
                   @else
-                      <a href="{{ route('login') }}" class="btn btn-default btn-lg">Sign in / Register</a>
+                    <div id="sign-in-or-register" style="display: flex; flex-direction: column; align-items: center;">
+                        <div id="login">
+                            @section('login')
+                                @include('auth.login')
+                            @show
+                        </div>
+
+                        <div id="register" style="display: none;">
+                            @section('register')
+                                @include('auth.register')
+                            @show
+                        </div>
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-lg">
+                                <li class="page-item active" aria-current="page">
+                                    <button class="page-link" onClick="displaySignIn()">Login</button>
+                                </li>
+                                <li class="page-item">
+                                    <button class="page-link" onClick="displayRegister()">Register</button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
                   @endauth
             @endif
 		</div>
@@ -130,6 +157,24 @@
 			</div>
 		</div>
 	</footer>
+
+    <script>
+
+    var login = document.getElementById("login");
+    var register = document.getElementById("register");
+
+    function displaySignIn() {
+        register.style.display = "none";
+        login.style.display = "block";
+    }
+
+    function displayRegister() {
+        register.style.display = "block";
+        login.style.display = "none";
+    }
+
+
+    </script>
 
 </body>
 
