@@ -29,6 +29,14 @@ Route::get('/about', function(){
 Route::get('/landing', function(){
     return view('landing');
 });
+
+Route::get('/surveyO', function(){
+    return view('surveyAppendixO');
+});
+
+Route::get('/surveyR', function(){
+    return view('surveyAppendixR');
+});
 Route::get('/auth0/callback', [Auth0Controller::class, 'callback'])->name('auth0-callback');
 Route::get('/login', [Auth0IndexController::class, 'login'])->name('login');
 Route::get('/logout', [Auth0IndexController::class, 'logout'])->name('logout');
