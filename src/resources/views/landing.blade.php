@@ -7,24 +7,66 @@
 	<!-- CSS ORDER MATTERS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}" />
     <title>Landing page</title>
 
 </head>
 
 <body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div>
+            <a class="navbar-brand" href="#">Virtual Wellness</a>
+        </div>
+        <div class="nav-links">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/about">About</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </div>
+    </nav>
+	<main>
 
-	<div id="home">
 		<div class="landing-text">
 			<h1>Virtual Wellness System</h1>
 			<br>
 			<h5>The landing page</h5>
 			<br>
 			<!--login and register buttom here, change link when these pages done-->
-			<a href="#" class="btn btn-default btn-lg">Login</a>
-			<a href="#" class="btn btn-default btn-lg">Register</a>
+
+
+            @if (Route::has('login'))
+                  @auth
+                    <form action="{{ route('logout') }}" method="post" class="p-3 inline">
+                    @csrf
+                        <button type="submit" class="btn btn-primary mb-3">Logout</button>
+                    </form>
+                  @else
+                    <div id="sign-in-or-register" style="display: flex; flex-direction: column; align-items: center;">
+                        <div id="login">
+                            @section('login')
+                                @include('auth.login')
+                            @show
+                        </div>
+
+                        <div id="register" style="display: none;">
+                            @section('register')
+                                @include('auth.register')
+                            @show
+                        </div>
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-lg">
+                                <li class="page-item active" aria-current="page">
+                                    <button class="page-link" onClick="displaySignIn()">Login</button>
+                                </li>
+                                <li class="page-item">
+                                    <button class="page-link" onClick="displayRegister()">Register</button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                  @endauth
+            @endif
 		</div>
-	</div>
 
 	<div class="padding">
 		<div class="container">
@@ -81,11 +123,9 @@
 				</div>
 			</div>
 		</div>
-	</div>	
-
-	<div id="fixed_background">
-		
 	</div>
+
+    </main>
 
 	<footer class="container-fluid text-center">
 		<div class="row">
@@ -117,7 +157,25 @@
 			</div>
 		</div>
 	</footer>
-	
+
+    <script>
+
+    var login = document.getElementById("login");
+    var register = document.getElementById("register");
+
+    function displaySignIn() {
+        register.style.display = "none";
+        login.style.display = "block";
+    }
+
+    function displayRegister() {
+        register.style.display = "block";
+        login.style.display = "none";
+    }
+
+
+    </script>
+
 </body>
 
 </html>

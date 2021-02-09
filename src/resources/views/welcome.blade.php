@@ -60,16 +60,7 @@
 						<h3>Content Two</h3>
 						<p>
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, ab! Voluptate eum repellendus repellat incidunt a enim, vero neque, cum reprehenderit, sunt assumenda eaque dignissimos atque eveniet unde. Nulla quam suscipit magni obcaecati est architecto quod maiores illum distinctio. Fuga vel, vitae nobis in at mollitia amet impedit, voluptas dolores, rerum cum assumenda sint asperiores temporibus. Quo, dicta dolor vitae harum labore culpa sunt voluptatum laudantium recusandae, ipsam iste. Eos, et. Aut aliquid earum, quas blanditiis expedita in quisquam facilis dolor reiciendis obcaecati, quo voluptatum libero, atque ut molestiae aspernatur minima et debitis totam provident eius harum. Quaerat, praesentium doloribus?</p>
-					
-            @if (Route::has('login'))
-              <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                  @auth
-                      <a href="{{ route('logout') }}" class="text-sm text-gray-700 underline">Sign out</a>
-                  @else
-                      <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Sign in / Register</a>
-                  @endauth
-              </div>
-            @endif
+
           </v-container>
 				</div>
 			</v-main>
