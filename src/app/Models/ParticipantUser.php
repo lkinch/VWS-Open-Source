@@ -2,17 +2,13 @@
 
 namespace App\Models;
 
-use App\Models\Like;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Illuminate\Database\Eloquent\Model;
 use Silber\Bouncer\Database\HasRolesAndAbilities;
 
-class User extends Authenticatable
+class ParticipantUser extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
     use HasRolesAndAbilities;
 
     /**

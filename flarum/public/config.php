@@ -1,6 +1,6 @@
 <?php return array (
   'debug' => false,
-  'database' => 
+  'database' =>
   array (
     'driver' => 'mysql',
     'host' => 'flarummysql',
@@ -16,7 +16,7 @@
     'prefix_indexes' => true,
   ),
   'url' => 'http://0.0.0.0',
-  'paths' => 
+  'paths' =>
   array (
     'api' => 'api',
     'admin' => 'admin',

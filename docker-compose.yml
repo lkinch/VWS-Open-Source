@@ -24,7 +24,7 @@ services:
     tty: true
     command: >
       /bin/sh -c "composer install
-      && chmod -R 777 /var/www/
+      && php artisan db:seed --class=DatabaseSeeder
       && php-fpm"
     environment:
       SERVICE_NAME: app
@@ -80,9 +80,9 @@ services:
       MYSQL_USER: laravel
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
-  mysql:
+  appmysql:
     image: mysql:5.7.32
-    container_name: mysql
+    container_name: appmysql
     ports:
       - 3307:3306
     volumes:
@@ -98,6 +98,6 @@ services:
     ports:
       - 8080:80
     environment:
-      MYSQL_ROOT_PASSWORD: secret
-      PMA_HOST: host.docker.internal
+      PMA_HOST: appmysql
+      PMA_PORT: 3306
   

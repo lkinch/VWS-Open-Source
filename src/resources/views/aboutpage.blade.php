@@ -19,8 +19,8 @@
             <a class="navbar-brand" href="#">Virtual Wellness</a>
         </div>
         <div class="nav-links">
-            <a class="nav-link active" aria-current="page" href="/VWS/">Home</a>
-            <a class="nav-link" href="/VWS/about">About</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/about">About</a>
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
     </nav>
