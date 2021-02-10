@@ -25,6 +25,14 @@ Route::get('/landing', function(){
     return view('landing');
 });
 
+Route::get('/surveyO', function(){
+    return view('surveyAppendixO');
+});
+
+Route::get('/surveyR', function(){
+    return view('surveyAppendixR');
+});
+
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
