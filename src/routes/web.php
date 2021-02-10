@@ -6,6 +6,8 @@ use App\Http\Controllers\GeneralWebsiteController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+
+use App\Http\Controllers\Surveys\SurveyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,13 +27,12 @@ Route::get('/landing', function(){
     return view('landing');
 });
 
-Route::get('/surveyO', function(){
-    return view('surveyAppendixO');
-});
+Route::get('/dashboard/surveys/appendices/surveyAppendixO', function(){
+    return view('/dashboard/surveys/appendices/surveyAppendixO');
+})->name('surveyAppendixO');
 
-Route::get('/surveyR', function(){
-    return view('surveyAppendixR');
-});
+Route::get('/dashboard/sampleSurvey', [SurveyController::class, 'index'])->name('SampleSurveyindex');
+Route::post('/dashboard/sampleSurvey', [SurveyController::class, 'store'])->name('SampleSurveystore');
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 

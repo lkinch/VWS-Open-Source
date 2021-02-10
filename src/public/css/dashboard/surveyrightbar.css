@@ -1,12 +1,3 @@
-/* sidebar's css over here*/
-/*buttons, username, avatar, dropdown menu*/
-
-.main {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-}
-
 
 section.right-panel {
     display: flex;
@@ -34,14 +25,14 @@ section.right-panel {
 
 .survey{
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
 }
 
-#surveyForm > .mb-3 {
+.survey > .mb-3 {
     width: 30vw;
 }
 
 #gender{
     display: flex;
 }
-
