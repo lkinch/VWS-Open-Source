@@ -7,7 +7,7 @@
 	<!-- CSS ORDER MATTERS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="{{ asset('css/landing.css') }}" />
     <title>Landing page</title>
 
 </head>
@@ -32,11 +32,38 @@
 			<br>
 			<!--login and register buttom here, change link when these pages done-->
 
+
             @if (Route::has('login'))
                   @auth
-                      <a href="{{ route('logout') }}" class="btn btn-default btn-lg">Sign out</a>
+                    <form action="{{ route('logout') }}" method="post" class="p-3 inline">
+                    @csrf
+                        <button type="submit" class="btn btn-primary mb-3">Logout</button>
+                    </form>
                   @else
-                      <a href="{{ route('login') }}" class="btn btn-default btn-lg">Sign in / Register</a>
+                    <div id="sign-in-or-register" style="display: flex; flex-direction: column; align-items: center;">
+                        <div id="login">
+                            @section('login')
+                                @include('auth.login')
+                            @show
+                        </div>
+
+                        <div id="register" style="display: none;">
+                            @section('register')
+                                @include('auth.register')
+                            @show
+                        </div>
+                        <nav aria-label="...">
+                            <ul class="pagination pagination-lg">
+                                <li class="page-item active" aria-current="page">
+                                    <button class="page-link" onClick="displaySignIn()">Login</button>
+                                </li>
+                                <li class="page-item">
+                                    <button class="page-link" onClick="displayRegister()">Register</button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
                   @endauth
             @endif
 		</div>
@@ -130,6 +157,24 @@
 			</div>
 		</div>
 	</footer>
+
+    <script>
+
+    var login = document.getElementById("login");
+    var register = document.getElementById("register");
+
+    function displaySignIn() {
+        register.style.display = "none";
+        login.style.display = "block";
+    }
+
+    function displayRegister() {
+        register.style.display = "block";
+        login.style.display = "none";
+    }
+
+
+    </script>
 
 </body>
 

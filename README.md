@@ -75,6 +75,35 @@ Run the docker compose up and everything should work.
 docker-compose up -d
 ```
 
+### 3.5 Step Six - Install Flarum
+
+Run the following commands to create the database for flarum
+
+```
+docker-compose up -d
+```
+
+navigate to 0.0.0.0 in your browser. Fill out the following information:
+
+```
+Forum Title: Virtual Wellness
+mysql Host: flarummysql
+MySQL Database: flarum3
+MySQL Username: root
+MySQL Password: secret
+Table Prefix: (leave blank)
+Admin Email: youremail@email.com
+Admin Username: admin
+Admin Password: secretsecret
+```
+
+Wait for the "Please Wait..." to be complete.
+Spin down and spin up the docker-container so that the permissions can correctly populate (it's erroring out now as the permissions on the cache folder are incorrect TODO: need to give less global permissions before deploy)
+```
+docker-compose down
+docker-compose up
+```
+
 ### 3.6 Other Useful Commands & Information
 To check what ports these two services are running on the following console command will run them:
 ```
@@ -97,7 +126,7 @@ To run the server through a simple php command, assuming all extensions are inst
 docker-compose up 
 ```
 
-Then visit localhost:3113 in the browser to see the webpage.
+Then visit localhost:3001 in the browser to see the main webpage. Visit localhost to see the forum.
 
 ## 5.0 API
 

@@ -1,0 +1,66 @@
+/* sidebar's css over here*/
+/*buttons, username, avatar, dropdown menu*/
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+section.left-panel {
+    display: block;
+    height: 100vh;
+    width: 20%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;    
+    justify-content: flex-start;
+}
+
+.left-panel-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.right-panel {
+    display: block;
+    height: 100vh;
+    width: 80%;
+}
+
+.survey-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bar-center {
+    display: flex;
+}
+
+.bar-center-img {
+    margin-left: 30px;
+}
+
+.survey{
+    display: flex;
+    justify-content: center;
+}
+
+#surveyForm{
+     
+}
+
+#surveyForm > .mb-3 {
+    width: 30vw;
+    margin: 20px;
+}
+
+#gender{
+    display: flex;
+}
+
