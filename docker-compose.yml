@@ -24,8 +24,7 @@ services:
     tty: true
     command: >
       /bin/sh -c "composer install
-      && php artisan db:seed --class=DatabaseSeeder
-      && php-fpm"
+      && php artisan migrate && php-fpm"
     environment:
       SERVICE_NAME: app
       SERVICE_TAGS: dev

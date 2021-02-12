@@ -148,12 +148,12 @@
 				</ul>
 			</div>
 			<div class="col-sm-4">
-			<h3>Something</h3>
+			<h3>Lorem.</h3>
 				<br>
-				<h6>something</h6>
-				<h6>something</h6>
-				<h6>something</h6>
-				<h6>something</h6>
+				<h6>Lorem, ipsum dolor.</h6>
+				<h6>Lorem, ipsum.</h6>
+				<h6>Lorem, ipsum dolor.</h6>
+				<h6>Lorem, ipsum.</h6>
 			</div>
 		</div>
 	</footer>
