@@ -22,7 +22,39 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function(){
+    return view('aboutpage');
+});
+
+Route::get('/landing', function(){
+    return view('landing');
+});
+
+Route::get('/surveyO', function(){
+    return view('surveyAppendixO');
+});
+
+Route::get('/surveyR', function(){
+    return view('surveyAppendixR');
+});
+
+Route::get('/surveyT', function(){
+    return view('surveyAppendixT');
+});
+
+Route::get('/surveyS', function(){
+    return view('surveyAppendixS');
+});
+
+Route::get('/surveyQ', function(){
+    return view('surveyAppendixQ');
+});
+
 Route::get('/auth0/callback', [Auth0Controller::class, 'callback'])->name('auth0-callback');
 Route::get('/login', [Auth0IndexController::class, 'login'])->name('login');
 Route::get('/logout', [Auth0IndexController::class, 'logout'])->name('logout');
 Route::get('/profile', [Auth0IndexController::class, 'profile'])->name('profile');
+Route::get('/survey-O', function(){
+    return view('surveyAppendixO');
+});
+
