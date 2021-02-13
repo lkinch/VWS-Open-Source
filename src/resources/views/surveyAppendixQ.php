@@ -132,16 +132,15 @@
     for (let i = 0; i < getAllQuestions.length; i++) {
         let outputDiv = getAllQuestions[i].querySelector('.output');
         let currentLikertValue = getAllQuestions[i].querySelector('.form-range').value;
-        outputDiv.innerText = currentLikertValue
-        console.log(getAllQuestions[i].querySelector('.inline .output'), currentLikertValue);
+        outputDiv.innerText = currentLikertValue;
     }
 
     function updateQuestion(questionNum) {
         let getAllQuestions = document.querySelectorAll('.question');
-        let outputDiv = getAllQuestions[questionNum]
+        let outputDiv = getAllQuestions[questionNum];
         let inlineElement = outputDiv.querySelector('.output');
         let currentLikertValue = getAllQuestions[questionNum].querySelector('.form-range').value;
-        inlineElement.innerText = currentLikertValue
+        inlineElement.innerText = currentLikertValue;
     }
 
 </script>
