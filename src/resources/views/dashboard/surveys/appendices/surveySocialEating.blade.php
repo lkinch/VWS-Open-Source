@@ -47,7 +47,6 @@
                         <div class="output" id="customRange1Output"></div>
                      </div>
  			</div>
-             </div>
              <div class="mb-3 question" id='question1'>
  				<label for="customRange1" class="form-label"> 3) Family: Reminded me not to eat high fat, high salt foods.</label>
                  <input type="range" class="form-range" min="1" max="5" step="1" id="customRange1" onchange="updateQuestion(4)">
@@ -64,7 +63,6 @@
                         <div class="output" id="customRange1Output"></div>
                      </div>
  			</div>
-             </div>
              <div class="mb-3 question" id='question1'>
  				<label for="customRange1" class="form-label"> 4) Family: Complimented me on changing my eating habits ("Keep it up", "We are proud of you ") .</label>
                  <input type="range" class="form-range" min="1" max="5" step="1" id="customRange1" onchange="updateQuestion(6)">
@@ -81,7 +79,6 @@
                         <div class="output" id="customRange1Output"></div>
                      </div>
  			</div>
-             </div>
              <div class="mb-3 question" id='question1'>
  				<label for="customRange1" class="form-label"> 5) Family: Commented if I went back to my oId eating habits.</label>
                  <input type="range" class="form-range" min="1" max="5" step="1" id="customRange1" onchange="updateQuestion(8)">
@@ -98,7 +95,6 @@
                         <div class="output" id="customRange1Output"></div>
                      </div>
  			</div>
-             </div>
              <div class="mb-3 question" id='question1'>
  				<label for="customRange1" class="form-label"> 6) Family: Ate high fat or high salt foods in front of me.</label>
                  <input type="range" class="form-range" min="1" max="5" step="1" id="customRange1" onchange="updateQuestion(10)">
@@ -115,7 +111,6 @@
                         <div class="output" id="customRange1Output"></div>
                      </div>
  			</div>
-             </div>
              <div class="mb-3 question" id='question1'>
  				<label for="customRange1" class="form-label"> 7) Family: Refused to eat the same foods I eat.</label>
                  <input type="range" class="form-range" min="1" max="5" step="1" id="customRange1" onchange="updateQuestion(12)">
@@ -132,7 +127,6 @@
                         <div class="output" id="customRange1Output"></div>
                      </div>
  			</div>
-             </div>
              <div class="mb-3 question" id='question1'>
  				<label for="customRange1" class="form-label"> 8) Family: Brought home foods I'm trying not to eat.</label>
                  <input type="range" class="form-range" min="1" max="5" step="1" id="customRange1" onchange="updateQuestion(14)">
@@ -149,7 +143,6 @@
                         <div class="output" id="customRange1Output"></div>
                      </div>
  			</div>
-             </div>
              <div class="mb-3 question" id='question1'>
  				<label for="customRange1" class="form-label"> 9) Family: Got angry when I encouraged them to eat low salt, low fat foods.</label>
                  <input type="range" class="form-range" min="1" max="5" step="1" id="customRange1" onchange="updateQuestion(16)">
@@ -166,7 +159,6 @@
                         <div class="output" id="customRange1Output"></div>
                      </div>
  			</div>
-             </div>
              <div class="mb-3 question" id='question1'>
  				<label for="customRange1" class="form-label"> 10) Family: Offered me food I'm trying not to eat.</label>
                  <input type="range" class="form-range" min="1" max="5" step="1" id="customRange1" onchange="updateQuestion(18)">
@@ -181,28 +173,28 @@
                     <div class="inline" style="display: flex;">
                         <label for="customRange1Output" class="output-label">Current Value: </label>
                         <div class="output" id="customRange1Output"></div>
-                     </div>
+                    </div>
  			</div>
-             
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script>
 
-     let getAllQuestions = document.querySelectorAll('.question');
+        let getAllQuestions = document.querySelectorAll('.question');
 
-     for (let i = 0; i < getAllQuestions.length; i++) {
-         let outputDiv = getAllQuestions[i].querySelector('.output');
-         let currentLikertValue = getAllQuestions[i].querySelector('.form-range').value;
-         outputDiv.innerText = currentLikertValue;
-     }
+        for (let i = 0; i < getAllQuestions.length; i++) {
+            let outputDiv = getAllQuestions[i].querySelector('.output');
+            let currentLikertValue = getAllQuestions[i].querySelector('.form-range').value;
+            outputDiv.innerText = currentLikertValue;
+        }
 
-     function updateQuestion(questionNum) {
-         let getAllQuestions = document.querySelectorAll('.question');
-         let outputDiv = getAllQuestions[questionNum];
-         let inlineElement = outputDiv.querySelector('.output');
-         let currentLikertValue = getAllQuestions[questionNum].querySelector('.form-range').value;
-         inlineElement.innerText = currentLikertValue;
-     }
+        function updateQuestion(questionNum) {
+            let getAllQuestions = document.querySelectorAll('.question');
+            let outputDiv = getAllQuestions[questionNum];
+            let inlineElement = outputDiv.querySelector('.output');
+            let currentLikertValue = getAllQuestions[questionNum].querySelector('.form-range').value;
+            inlineElement.innerText = currentLikertValue;
+        }
 
- </script>
+    </script>
 @endsection('surveySocialEating')
