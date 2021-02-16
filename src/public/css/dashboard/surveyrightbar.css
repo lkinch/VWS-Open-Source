@@ -23,14 +23,15 @@ section.right-panel {
     margin-left: 30px;
 }
 
-.survey{
+.survey {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 90%;
 }
 
-.survey > .mb-3 {
-    width: 30vw;
+.mb-3.question {
+    width: 90%;
 }
 
 #gender{
