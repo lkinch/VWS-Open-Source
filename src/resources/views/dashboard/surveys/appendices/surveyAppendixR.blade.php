@@ -1,16 +1,4 @@
-@section('appendixR')
-<section class="right-panel" >
-    <!--top includes greetings, avatar, user name and drop down list-->
-    <!--all followed the mainpage design in first mockup, might change in later-->
-    <div class="survey-title">
-        <h2>Appendix R: Healthcare Utilization Survey</h2>
-    </div>
-
-    <!--Survey form start from here-->
-    <!--Should be in the middle of the screen-->
-    <!-- this component form comes from https://getbootstrap.com/docs/5.0/forms/overview/ -->
-    <div class='survey'>
-        <form id='surveyForm'>
+@section('surveyAppendixR')
             <p>During the past 6 months, how many times have you</p>
             <div class="mb-3">
                 <label for="physicianFequency" class="form-label">Went to see your family physician?</label>
@@ -36,14 +24,14 @@
                 <label for="walkIn" class="form-label">Went to a walk in clinic?</label>
                 <!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="questionFive" id="questionFiveAnswer1">
+                    <label class="form-check-label" for="questionFiveAnswer1">
                         Yes
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="questionFive" id="questionFiveAnswer2" checked>
+                    <label class="form-check-label" for="questionFiveAnswer2">
                         No
                     </label>
                 </div>
@@ -119,9 +107,4 @@
                 <label for="nightHospitalTimes" class="form-label">If yes, how many nights?</label>
                 <input type="text" class="form-control" id="nightHospitalTimes" aria-describedby="nightHospitalTimes">
             </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-</section>
-@endsection('appendixR')
+@endsection('surveyAppendixR')
