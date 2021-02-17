@@ -43,13 +43,11 @@
 			<output>6</output>
 		</div>
 
-		<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
 			<br>
 			<p>References: Lorig KR, Sobel, DS, Ritter PL, Laurent, D, Hobbs, M. Effect of a self-management program for patients with chronic disease. Effective Clinical Practice, 4, 2001,pp. 256-262.</p>
 	</div>
 
-	
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <script>
 	document.registrationForm.ageInputId.oninput = function(){
