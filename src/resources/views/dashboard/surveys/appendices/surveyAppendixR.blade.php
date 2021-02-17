@@ -3,7 +3,7 @@
     <!--top includes greetings, avatar, user name and drop down list-->
     <!--all followed the mainpage design in first mockup, might change in later-->
     <div class="survey-title">
-        <h2>Appendix R</h2>
+        <h2>Appendix R: Healthcare Utilization Survey</h2>
     </div>
 
     <!--Survey form start from here-->
