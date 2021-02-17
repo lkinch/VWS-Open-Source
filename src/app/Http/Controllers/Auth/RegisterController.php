@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\ParticipantUser;
+use Silber\Bouncer\Bouncer;
 use Illuminate\Http\Request;
+use App\Models\ParticipantUser;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-
-use Silber\Bouncer\Bouncer;
 
 class RegisterController extends Controller
 {
@@ -30,13 +30,14 @@ class RegisterController extends Controller
             'password' => 'required|confirmed',
         ]);
 
-        $newUser = ParticipantUser::create([
-            'name' => $request->name,
-            'username' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+        //
+        //dd($request);
+        $newUser = ParticipantUser::create([ //stores the user in that table
+            'name'=> $request->name,
+            'username'=> $request->username,
+            'email'=> $request->email,
+            'password'=> Hash::make($request-> password),
         ]);
-
         $newUser->assign('participant');
 
         auth()->attempt($request->only('email', 'password'));
