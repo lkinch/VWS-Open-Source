@@ -12,26 +12,26 @@
 						<label for="surveyQuestion" class="form-label">Feeling nervous, anxious, or on edge?</label>
 						<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question" id="answer1" checked>
+							<label class="form-check-label" for="answer1">
 								Not at all
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question" id="answer2">
+							<label class="form-check-label" for="answer2">
 								Several days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question" id="answer3">
+							<label class="form-check-label" for="answer3">
 								More than half the days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question" id="answer4">
+							<label class="form-check-label" for="answer4">
 								Nearly every day
 							</label>
 						</div>
@@ -41,26 +41,26 @@
 						<label for="surveyQuestion" class="form-label">Not being able to stop or control worrying?</label>
 						<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question2" id="q2answer1" checked>
+							<label class="form-check-label" for="q2answer1">
 								Not at all
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question2" id="q2answer2">
+							<label class="form-check-label" for="q2answer2">
 								Several days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question2" id="q2answer3">
+							<label class="form-check-label" for="q2answer3">
 								More than half the days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question2" id="q2answer4">
+							<label class="form-check-label" for="q2answer4">
 								Nearly every day
 							</label>
 						</div>
@@ -70,8 +70,8 @@
 						<label for="surveyQuestion" class="form-label">Worrying too much about different things?</label>
 						<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+							<label class="form-check-label" for="flexRadioDefault2">
 								Not at all
 							</label>
 						</div>
@@ -83,7 +83,7 @@
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-							<label class="form-check-label" for="flexRadioDefault1">
+							<label class="form-check-label" for="flexRadioDefault2">
 								More than half the days
 							</label>
 						</div>
@@ -243,7 +243,7 @@
 			<br>
 			<p>Source: Primary Care Evaluation of Mental Disorders Patient Health Questionnaire (PRIME-MD-PHQ). The PHQ was developed by Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke, and colleagues. For research information, contact Dr. Spitzer at ris8@columbia.edu. PRIME-MD® is a trademark of Pfizer Inc. Copyright© 1999 Pfizer Inc. All rights reserved. Reproduced with permission</p>
 	</div>
-	
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 @endsection('surveyAppendixT')

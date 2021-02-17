@@ -23,8 +23,7 @@ services:
     restart: unless-stopped
     tty: true
     command: >
-      /bin/sh -c "composer install
-      && php artisan migrate && php-fpm"
+      /bin/sh -c "composer install && php-fpm"
     environment:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
