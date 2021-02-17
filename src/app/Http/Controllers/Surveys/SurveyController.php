@@ -16,23 +16,23 @@ class SurveyController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'age' => 'required|max:255',
-            'gender' => 'required|max:255',
-            'height' => 'required|max:255',
-            'weight' => 'required|max:255',
-            'occupation' => 'required|max:255',
-            'employment' => 'required|max:255',
-            'chronic_conditions' => 'required|max:255'
+            'inputAge' => 'required|max:255',
+            'gender' => 'required|in:male,female',
+            'inputHeight' => 'required|max:255',
+            'inputWeight' => 'required|max:255',
+            'inputOccupation' => 'required|max:255',
+            'inputEmployment' => 'required|max:255',
+            'chronic' => 'required|max:255'
         ]);
 
-        $newUser = AppendixO::create([
-            'age' => $request->age,
+         AppendixO::create([
+            'age' => $request->inputAge,
             'gender' => $request->gender,
-            'height' => $request->height,
-            'weight' => $request->weight,
-            'occupation' => $request->occupation,
-            'employment' => $request->employment,
-            'chronic_conditions' => $request->chronic_conditions,
+            'height' => $request->inputHeight,
+            'weight' => $request->inputWeight,
+            'occupation' => $request->inputOccupation,
+            'employment' => $request->inputEmployment,
+            'chronic_conditions' => $request->chronic,
         ]);
 
         return redirect()->route('dashboard');
