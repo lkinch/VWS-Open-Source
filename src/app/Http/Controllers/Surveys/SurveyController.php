@@ -35,16 +35,6 @@ class SurveyController extends Controller
             'chronic_conditions' => $request->chronic,
         ]);
 
-       /* $request->user()->consent()->create([ //chains the users post to a user
-            'age' => $request->age,
-            'gender' => $request->gender,
-            'height' => $request->height,
-            'weight' => $request->weight,
-            'occupation' => $request->occupation,
-            'employment' => $request->employment,
-            'chronic_conditions' => $request->chronic_conditions,
-        ]);*/
-
         return redirect()->route('dashboard');
     }
 
