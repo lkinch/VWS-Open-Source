@@ -23,12 +23,7 @@ services:
     restart: unless-stopped
     tty: true
     command: >
-<<<<<<< HEAD
       /bin/sh -c "composer install && php-fpm"
-=======
-      /bin/sh -c "composer install
-      && php-fpm"
->>>>>>> 62a3cdd8ffe44043f18cfd02291b2aff7b6f68f8
     environment:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
