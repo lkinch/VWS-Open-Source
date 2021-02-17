@@ -46,14 +46,14 @@
                 <label for="emergencyRoom" class="form-label">Went to the emergency room?</label>
                 <!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="questionSeven" id="questionSevenAnswer1">
+                    <label class="form-check-label" for="questionSevenAnswer1">
                         Yes
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="questionSeven" id="questionSevenAnswer2" checked>
+                    <label class="form-check-label" for="questionSevenAnswer2">
                         No
                     </label>
                 </div>
@@ -68,14 +68,14 @@
                 <label for="hospital" class="form-label">Were admitted to the hospital? </label>
                 <!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="questionNine" id="questionNineAnswer1">
+                    <label class="form-check-label" for="questionNineAnswer1">
                         Yes
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="questionNine" id="questionNineAnswer2" checked>
+                    <label class="form-check-label" for="questionNineAnswer2">
                         No
                     </label>
                 </div>
@@ -90,14 +90,14 @@
                 <label for="nightHospital" class="form-label">Spent the night in the hospital?</label>
                 <!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="questionEleven" id="questionElevenAnswer1">
+                    <label class="form-check-label" for="questionElevenAnswer1">
                         Yes
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="questionEleven" id="questionElevenAnswer2" checked>
+                    <label class="form-check-label" for="questionElevenAnswer2">
                         No
                     </label>
                 </div>

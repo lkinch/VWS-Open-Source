@@ -70,26 +70,26 @@
 						<label for="surveyQuestion" class="form-label">Worrying too much about different things?</label>
 						<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question3" id="q3answer1" checked>
+							<label class="form-check-label" for="q3answer1">
 								Not at all
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question3" id="q3answer2">
+							<label class="form-check-label" for="q3answer2">
 								Several days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question3" id="q3answer3">
+							<label class="form-check-label" for="q3answer3">
 								More than half the days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question3" id="q3answer4">
+							<label class="form-check-label" for="q3answer4">
 								Nearly every day
 							</label>
 						</div>
@@ -99,26 +99,26 @@
 						<label for="surveyQuestion" class="form-label">Trouble relaxing?</label>
 						<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question4" id="q4answer1" checked>
+							<label class="form-check-label" for="q4answer1">
 								Not at all
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question4" id="q4answer2">
+							<label class="form-check-label" for="q4answer2">
 								Several days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question4" id="q4answer3">
+							<label class="form-check-label" for="q4answer3">
 								More than half the days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question4" id="q4answer4">
+							<label class="form-check-label" for="q4answer4">
 								Nearly every day
 							</label>
 						</div>
@@ -128,26 +128,26 @@
 						<label for="surveyQuestion" class="form-label">Being so restless that it is hard to sit still?</label>
 						<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question5" id="q5answer1" checked>
+							<label class="form-check-label" for="q5answer1">
 								Not at all
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question5" id="q5answer2">
+							<label class="form-check-label" for="q5answer2">
 								Several days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question5" id="q5answer3">
+							<label class="form-check-label" for="q5answer3">
 								More than half the days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question5" id="q5answer4">
+							<label class="form-check-label" for="q5answer4">
 								Nearly every day
 							</label>
 						</div>
@@ -157,26 +157,26 @@
 						<label for="surveyQuestion" class="form-label">Becoming easily annoyed or irritable?</label>
 						<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question6" id="q6answer1" checked>
+							<label class="form-check-label" for="q6answer1">
 								Not at all
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question6" id="q6answer2">
+							<label class="form-check-label" for="q6answer2">
 								Several days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question6" id="q6answer3">
+							<label class="form-check-label" for="q6answer3">
 								More than half the days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question6" id="q6answer4">
+							<label class="form-check-label" for="q6answer4">
 								Nearly every day
 							</label>
 						</div>
@@ -186,26 +186,26 @@
 						<label for="surveyQuestion" class="form-label">Feeling afraid, as if something awful might happen?</label>
 						<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question7" id="q7answer1" checked>
+							<label class="form-check-label" for="q7answer1">
 								Not at all
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question7" id="q7answer2">
+							<label class="form-check-label" for="q7answer2">
 								Several days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question7" id="q7answer3">
+							<label class="form-check-label" for="q7answer3">
 								More than half the days
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question7" id="q7answer4">
+							<label class="form-check-label" for="q7answer4">
 								Nearly every day
 							</label>
 						</div>
@@ -215,26 +215,26 @@
 						<label for="surveyQuestion" class="form-label">If you checked any problems, how difficult have they made it for you to do your work, take care of things at home, or get along with other people?</label>
 						<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question8" id="q8answer1" checked>
+							<label class="form-check-label" for="q8answer1">
 								Not difficult at all
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question8" id="q8answer2">
+							<label class="form-check-label" for="q8answer2">
 								Somewhat difficult
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-							<label class="form-check-label" for="flexRadioDefault1">
+							<input class="form-check-input" type="radio" name="question8" id="q8answer3">
+							<label class="form-check-label" for="q8answer3">
 								Very difficult
 							</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-							<label class="form-check-label" for="flexRadioDefault2">
+							<input class="form-check-input" type="radio" name="question8" id="q8answer4">
+							<label class="form-check-label" for="q8answer4">
 								Extremely difficult
 							</label>
 						</div>
