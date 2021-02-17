@@ -30,8 +30,8 @@ section.right-panel {
     width: 90%;
 }
 
-.mb-3.question {
-    width: 90%;
+.survey > .mb-3 {
+    width: 80%;
 }
 
 #gender{
