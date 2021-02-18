@@ -12,48 +12,92 @@
             @csrf
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
-                <input type="text" class="form-control" id="inputAge" aria-describedby="Age">
+                <input type="text" class="form-control" id="inputAge"  name="inputAge"aria-describedby="Age">
+
+                @error('inputAge') <!-- outputs error message -->
+                <div class="mt-2 text-danger">
+                    {{$message}}
+                </div>
+                 @enderror
+
             </div>
             <div class="mb-3" id='gender'>
                 <label for="gender" class="form-label">Gender</label>
                 <!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="gender" id="gender" value="male">
+                    <label class="form-check-label" for="gender">
                         male
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="gender" id="gender" value="female" checked>
+                    <label class="form-check-label" for="gender">
                         female
                     </label>
                 </div>
+
+                @error('gender') <!-- outputs error message -->
+                <div class="mt-2 text-danger">
+                    {{$message}}
+                </div>
+                 @enderror
+
+
+
             </div>
 
             <div class="mb-3">
                 <label for="height" class="form-label">Height</label>
-                <input type="text" class="form-control" id="inputHeight" aria-describedby="Height">
+                <input type="text" class="form-control" id="inputHeight" name="inputHeight" aria-describedby="Height">
+
+                @error('inputHeight') <!-- outputs error message -->
+                <div class="mt-2 text-danger">
+                    {{$message}}
+                </div>
+                 @enderror
+
             </div>
 
             <div class="mb-3">
                 <label for="weight" class="form-label">Weight</label>
-                <input type="text" class="form-control" id="inputWeight" aria-describedby="weight">
+                <input type="text" class="form-control" id="inputWeight" name="inputWeight" aria-describedby="weight">
+
+                @error('inputWeight') <!-- outputs error message -->
+                <div class="mt-2 text-danger">
+                    {{$message}}
+                </div>
+                 @enderror
             </div>
 
             <div class="mb-3">
                 <label for="occupation" class="form-label">Occupation</label>
-                <input type="text" class="form-control" id="inpuOccupation" aria-describedby="occupation">
+                <input type="text" class="form-control" id="inputOccupation" name="inputOccupation" aria-describedby="occupation">
+                @error('inputOccupation') <!-- outputs error message -->
+                <div class="mt-2 text-danger">
+                    {{$message}}
+                </div>
+                 @enderror
             </div>
 
             <div class="mb-3">
                 <label for="workSituation" class="form-label">Full time or part time employment</label>
-                <input type="text" class="form-control" id="inputworkSituation" aria-describedby="workSituation">
+                <input type="text" class="form-control" id="inputEmployment" name="inputEmployment" aria-describedby="workSituation">
+                @error('inputEmployment') <!-- outputs error message -->
+                <div class="mt-2 text-danger">
+                    {{$message}}
+                </div>
+                 @enderror
             </div>
 
             <div class="form-group">
                 <label for="chronic">Chronic conditions:</label>
-                <textarea class="form-control" rows="5" id="chronic"></textarea>
+                <textarea class="form-control" rows="5" id="chronic" name="chronic""></textarea>
+                @error('chronic') <!-- outputs error message -->
+                <div class="mt-2 text-danger">
+                    {{$message}}
+                </div>
+                 @enderror
             </div>
 
     </div>

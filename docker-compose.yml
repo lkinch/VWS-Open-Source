@@ -80,7 +80,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
   appmysql:
     image: mysql:5.7.32
-    container_name: appmysql
+    container_name: mysql
     ports:
       - 3307:3306
     volumes:

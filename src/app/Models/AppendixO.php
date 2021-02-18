@@ -39,4 +39,11 @@ class AppendixO extends Model
     protected $casts = [
     ];
 
+   /* public function user()
+    {
+        return $this->belongsTo(ParticipantUser::class);
+    }*/
+
+    protected $table = "appendix_O";
+
 }
