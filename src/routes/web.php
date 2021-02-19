@@ -38,6 +38,18 @@ Route::get('/dashboard/surveys/appendices/surveyAppendixQ', function(){
     return view('/dashboard/surveys/appendices/surveyAppendixQ');
 })->name('surveyAppendixQ');
 
+Route::get('/dashboard/surveylk', function(){
+    return view('/dashboard/surveylk');
+})->name('surveylk');
+
+Route::get('/dashboard/surveyWorkout', function(){
+    return view('/dashboard/surveyWorkout');
+})->name('surveyWorkout');
+
+Route::get('/dashboard/surveyHealth', function(){
+    return view('/dashboard/surveyHealth');
+})->name('surveyHealth');
+
 Route::get('/dashboard/sampleSurvey', [SurveyController::class, 'index'])->name('SampleSurveyindex');
 Route::post('/dashboard/sampleSurvey', [SurveyController::class, 'store'])->name('SampleSurveystore');
 
