@@ -23,8 +23,8 @@
 
         <section class="right-panel" >
             <form id='surveyForm' action="{{ route('SampleSurveystore') }}" method="post">
-                @section('surveyAppendixQ')
-                    @include('dashboard.surveys.appendices.surveyAppendixQ')
+                @section('surveyAppendixS')
+                    @include('dashboard.surveys.appendices.surveyAppendixS')
                 @show
             <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
             </form>

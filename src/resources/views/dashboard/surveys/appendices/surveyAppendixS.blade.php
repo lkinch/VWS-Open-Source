@@ -1,252 +1,81 @@
 
-@section('surveyAppendixR')
+@section('surveyAppendixS')
 	<div class="survey-title">
-		<h2>Work Productivity And Activity Impairment Questionnaire: General Health (WPAI-GH)</h2>
-	</div>
-	<!--Survey form start from here-->
-	<!--Should be in the middle of the screen-->
-	<!-- this component form comes from https://getbootstrap.com/docs/5.0/forms/overview/ -->
+        <h2>Appendix S: Work Productivity And Activity Impairment Questionnaire General Health (WPAI-GH)</h2>
+    </div>
+
 	<div class='survey'>
-		<p>Over the last two weeks, how often have you been bothered by the following problems?</p>
-		<div class="mb-3" id='question1'>
-		<label for="question1" class="form-label">Feeling nervous, anxious, or on edge?</label>
-		<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
-		<div class="form-check">
-				<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-					<label class="form-check-label" for="flexRadioDefault1">
-					Not at all
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-					<label class="form-check-label" for="flexRadioDefault2">
-					Several days
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-					<label class="form-check-label" for="flexRadioDefault1">
-					More than half the days
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-					<label class="form-check-label" for="flexRadioDefault2">
-					Nearly every day
-					</label>
-				</div>
+		<div class="mb-3" id='surveyQuestion'>
+            <label for="surveyQuestion" class="form-label">Are you currently employed (working for pay)?</label>
+            <div class="form-check">
+                <input class="form-check-input" onclick="becomeAvailable();" type="radio" name="questionOne" id="questionOneAnswer1" checked>
+                <label class="form-check-label" for="questionOneAnswer1">
+                	Yes
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" onclick="becomeReadOnly();"type="radio" name="questionOne" id="questionOneAnswer2">
+                <label class="form-check-label" for="questionOneAnswer2">
+                	No
+                </label>
+            </div>
+        </div>
 
-				<div class="mb-3" id='question2'>
-					<label for="question2" class="form-label">Not being able to stop or control worrying?</label>
-					<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-						<label class="form-check-label" for="flexRadioDefault1">
-						Not at all
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Several days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-						<label class="form-check-label" for="flexRadioDefault1">
-						More than half the days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Nearly every day
-						</label>
-					</div>
-				</div>
+		<div class="mb-3"id='surveyQuestion'>
+            <label for="surveyQuestion" class="form-label">The next questions are about the past seven days, not including today.  During the past seven days, how many hours did you miss from work because of health problems?  Include hours you missed on sick days, times you went in late, left early, etc.  Do not include time you missed to participate in this study.</label>
+            <input type="text" class="form-control" id="questionTwo" placeholder="(Hours)" aria-describedby="questionTwo">
+        </div>
 
-				<div class="mb-3" id='question3'>
-					<label for="question3" class="form-label">Worrying too much about different things?</label>
-					<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-						<label class="form-check-label" for="flexRadioDefault1">
-						Not at all
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Several days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-						<label class="form-check-label" for="flexRadioDefault1">
-						More than half the days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Nearly every day
-						</label>
-					</div>
-				</div>
+		<div class="mb-3"id='surveyQuestion'>
+            <label for="surveyQuestion" class="form-label">During the past seven days, how many hours did you miss from work because of any other reason, such as vacation, holidays, time off to participate in this study? </label>
+            <input type="text" class="form-control" id="questionThree" placeholder="(Hours)" aria-describedby="questionThree">
+        </div>
 
-				<div class="mb-3" id='question4'>
-					<label for="question4" class="form-label">Trouble relaxing?</label>
-					<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-						<label class="form-check-label" for="flexRadioDefault1">
-						Not at all
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Several days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-						<label class="form-check-label" for="flexRadioDefault1">
-						More than half the days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Nearly every day
-						</label>
-					</div>
-				</div>
+		<div class="mb-3" id='surveyQuestion'>
+            <label for="surveyQuestion" class="form-label">During the past seven days, how many hours did you actually work?</label>
+            <input type="text" class="form-control" id="questionFour" placeholder="(Hours)" aria-describedby="questionFour">
+        </div>
 
-				<div class="mb-3" id='question5'>
-					<label for="question5" class="form-label">Being so restless that it is hard to sit still?</label>
-					<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-						<label class="form-check-label" for="flexRadioDefault1">
-						Not at all
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Several days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-						<label class="form-check-label" for="flexRadioDefault1">
-						More than half the days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Nearly every day
-						</label>
-					</div>
-				</div>
+		<div class="mb-3"id='surveyQuestion'>
+            <label for="surveyQuestion" class="form-label">During the past seven days, how much did health problems affect your productivity while you were working?  Think about days you were limited in the amount or kind of work you could do, days you accomplished less than you would like, or days you could not do your work as carefully as usual.  On a scale from 0 to 10, with 0 meaning health problems had no effect on work, and 10 meaning health problems completely prevented you from working, how much did health problems affect your productivity while you were working? If health problems affected your work only a little, choose a low number.  Choose a high number if health problems affected your work a great deal.  What number do you choose? </label>
+            <input type="text" class="form-control" id="questionFive" placeholder="(0-10)" aria-describedby="questionFive">
+        </div>
 
-				<div class="mb-3" id='question6'>
-					<label for="question6" class="form-label">Becoming easily annoyed or irritable?</label>
-					<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-						<label class="form-check-label" for="flexRadioDefault1">
-						Not at all
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Several days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-						<label class="form-check-label" for="flexRadioDefault1">
-						More than half the days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Nearly every day
-						</label>
-					</div>
-				</div>
-
-				<div class="mb-3" id='question7'>
-					<label for="question7" class="form-label">Feeling afraid, as if something awful might happen?</label>
-					<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-						<label class="form-check-label" for="flexRadioDefault1">
-						Not at all
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Several days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-						<label class="form-check-label" for="flexRadioDefault1">
-						More than half the days
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-						<label class="form-check-label" for="flexRadioDefault2">
-							Nearly every day
-						</label>
-					</div>
-				</div>
-
-				<div class="mb-3" id='question8'>
-					<label for="question8" class="form-label">If you checked any problems, how difficult have they made it for you to do your work, take care of things at home, or get along with other people?</label>
-					<!-- this comes from https://getbootstrap.com/docs/5.0/forms/checks-radios/ -->
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-						<label class="form-check-label" for="flexRadioDefault1">
-						Not difficult at all
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-						<label class="form-check-label" for="flexRadioDefault2">
-						Somewhat difficult
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-						<label class="form-check-label" for="flexRadioDefault1">
-						Very difficult
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-						<label class="form-check-label" for="flexRadioDefault2">
-							Extremely difficult
-						</label>
-					</div>
-				</div>
-
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
-			</div>
-			<br>
-			<p>Source: Primary Care Evaluation of Mental Disorders Patient Health Questionnaire (PRIME-MD-PHQ). The PHQ was developed by Drs. Robert L. Spitzer, Janet B.W. Williams, Kurt Kroenke, and colleagues. For research information, contact Dr. Spitzer at ris8@columbia.edu. PRIME-MD® is a trademark of Pfizer Inc. Copyright© 1999 Pfizer Inc. All rights reserved. Reproduced with permission</p>
-
+		<div class="mb-3"id='surveyQuestion'>
+            <label for="surveyQuestion" class="form-label">
+				<p>Now I’d like to ask you about your regular daily activities, (other than your job). By this I mean the usual activities that you do every day, such as work around the house, shopping, child care, exercising, etc.</p>
+				<p>During the past seven days, not including today, how much did health problems affect your ability to do your regular daily activities?  Think about times you were limited in the amount or kind of activities you could do, times you accomplished less than you would like or times you could not do your regular activities as carefully as usual. On a scale from 0 to 10, with 0 meaning health problems had no effect on your regular activities, and 10 meaning health problems completely prevented you from doing your regular activities, how much did health problems affect your regular activities?</p>
+				<p>If health problems affected your activities only a little, choose a low number.  Choose a high number if health problems affected your activities a great deal. What number do you choose?	</p>
+			</label>
+            <input type="text" class="form-control" id="questionSix" placeholder="(0-10)" aria-describedby="questionSix">
+        </div>
 	</div>
-	
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-@endsection('surveyAppendixR')
+	<script>
+		function becomeReadOnly(){
+			document.getElementById("questionTwo").readOnly = true;
+			document.getElementById("questionThree").readOnly = true;
+			document.getElementById("questionFour").readOnly = true;
+			document.getElementById("questionFive").readOnly = true;
+		}
+
+		function becomeAvailable(){
+			document.getElementById("questionTwo").readOnly = false;
+			document.getElementById("questionThree").readOnly = false;
+			document.getElementById("questionFour").readOnly = false;
+			document.getElementById("questionFive").readOnly = false;
+		}
+
+		function becomeReadOnlyQ4(){
+			document.getElementById("questionFour").readOnly = true;
+			document.getElementById("questionFive").readOnly = true;
+			document.getElementById("questionFourHour").readOnly = true;
+		}
+
+		function becomeAvailableQ4(){
+			document.getElementById("questionFour").readOnly = false;
+			document.getElementById("questionFive").readOnly = false;
+			document.getElementById("questionFourHour").readOnly = false;
+		}
+	</script>
+@endsection('surveyAppendixS')
