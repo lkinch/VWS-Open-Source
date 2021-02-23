@@ -7,7 +7,14 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Surveys\AppendixOController;
+use App\Http\Controllers\Surveys\AppendixQController;
+use App\Http\Controllers\Surveys\AppendixRController;
+use App\Http\Controllers\Surveys\AppendixSController;
+use App\Http\Controllers\Surveys\AppendixTController;
 use App\Http\Controllers\Surveys\SurveyController;
+use App\Http\Controllers\Surveys\SocialWorkoutController;
+use App\Http\Controllers\Surveys\SocialEatingController;
+use App\Http\Controllers\Surveys\PatientHealthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,31 +35,30 @@ Route::get('/landing', function(){
     return view('landing');
 });
 
-Route::get('/dashboard/surveys/appendices/surveyAppendixO', function(){
-    return view('/dashboard/surveys/appendices/surveyAppendixO');
-})->name('surveyAppendixO');
+Route::get('/dashboard/surveys/appendices/socialEatingSurvey', [SocialEatingController::class,'index'])->name('SocialEating');
+Route::post('/dashboard/surveys/appendices/socialEatingSurvey', [SocialEatingController::class,'store']);
 
-Route::get('/surveyS', function(){
-    return view('surveyAppendixS');
-});
-Route::get('/dashboard/surveys/appendices/surveyAppendixQ', function(){
-    return view('/dashboard/surveys/appendices/surveyAppendixQ');
-})->name('surveyAppendixQ');
+Route::get('/dashboard/surveys/appendices/patientHealthSurvey', [PatientHealthController::class,'index'])->name('PatientHealth');
+Route::post('/dashboard/surveys/appendices/patientHealthSurvey', [PatientHealthController::class,'store']);
 
-Route::get('/dashboard/surveylk', function(){
-    return view('/dashboard/surveylk');
-})->name('surveylk');
+Route::get('/dashboard/surveys/appendices/surveyAppendixT', [AppendixTController::class,'index'])->name('AppendixT');
+Route::post('/dashboard/surveys/appendices/surveyAppendixT', [AppendixTController::class,'store']);
 
-Route::get('/dashboard/surveyWorkout', function(){
-    return view('/dashboard/surveyWorkout');
-})->name('surveyWorkout');
+Route::get('/dashboard/surveys/appendices/surveyAppendixS', [AppendixSController::class,'index'])->name('AppendixS');
+Route::post('/dashboard/surveys/appendices/surveyAppendixS', [AppendixSController::class,'store']);
 
-Route::get('/dashboard/surveyHealth', function(){
-    return view('/dashboard/surveyHealth');
-})->name('surveyHealth');
+Route::get('/dashboard/surveys/appendices/surveyAppendixR', [AppendixRController::class,'index'])->name('AppendixR');
+Route::post('/dashboard/surveys/appendices/surveyAppendixR', [AppendixRController::class,'store']);
+
+Route::get('/dashboard/surveys/appendices/surveyAppendixQ', [AppendixQController::class,'index'])->name('AppendixQ');
+Route::post('/dashboard/surveys/appendices/surveyAppendixQ', [AppendixQController::class,'store']);
+
 
 Route::get('/dashboard/surveys/appendices/surveyAppendixO', [AppendixOController::class,'index'])->name('AppendixO');
 Route::post('/dashboard/surveys/appendices/surveyAppendixO', [AppendixOController::class,'store']);
+
+Route::get('/dashboard/surveys/appendices/SocialWorkoutSurvey', [SocialWorkoutController::class,'index'])->name('SocialWorkout');
+Route::post('/dashboard/surveys/appendices/SocialWorkoutSurvey', [SocialWorkoutController::class,'store']);
 
 
 Route::get('/dashboard/sampleSurvey', [SurveyController::class, 'index'])->name('SampleSurveyindex');

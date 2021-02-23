@@ -50,4 +50,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(AppendixO::class); //code to connect user model to posts
     }
+
+    public function appendixQ()
+    {
+        return $this->hasMany(AppendixQ::class); //code to connect user model to posts
+    }
+
+    public function appendixR()
+    {
+        return $this->hasMany(AppendixR::class); //code to connect user model to posts
+    }
 }

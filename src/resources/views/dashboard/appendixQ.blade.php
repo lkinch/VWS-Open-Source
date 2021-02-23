@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="/css/dashboard/surveyrightbar.css" />
 
 	<script src="https://kit.fontawesome.com/555936ed9c.js" crossorigin="anonymous"></script>
-    <title>Appendix O Survey</title>
+    <title>Appendix Q Survey</title>
 
 </head>
 
@@ -22,9 +22,9 @@
         @show
 
         <section class="right-panel" >
-            <form id='surveyForm' action="{{ route('AppendixO') }}" method="post">
-                @section('surveyAppendixO')
-                    @include('dashboard.surveys.appendices.surveyAppendixO')
+            <form id='surveyForm' action="{{ route('AppendixQ') }}" method="post">
+                @section('surveyAppendixQ')
+                    @include('dashboard.surveys.appendices.surveyAppendixQ')
                 @show
             <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
             </form>
