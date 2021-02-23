@@ -6,7 +6,7 @@ use App\Http\Controllers\GeneralWebsiteController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
-
+use App\Http\Controllers\Surveys\AppendixOController;
 use App\Http\Controllers\Surveys\SurveyController;
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +50,10 @@ Route::get('/dashboard/surveyWorkout', function(){
 Route::get('/dashboard/surveyHealth', function(){
     return view('/dashboard/surveyHealth');
 })->name('surveyHealth');
+
+Route::get('/dashboard/surveys/appendices/surveyAppendixO', [AppendixOController::class,'index'])->name('AppendixO');
+Route::post('/dashboard/surveys/appendices/surveyAppendixO', [AppendixOController::class,'store']);
+
 
 Route::get('/dashboard/sampleSurvey', [SurveyController::class, 'index'])->name('SampleSurveyindex');
 Route::post('/dashboard/sampleSurvey', [SurveyController::class, 'store'])->name('SampleSurveystore');
