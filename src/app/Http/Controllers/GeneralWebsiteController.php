@@ -19,7 +19,7 @@ class GeneralWebsiteController extends Controller
 
     public function index()
     {
-        return view('landing');
+        return view('welcome');
     }
 
     public function about()

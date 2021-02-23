@@ -26,7 +26,7 @@
                 <img src="https://www.upei.ca/sites/default/files/styles/crop_header_image/public/sdu_main_winter.jpg?h=b9e11ae9&itok=Pkv2bCnk" height="960" width="1650"></img>
             </div>
             <div class="main-content">
-                <h2>What is Vitual Wellness System?</h2>
+                <h2>What is Virtual Wellness System?</h2>
 
                 <p>
                 The Vitual Wellness System is a system that allow users to enter data, chart about their progress and recieve useful suggestions on how to improve their health.

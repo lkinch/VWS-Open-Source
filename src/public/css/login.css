@@ -1,0 +1,26 @@
+.login{
+    background: #FCFCFC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.login-header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.green-background{background-color:#6D9D70;}
+
+.form-width{ width: 300px;}
+.img-footer{width: 134px;height: 54px;}
+.login-header h1{font-size: 40px; color: #152536; font-weight: 600; line-height: 48px;}
+.login-header p{font-size: 20px;}
+
+login-footer{
+    width: 100%;
+    height: 10vh;
+}
