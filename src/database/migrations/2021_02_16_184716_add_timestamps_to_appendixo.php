@@ -15,6 +15,8 @@ class AddTimestampsToAppendixo extends Migration
     {
         Schema::table('appendix_O', function (Blueprint $table) {
             $table->timestamps();
+            $table->foreign('user_id');
+            $table->string('name');
         });
     }
 
@@ -27,6 +29,9 @@ class AddTimestampsToAppendixo extends Migration
     {
         Schema::table('appendix_O', function (Blueprint $table) {
              $table->dropColumn('timestamps');
+             $table->dropColumn('user_id');
+             $table->dropColumn('name');
+
         });
     }
 }

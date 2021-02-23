@@ -22,7 +22,7 @@
         @show
 
         <section class="right-panel" >
-            <form id='surveyForm' action="{{ route('SampleSurveystore') }}" method="post">
+            <form id='surveyForm' action="{{ route('PatientHealth') }}" method="post">
                 @section('surveyPatientHealth')
                     @include('dashboard.surveys.appendices.surveyPatientHealth')
                 @show

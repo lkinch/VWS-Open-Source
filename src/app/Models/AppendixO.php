@@ -42,7 +42,7 @@ class AppendixO extends Model
     protected $casts = [
     ];
 
-    public function participantuser() //chains survey post to a user
+    public function user() //chains survey post to a user
     {
         return $this->belongsTo(User::class);
     }
