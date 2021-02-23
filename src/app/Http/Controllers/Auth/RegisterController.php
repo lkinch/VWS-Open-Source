@@ -32,7 +32,7 @@ class RegisterController extends Controller
 
         //
         //dd($request);
-        $newUser = ParticipantUser::create([ //stores the user in that table
+        $newUser = User::create([ //stores the user in that table
             'name'=> $request->name,
             'username'=> $request->username,
             'email'=> $request->email,

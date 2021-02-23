@@ -17,10 +17,13 @@ class AppendixO extends Model
     protected $fillable = [
         'age',
         'height',
+        'gender',
         'weight',
         'occupation',
         'employment',
-        'chronic_conditions'
+        'chronic_conditions',
+        'user',
+        'name'
     ];
 
     /**
@@ -39,10 +42,10 @@ class AppendixO extends Model
     protected $casts = [
     ];
 
-   /* public function user()
+    public function participantuser() //chains survey post to a user
     {
-        return $this->belongsTo(ParticipantUser::class);
-    }*/
+        return $this->belongsTo(User::class);
+    }
 
     protected $table = "appendix_O";
 

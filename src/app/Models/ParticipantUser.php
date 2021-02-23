@@ -11,6 +11,9 @@ class ParticipantUser extends Model
     use HasFactory;
     use HasRolesAndAbilities;
 
+
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,5 +44,10 @@ class ParticipantUser extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function appendixO()
+    {
+        return $this->hasMany(AppendixO::class); //code to connect user model to posts
+    }
 
 }
