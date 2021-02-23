@@ -20,6 +20,7 @@ use App\Http\Controllers\Surveys\SurveyController;
 */
 
 Route::get('/', [GeneralWebsiteController::class, 'index'])->name('index');
+Route::get('/home', [GeneralWebsiteController::class, 'home'])->name('home');
 Route::get('/about', [GeneralWebsiteController::class, 'about'])->name('about');
 Route::get('/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('dashboard');
 

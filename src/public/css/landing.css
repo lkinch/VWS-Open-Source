@@ -1,21 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
 
 html, body{
     height: 100%;
     width: 100%;
-    font-family: 'Open Sans' sans-serif;
+    font-family: 'Inter', sans-serif;
     /*color: #ffffff;*/
-
 }
 
-.landing-text {
-    /* darkolivergreen might change to some url if professor provide it */
-    background: #6d9d70 no-repeat 50% 50%;
-    display: flex;
-    height: 40vh;
-    width: 100vw;
-    background-size: cover;
-}
 
 .navbar {
     position: -webkit-sticky; /* Safari */
@@ -29,11 +20,27 @@ html, body{
     display: flex;
 }
 
+.landing-text {
+    /* darkolivergreen might change to some url if professor provide it */
+    background: #6d9d70 no-repeat 50% 50%;
+    display: flex;
+    height: 40vh;
+    width: 100vw;
+    background-size: cover;
+}
+
 .landing-text{
     display: table-cell;
     vertical-align: middle;
     text-align: center;
 }
+
+footer{
+    width: 100%;
+    background-color: #6d9d70;
+    padding: 5% 5% 10% 5%;
+}
+
 
 h1{
     font-family: sans-serif;
@@ -59,10 +66,6 @@ h5{
     background-color: #36342f;
 }
 
-p{
-    color: #000000;
-    padding: 3%;
-}
 
 @media (max-width: 768px){
     h1{
@@ -87,11 +90,6 @@ p{
     width: 100%;
 }
 
-footer{
-    width: 100%;
-    background-color: #6d9d70;
-    padding: 5% 5% 10% 5%;
-}
 
 .a{
     color: #ffffff;

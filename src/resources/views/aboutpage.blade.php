@@ -32,10 +32,10 @@
             <h1>About Virtual Wellness System</h1>
         </div>
         <div class="container-fluid">
-            <h2>What is Vitual Wellness System?</h2>
+            <h2>What is Virtual Wellness System?</h2>
 
             <p>
-            The Vitual Wellness System is a system that allow users to enter data, chart about their progress and recieve useful suggestions on how to improve their health.
+            The Virtual Wellness System is a system that allow users to enter data, chart about their progress and recieve useful suggestions on how to improve their health.
             </p>
         </div>
         <div class="container-fluid">
