@@ -71,3 +71,6 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/dashboard/surveyNav', [SurveyNavController::class, 'index'])->name('SurveyNav');
+Route::post('/dashboard/surveyNav', [SurveyNavController::class, 'store']);
