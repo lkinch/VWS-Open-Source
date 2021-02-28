@@ -26,8 +26,8 @@ use App\Http\Controllers\Surveys\PatientHealthController;
 |
 */
 
-Route::get('/', [GeneralWebsiteController::class, 'index'])->name('index');
-Route::get('/home', [GeneralWebsiteController::class, 'home'])->name('home');
+Route::get('/', [LoginController::class, 'index'])->name('index');
+Route::get('/home', [LoginController::class, 'index'])->name('home');
 Route::get('/about', [GeneralWebsiteController::class, 'about'])->name('about');
 Route::get('/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('dashboard');
 

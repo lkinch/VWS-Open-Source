@@ -13,10 +13,9 @@ class AddTimestampsToAppendixo extends Migration
      */
     public function up()
     {
-        Schema::table('appendix_O', function (Blueprint $table) {
-            $table->timestamps();
-            $table->foreign('user_id');
-            $table->string('name');
+        Schema::table('new_appendix_o', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained();
+            $table->string('persons_name');
         });
     }
 
@@ -27,10 +26,9 @@ class AddTimestampsToAppendixo extends Migration
      */
     public function down()
     {
-        Schema::table('appendix_O', function (Blueprint $table) {
-             $table->dropColumn('timestamps');
-             $table->dropColumn('user_id');
-             $table->dropColumn('name');
+        Schema::table('new_appendix_o', function (Blueprint $table) {
+            //  $table->dropForeign('user_id_foreign');
+             $table->dropColumn('persons_name');
 
         });
     }

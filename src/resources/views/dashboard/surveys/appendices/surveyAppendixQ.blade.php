@@ -1,5 +1,6 @@
 
 @section('surveyAppendixQ')
+    <!-- THESE NEED A DATE ATTACHED - SEMI REGULARLY -->
 	<div class="survey-title">
         <h2>Appendix Q: Self-Efficacy for Managing Chronic Disease 6-item Scale</h2>
     </div>

@@ -4,12 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AppendixO extends Migration
+class CreateNewAppendixO extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('appendix_O', function (Blueprint $table) {
-            $table->id();
+        Schema::create('new_appendix_o', function (Blueprint $table) {
+            $table->id('appendix_id');
             $table->string('age');
             $table->string('gender');
             $table->string('height');
@@ -17,6 +22,7 @@ class AppendixO extends Migration
             $table->string('occupation');
             $table->string('employment');
             $table->string('chronic_conditions');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +33,6 @@ class AppendixO extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appendix_O');
+        Schema::dropIfExists('new_appendix_o');
     }
 }
