@@ -13,7 +13,7 @@ class ChangeGenderInAppendixOToNullable extends Migration
      */
     public function up()
     {
-        Schema::table('appendix_O', function (Blueprint $table) {
+        Schema::table('new_appendix_o', function (Blueprint $table) {
             $table->string('gender')->nullable()->change();
         });
     }

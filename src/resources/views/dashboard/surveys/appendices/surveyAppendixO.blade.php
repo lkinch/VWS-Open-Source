@@ -1,10 +1,11 @@
-@section('surveyAppendixO')
+@section('surveyAppendixO'
     <!--top includes greetings, avatar, user name and drop down list-->
     <!--all followed the mainpage design in first mockup, might change in later-->
     <div class="survey-title">
         <h2>Appendix O: Demographic Survey</h2>
     </div>
 
+    <!-- TODO: this is asked once on login -->
     <!--Survey form start from here-->
     <!--Should be in the middle of the screen-->
     <!-- this component form comes from https://getbootstrap.com/docs/5.0/forms/overview/ -->
