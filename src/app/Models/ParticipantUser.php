@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use Silber\Bouncer\Database\HasRolesAndAbilities;
 
-class ParticipantUser extends Model
+class ParticipantUser extends Authenticatable
 {
     use HasFactory;
     use HasRolesAndAbilities;
@@ -45,9 +47,5 @@ class ParticipantUser extends Model
         'email_verified_at' => 'datetime',
     ];
 
-    public function appendixO()
-    {
-        return $this->hasMany(AppendixO::class); //code to connect user model to posts
-    }
 
 }

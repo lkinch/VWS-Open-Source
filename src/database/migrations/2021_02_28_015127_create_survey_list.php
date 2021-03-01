@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeGenderInAppendixOToNullable extends Migration
+class CreateSurveyList extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class ChangeGenderInAppendixOToNullable extends Migration
      */
     public function up()
     {
-        Schema::table('new_appendix_o', function (Blueprint $table) {
-            $table->string('gender')->nullable()->change();
+        Schema::create('survey_list', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('SurveyName');
+            $table->timestamp('CreateDate')->nullable();
+            $table->timestamp('DeliveryDate')->nullable();
         });
     }
 
@@ -25,8 +29,6 @@ class ChangeGenderInAppendixOToNullable extends Migration
      */
     public function down()
     {
-        Schema::table('appendix_O', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('survey_list');
     }
 }

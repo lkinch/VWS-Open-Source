@@ -13,7 +13,7 @@
             @csrf
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
-                <input type="text" class="form-control" id="inputAge"  name="inputAge"aria-describedby="Age">
+                <input type="text" class="form-control" id="inputAge"  name="inputAge" aria-describedby="Age">
 
                 @error('inputAge') <!-- outputs error message -->
                 <div class="mt-2 text-danger">
