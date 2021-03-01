@@ -1,14 +1,14 @@
 
-@section('login')
+@section('loginresearcher')
         <div class="container" style="display: flex; flex-direction: column; align-items: center;">
-            <p>Please Log in Here As A Participant</p>
+            <p>Please Log in Here As a Researcher</p>
             @if (session('status'))
                 <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
                     {{ session('status') }}
                 </div>
             @endif
 
-            <form action="{{ route('login') }}" method="post">
+            <form action="{{ route('loginresearcher') }}" method="post">
                 @csrf
 
                 <div >
@@ -39,8 +39,8 @@
                 </div>
 
                 <div style="display: flex; flex-direction: column; align-items: center;">
-                    <p class>Don't have an account? <a href="{{route('register')}}">Sign Up</a> </p>
+                    <p class>Don't have an account? <a href="{{route('registerresearcher')}}">Sign Up As Researcher</a> </p>
                 </div>
             </form>
     </div>
-@endsection('login')
+@endsection('loginresearcher')
