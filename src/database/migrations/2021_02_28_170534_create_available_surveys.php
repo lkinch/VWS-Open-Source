@@ -17,8 +17,10 @@ class CreateAvailableSurveys extends Migration
             $table->id();
             $table->timestamps();
             $table->string('SurveyName');
-            $table->bigInteger('DeliveryFreq')->unsigned()->nullable();
-            $table->timestamp('ProgramStartDate')->nullable();
+            $table->string('DeliveryFreq');
+            //  TODO: figure out how to do it this way
+            // $table->timestamp('ProgramStartDate')->nullable();
+            $table->string('ProgramStartDate');
         });
     }
 
