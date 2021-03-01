@@ -13,12 +13,14 @@ class CreateSurveyList extends Migration
      */
     public function up()
     {
-        Schema::create('survey_list', function (Blueprint $table) {
+        Schema::create('survey_lists', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('SurveyName');
-            $table->timestamp('CreateDate')->nullable();
-            $table->timestamp('DeliveryDate')->nullable();
+
+            //TODO: use this in the future
+            // $table->timestamp('DeliveryDate')->nullable();
+            $table->string('DeliveryDate');
         });
     }
 
@@ -29,6 +31,6 @@ class CreateSurveyList extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('survey_list');
+        Schema::dropIfExists('survey_lists');
     }
 }

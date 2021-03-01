@@ -15,7 +15,7 @@ class CreateSurveyUserList extends Migration
      */
     public function up()
     {
-        Schema::create('survey_user_list', function (Blueprint $table) {
+        Schema::create('survey_user_lists', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->boolean('isCompleted')->default(false);
@@ -39,6 +39,6 @@ class CreateSurveyUserList extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('survey_user_list');
+        Schema::dropIfExists('survey_user_lists');
     }
 }

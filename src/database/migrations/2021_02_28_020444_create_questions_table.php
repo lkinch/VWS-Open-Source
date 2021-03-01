@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use Silber\Bouncer\Database\Models;
+
 class CreateQuestionsTable extends Migration
 {
     /**
@@ -18,7 +20,12 @@ class CreateQuestionsTable extends Migration
             $table->timestamps();
             $table->string('Description');
             $table->boolean('isAnsweredRepeatedly')->default(false);
-            $table->bigInteger('survey_list_id')->unsigned();
+            $table->bigInteger('survey_lists_id')->unsigned();
+
+
+            $table->foreign('survey_lists_id')
+                  ->references('id')->on(Models::table('survey_lists'))
+                  ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
