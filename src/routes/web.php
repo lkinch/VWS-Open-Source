@@ -68,9 +68,16 @@ Route::get('/dashboard/distributeSurvey', [SurveyController::class, 'showDistrib
 Route::post('/dashboard/distributeSurvey', [SurveyController::class, 'DistributeSurveyStore'])->name('DistributeSurveyStore');
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/loginresearcher', [LoginController::class, 'indexresearcher'])->name('loginresearcher');
+Route::post('/loginresearcher', [LoginController::class, 'storeresearcher']);
+
+Route::get('/registerresearcher', [RegisterController::class, 'indexresearcher'])->name('registerresearcher');
+Route::post('/registerresearcher', [RegisterController::class, 'storeresearcher']);

@@ -46,18 +46,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function appendixO()
-    {
-        return $this->hasMany(AppendixO::class); //code to connect user model to posts
-    }
-
-    public function appendixQ()
-    {
-        return $this->hasMany(AppendixQ::class); //code to connect user model to posts
-    }
-
-    public function appendixR()
-    {
-        return $this->hasMany(AppendixR::class); //code to connect user model to posts
-    }
 }
