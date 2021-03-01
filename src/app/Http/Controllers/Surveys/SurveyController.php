@@ -7,6 +7,8 @@ use App\Models\DataToPopulateSurvey;
 use App\Models\AvailableSurveys;
 use App\Models\SurveyUserList;
 use App\Models\SurveyList;
+use App\Models\Questions;
+use App\Models\Answers;
 
 use App\Http\Controllers\Controller;
 
@@ -161,10 +163,31 @@ class SurveyController extends Controller
             $request->participantFive
         ];
 
-        foreach ($participants as $participant) {
-
+        //Two loops need to be refactored
+        foreach ($addPopulateSurveyRows as $surveyRows) {
+            $this->populateQuestionAnswersWithParticipants($participants, $addAvailableSurveys, $surveyRows, $addSurveyList);
         }
+
+    }
+
+    private function populateQuestionAnswersWithParticipants($participants, $addAvailableSurveys, $surveyRows, $addSurveyList) {
         
+        $addQuestions = Questions::create([
+            'updated_at' => $addAvailableSurveys->updated_at,
+            'Description' => $surveyRows->QuestionDescription,
+            'isAnsweredRepeatedly' => false,
+            'survey_lists_id' => $addSurveyList->id
+        ]);
+        
+        foreach ($participants as $participant) {
+            //FIXME: Participant User ID is hardcoded to 1, and it should be dynamic
+            $addAnswers = Answers::create([
+                'updated_at' => $addAvailableSurveys->updated_at,
+                'answerValue' => 'default',
+                'question_id' => $addQuestions->id,
+                'participant_user_id' => 1 
+            ]); 
+        }
     }
 
 }

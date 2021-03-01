@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Answers extends Model
+class Questions extends Model
 {
     use HasFactory;
 
@@ -16,8 +16,8 @@ class Answers extends Model
      */
     protected $fillable = [
         'updated_at',
-        'answerValue',
-        'question_id',
-        'participant_user_id'
+        'Description',
+        'isAnsweredRepeatedly',
+        'survey_lists_id',
     ];
 }
