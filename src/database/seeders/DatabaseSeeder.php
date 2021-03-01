@@ -16,5 +16,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
         ]);
+        $this->call([
+            ParticipantUserSeeder::class,
+        ]);
+        $this->call([
+            BouncerSeeder::class,
+        ]);
     }
 }
