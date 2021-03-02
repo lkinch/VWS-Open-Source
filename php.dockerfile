@@ -42,4 +42,4 @@ COPY ./src/ /var/www/
 # Change current user to www
 # USER www
 
-
+ENTRYPOINT [ "./appstart.sh" ]

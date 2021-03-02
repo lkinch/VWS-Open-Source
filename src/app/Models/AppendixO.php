@@ -47,6 +47,6 @@ class AppendixO extends Model
         return $this->belongsTo(User::class);
     }
 
-    protected $table = "appendix_O";
+    protected $table = "appendix_o";
 
 }

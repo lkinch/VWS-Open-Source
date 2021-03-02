@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTimestampsToAppendixo extends Migration
+class CreateSurveyList extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class AddTimestampsToAppendixo extends Migration
      */
     public function up()
     {
-        Schema::table('appendix_O', function (Blueprint $table) {
+        Schema::create('survey_lists', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-            $table->foreign('user_id');
-            $table->string('name');
+            $table->string('SurveyName');
+
+            //TODO: use this in the future
+            // $table->timestamp('DeliveryDate')->nullable();
+            $table->string('DeliveryDate');
         });
     }
 
@@ -27,11 +31,6 @@ class AddTimestampsToAppendixo extends Migration
      */
     public function down()
     {
-        Schema::table('appendix_O', function (Blueprint $table) {
-             $table->dropColumn('timestamps');
-             $table->dropColumn('user_id');
-             $table->dropColumn('name');
-
-        });
+        Schema::dropIfExists('survey_lists');
     }
 }

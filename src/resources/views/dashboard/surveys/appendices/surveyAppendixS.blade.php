@@ -1,5 +1,6 @@
 
 @section('surveyAppendixS')
+    <!-- THIS IS ASKED PERIODICALLY -->
 	<div class="survey-title">
         <h2>Appendix S: Work Productivity And Activity Impairment Questionnaire General Health (WPAI-GH)</h2>
     </div>
