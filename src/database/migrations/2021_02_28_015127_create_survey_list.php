@@ -18,9 +18,9 @@ class CreateSurveyList extends Migration
             $table->timestamps();
             $table->string('SurveyName');
 
-            //TODO: use this in the future
-            // $table->timestamp('DeliveryDate')->nullable();
-            $table->string('DeliveryDate');
+            //BUG fixed: use this in the future
+            // ask user for <input type="date"> on the form to store this appropriately
+            $table->date('DeliveryDate')->nullable();
         });
     }
 

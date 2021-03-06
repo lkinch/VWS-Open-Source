@@ -19,8 +19,8 @@ class CreateAvailableSurveys extends Migration
             $table->string('SurveyName');
             $table->string('DeliveryFreq');
             //  TODO: figure out how to do it this way
-            // $table->timestamp('ProgramStartDate')->nullable();
-            $table->string('ProgramStartDate');
+            // // ask user for <input type="date"> on the form to store this appropriately
+            $table->date('ProgramStartDate')->nullable();
         });
     }
 
