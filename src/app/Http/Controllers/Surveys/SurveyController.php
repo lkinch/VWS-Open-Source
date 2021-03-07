@@ -77,7 +77,7 @@ class SurveyController extends Controller
         $this->validate($request, [
             'surveyName' => 'required|max:255',
             'deliveryfrequency' => 'required|max:255',
-            'programstartdate' => 'required|max:255',
+            'programstartdate' => 'required|date',
             'chooseSurvey' => 'required|max:255',
             'participantOne' => 'required|max:255',
             'participantTwo' => 'required|max:255',
@@ -102,9 +102,9 @@ class SurveyController extends Controller
     private function addAvailableSurveys($request) {
 
         $addAvailableSurveys = AvailableSurveys::create([
-            'updated_at' => date('Y-m-d H:i:s') . '', 
-            'SurveyName' => $request->surveyName, 
-            'DeliveryFreq' => $request->deliveryfrequency, 
+            'updated_at' => date('Y-m-d H:i:s') . '',
+            'SurveyName' => $request->surveyName,
+            'DeliveryFreq' => $request->deliveryfrequency,
             'ProgramStartDate' => $request->programstartdate
         ]);
 
@@ -136,9 +136,9 @@ class SurveyController extends Controller
     private function addSurveyUserList($addAvailableSurveys, $populateSurveyRows) {
 
         $addPopulateNewSurvey = SurveyUserList::create([
-            'updated_at' => date('Y-m-d H:i:s') . '', 
-            'isCompleted' => false, 
-            'user_id' => Auth::id(), 
+            'updated_at' => date('Y-m-d H:i:s') . '',
+            'isCompleted' => false,
+            'user_id' => Auth::id(),
             'survey_id' => $addAvailableSurveys->id,
             'ProgramStartDate' => $addAvailableSurveys->ProgramStartDate
         ]);
@@ -156,7 +156,7 @@ class SurveyController extends Controller
             'DeliveryDate' => $request->programstartdate, // FIXME: This only works for the first program, should be calculated
         ]);
 
-        $participants = [$request->participantOne, 
+        $participants = [$request->participantOne,
             $request->participantTwo,
             $request->participantThree,
             $request->participantFour,
@@ -171,22 +171,22 @@ class SurveyController extends Controller
     }
 
     private function populateQuestionAnswersWithParticipants($participants, $addAvailableSurveys, $surveyRows, $addSurveyList) {
-        
+
         $addQuestions = Questions::create([
             'updated_at' => $addAvailableSurveys->updated_at,
             'Description' => $surveyRows->QuestionDescription,
             'isAnsweredRepeatedly' => false,
             'survey_lists_id' => $addSurveyList->id
         ]);
-        
+
         foreach ($participants as $participant) {
             //FIXME: Participant User ID is hardcoded to 1, and it should be dynamic
             $addAnswers = Answers::create([
                 'updated_at' => $addAvailableSurveys->updated_at,
                 'answerValue' => 'default',
                 'question_id' => $addQuestions->id,
-                'participant_user_id' => 1 
-            ]); 
+                'participant_user_id' => 1
+            ]);
         }
     }
 

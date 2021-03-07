@@ -1,4 +1,4 @@
-@section('surveyAppendixO'
+@section('surveyAppendixO')
     <!--top includes greetings, avatar, user name and drop down list-->
     <!--all followed the mainpage design in first mockup, might change in later-->
     <div class="survey-title">
