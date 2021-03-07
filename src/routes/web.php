@@ -81,3 +81,7 @@ Route::post('/loginresearcher', [LoginController::class, 'storeresearcher']);
 
 Route::get('/registerresearcher', [RegisterController::class, 'indexresearcher'])->name('registerresearcher');
 Route::post('/registerresearcher', [RegisterController::class, 'storeresearcher']);
+
+Route::get('/userProfilePage/{id}', [GeneralWebsiteController::class, 'showProfileData']);
+Route::post('/userProfilePage',[GeneralWebsiteController::class, 'updateProfile']);
+
