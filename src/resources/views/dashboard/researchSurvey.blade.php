@@ -39,7 +39,6 @@
             <tbody>
                 <tr>
                      <th scope="row">1</th>
-                     <td>1</td>
                      <td>Appendix O</td>
                      <td>0</td>
                      <td>0%</td>
@@ -48,7 +47,6 @@
                 </tr>
                 <tr>
                      <th scope="row">2</th>
-                     <td>2</td>
                      <td>Appendix Q</td>
                      <td>0</td>
                      <td>0%</td>
@@ -57,7 +55,6 @@
                 </tr>
                 <tr>
                      <th scope="row">3</th>
-                     <td>3</td>
                      <td>Appendix R</td>
                      <td>0</td>
                      <td>0%</td>
@@ -66,7 +63,6 @@
                 </tr>
                 <tr>
                      <th scope="row">4</th>
-                     <td>4</td>
                      <td>Appendix S</td>
                      <td>0</td>
                      <td>0%</td>
@@ -75,7 +71,6 @@
                 </tr>
                 <tr>
                      <th scope="row">5</th>
-                     <td>5</td>
                      <td>Appendix T</td>
                      <td>0</td>
                      <td>0%</td>
@@ -84,7 +79,6 @@
                 </tr>
                 <tr>
                      <th scope="row">6</th>
-                     <td>6</td>
                      <td>Social Eating</td>
                      <td>0</td>
                      <td>0%</td>
@@ -93,7 +87,6 @@
                 </tr>
                 <tr>
                      <th scope="row">7</th>
-                     <td>7</td>
                      <td>Social Workout</td>
                      <td>0</td>
                      <td>0%</td>
@@ -102,7 +95,6 @@
                 </tr>
                 <tr>
                      <th scope="row">8</th>
-                     <td>8</td>
                      <td>Health Questionnaire</td>
                      <td>0</td>
                      <td>0%</td>
