@@ -51,6 +51,10 @@ class SurveyController extends Controller
 
         return redirect()->route('dashboard');
     }
+    public function researchSurvey()
+    {
+        return view("dashboard.researchSurvey");
+    }
 
     public function showDistributeSurvey() {
         return view('dashboard/distributeSurvey');
