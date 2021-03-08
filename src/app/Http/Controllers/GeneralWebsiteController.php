@@ -9,6 +9,12 @@ use App\models\User;
 
 class GeneralWebsiteController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     public function get()
     {
         return view('landing');
