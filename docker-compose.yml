@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 
 services:
   #Nginx Service
@@ -22,8 +22,8 @@ services:
     container_name: app
     restart: unless-stopped
     tty: true
-    command: >
-      /bin/sh -c "composer install && php-fpm"
+    depends_on: 
+      - appmysql
     environment:
       SERVICE_NAME: app
       SERVICE_TAGS: dev

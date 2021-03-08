@@ -1,4 +1,5 @@
 @section('surveyAppendixT')
+<!-- THIS IS ASKED PERIODICALLY -->
 <div class="survey-title">
     <h2>Appendix T: GAD-7 Anxiety</h2>
 </div>

@@ -5,6 +5,7 @@
         <h2>Appendix O: Demographic Survey</h2>
     </div>
 
+    <!-- TODO: this is asked once on login -->
     <!--Survey form start from here-->
     <!--Should be in the middle of the screen-->
     <!-- this component form comes from https://getbootstrap.com/docs/5.0/forms/overview/ -->
@@ -12,7 +13,7 @@
             @csrf
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
-                <input type="text" class="form-control" id="inputAge"  name="inputAge"aria-describedby="Age">
+                <input type="text" class="form-control" id="inputAge"  name="inputAge" aria-describedby="Age">
 
                 @error('inputAge') <!-- outputs error message -->
                 <div class="mt-2 text-danger">

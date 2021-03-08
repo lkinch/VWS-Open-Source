@@ -23,6 +23,9 @@
 
         <section class="right-panel" >
             <form id='surveyForm' action="{{ route('SampleSurveystore') }}" method="post">
+                @section('surveyAppendixO')
+                    @include('dashboard.surveys.appendices.surveyAppendixO')
+                @show
                 @section('surveyAppendixS')
                     @include('dashboard.surveys.appendices.surveyAppendixS')
                 @show

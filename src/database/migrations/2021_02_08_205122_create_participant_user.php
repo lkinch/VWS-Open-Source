@@ -32,6 +32,6 @@ class CreateParticipantUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('participant_user');
+        Schema::dropIfExists('participant_users');
     }
 }

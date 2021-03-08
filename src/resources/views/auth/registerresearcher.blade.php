@@ -2,9 +2,9 @@
     <div class="flex justify-center">
         <div class="w-4/12 bg-white p-6 rounded-lg">
 
-            <p>Please fill the information below to register as a participant</p>
+            <p>Please fill the information below to register as a researcher</p>
 
-            <form action="{{ route('register') }}" method="post">
+            <form action="{{ route('registerresearcher') }}" method="post">
                 @csrf
                 <div class>
                     <input type="text" name="name" id="name" placeholder="Your Name" class="form-control form-width @error('name') border border-danger @enderror" value="{{ old('name') }}">

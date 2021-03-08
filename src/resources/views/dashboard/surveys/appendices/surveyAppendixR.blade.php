@@ -1,5 +1,6 @@
 @section('surveyAppendixR')
         @csrf
+            <!-- THIS IS ASKED EVERY 6 MONTHS likely -->
             <p>During the past 6 months, how many times have you</p>
             <div class="mb-3">
                 <label for="physicianFequency" class="form-label">Went to see your family physician?</label>
