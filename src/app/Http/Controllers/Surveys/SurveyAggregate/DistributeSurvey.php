@@ -11,6 +11,8 @@ use App\Models\SurveyList;
 use App\Models\Questions;
 use App\Models\Answers;
 
+use App\Http\Controllers\Surveys\SimpleDTOs\PopulateSurveysAggregate;
+use App\Http\Controllers\Surveys\SimpleDTOs\DataToPopulateSurveysAggregate;
 class DistributeSurvey
 {
     private $request = null;
@@ -30,15 +32,12 @@ class DistributeSurvey
 
     public function create() {
 
-        $this->AvailableSurveysDTO()->create();
 
-        $this->PopulateSurveysDTO()->create();
+        $result[0] = new PopulateSurveysAggregate($this->request);
+        $result[1] = new DataToPopulateSurveysAggregate($this->request);
 
-        $this->SurveyUserListDTO()->create();
-
-        $this->SurveyListDTO()->create();
-
-        $result = $this->DataToPopulateSurveysDTO()->create();
+        $result[0]->createAggregate();
+        $result[1]->createAggregate();
 
         return $result;
     }

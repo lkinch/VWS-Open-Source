@@ -1,31 +1,32 @@
 <?php
 
-namespace App\Http\Controllers\Surveys\SimpleDTOs;
+namespace App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Answers;
 
-class AnswersDTO
+use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
+
+class AnswersDTO implements IDTO
 {
     private $request = null;
-    private $AnswersDTO = Array();
+    private $AnswersDTO = null;
     private $participant = "";
 
-    public function __construct(Request $request, $QuestionsDTO)
+    public function __construct($participant, $QuestionsDTO)
     {
-        $this->request = $request;
         $this->participant = $participant;
         $this->QuestionsDTO = $QuestionsDTO;
     }
-    private function create() {
+    public function create() {
 
-        $AnswersDTO[$idx] = Answers::create([
+        $AnswersDTO = Answers::create([
             'updated_at' => $this->QuestionsDTO->getUpdatedAt(),
             'answerValue' => 'default',
             'question_id' => $this->QuestionsDTO->getId(),
             'participant_user_id' => 7
         ]);
-        $idx++;
+        return $this;
     }
 }

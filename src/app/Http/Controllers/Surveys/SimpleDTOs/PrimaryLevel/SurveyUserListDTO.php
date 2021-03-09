@@ -11,7 +11,9 @@ use App\Models\SurveyList;
 use App\Models\Questions;
 use App\Models\Answers;
 
-class DistributeSurvey
+use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
+
+class DistributeSurvey implements IDTO
 {
     private $request = null;
     private $SurveyUserListDTO = null;

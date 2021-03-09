@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Surveys\SimpleDTOs;
+namespace App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\AvailableSurveys;
 
-class DistributeSurvey
+use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
+class AvailableSurveysDTO implements IDTO
 {
     private $AvailableSurveysDTO = null;
 
@@ -25,6 +26,10 @@ class DistributeSurvey
         ]);
 
         return $this->AvailableSurveysDTO;
+    }
+
+    public function getId() {
+        return $this->AvailableSurveysDTO->id;
     }
 
 }

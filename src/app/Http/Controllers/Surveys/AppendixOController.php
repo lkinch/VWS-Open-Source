@@ -32,7 +32,6 @@ class AppendixOController extends Controller
             'chronic' => 'required|max:255'
         ]);
 
-
         $name = Auth::user()->name;
 
         $request->user()->appendixO()->create([ //chains the users post to a user
@@ -46,6 +45,9 @@ class AppendixOController extends Controller
             'name'=> $name
             ]);
 
+        $surveyData = new PopulateSurveysAggregate($surveyName, $date, $user)
+        $surveyData->displayQuestions();
+        $surveyData->displayAnswers();
         return redirect()->route('dashboard');
     }
 

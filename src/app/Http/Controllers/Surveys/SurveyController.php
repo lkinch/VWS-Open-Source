@@ -56,7 +56,7 @@ class SurveyController extends Controller
         //Validate the data
         $this->validateSurveyStore($request);
 
-        $DistributionSurvey = new DistributeSurvey($request, $this);
+        $DistributionSurvey = new DistributeSurvey($request);
 
         //Create the DistributionList for the survey
         $DistributionSurvey->create();
