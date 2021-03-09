@@ -45,9 +45,6 @@ class AppendixOController extends Controller
             'name'=> $name
             ]);
 
-        $surveyData = new PopulateSurveysAggregate($surveyName, $date, $user)
-        $surveyData->displayQuestions();
-        $surveyData->displayAnswers();
         return redirect()->route('dashboard');
     }
 

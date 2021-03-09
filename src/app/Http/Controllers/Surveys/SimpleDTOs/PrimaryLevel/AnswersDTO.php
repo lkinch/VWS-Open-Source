@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Answers;
 
 use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
 
-class AnswersDTO implements IDTO
+class AnswersDTO //implements IDTO
 {
     private $request = null;
     private $AnswersDTO = null;
@@ -19,9 +18,9 @@ class AnswersDTO implements IDTO
         $this->participant = $participant;
         $this->QuestionsDTO = $QuestionsDTO;
     }
-    public function create() {
+    public function create($Answers) {
 
-        $AnswersDTO = Answers::create([
+        $AnswersDTO = $Answers::create([
             'updated_at' => $this->QuestionsDTO->getUpdatedAt(),
             'answerValue' => 'default',
             'question_id' => $this->QuestionsDTO->getId(),

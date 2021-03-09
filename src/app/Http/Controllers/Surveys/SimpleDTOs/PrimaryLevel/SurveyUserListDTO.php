@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Surveys\SimpleDTOs;
+namespace App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,25 +13,26 @@ use App\Models\Answers;
 
 use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
 
-class DistributeSurvey implements IDTO
+class SurveyUserListDTO //implements IDTO
 {
     private $request = null;
     private $SurveyUserListDTO = null;
 
-    public function __construct(Request $request, $AvailableSurveysDTO)
+    public function __construct(Int $authId, Int $AvailableSurveysID, String $ProgramStartDate)
     {
-        $this->request = $request;
-        $this->AvailableSurveys = $AvailableSurveysDTO;
+        $this->authId = $authId;
+        $this->AvailableSurveysID = $AvailableSurveysID;
+        $this->ProgramStartDate = $ProgramStartDate;
     }
 
-    public function create() {
+    public function create($SurveyUserList) {
 
-        $this->SurveyUserListDTO = SurveyUserList::create([
+        $this->SurveyUserListDTO = $SurveyUserList::create([
             'updated_at' => date('Y-m-d H:i:s') . '',
             'isCompleted' => false,
-            'user_id' => Auth::id(),
-            'survey_id' => $this->AvailableSurveysDTO->getId(),
-            'ProgramStartDate' => $this->AvailableSurveysDTO->getProgramStartDate()
+            'user_id' => $this->authId,
+            'survey_id' => $this->AvailableSurveysID,
+            'ProgramStartDate' => $this->ProgramStartDate
         ]);
 
         return $this->SurveyUserListDTO;

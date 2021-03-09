@@ -10,6 +10,8 @@ use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\QuestionsDTO;
 use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\AnswersDTO;
 
 use App\Models\Questions;
+use App\Models\Answers;
+use App\Models\SurveyList;
 
 interface ICreateAggregate {
     public function createAggregate();
@@ -30,38 +32,54 @@ class PopulateSurveysAggregate implements ICreateAggregate
 
     public function __construct(Request $request)
     {
-        $this->request = $request;
-        $this->questionDescriptions = [$this->request->questionOne, $this->request->questionTwo, $this->request->questionThree,
-            $this->request->questionFour, $this->request->questionFive, $this->request->questionSix, $this->request->questionSeven,
-            $this->request->questionEight, $this->request->questionNine];
+        $this->surveyName = $request->surveyName;
+        $this->DeliveryFreq = $request->deliveryFrequency;
+        $this->programStartDate = $request->programstartdate;
+        $this->chooseSurvey = $request->chooseSurvey;
 
-        $this->answerDescriptions = [$this->request->questionOneLikert, $this->request->questionTwoLikert, $this->request->questionThreeLikert,
-            $this->request->questionFourLikert, $this->request->questionFiveLikert, $this->request->questionSixLikert, $this->request->questionSevenLikert,
-            $this->request->questionEightLikert, $this->request->questionNineLikert];
+        $this->questionDescriptions = [$request->questionOne, $request->questionTwo, $request->questionThree,
+            $request->questionFour, $request->questionFive, $request->questionSix, $request->questionSeven,
+            $request->questionEight, $request->questionNine];
 
-        $this->participants = [$this->request->participantOne,
-            $this->request->participantTwo,
-            $this->request->participantThree,
-            $this->request->participantFour,
-            $this->request->participantFive
+        $this->answerDescriptions = [$request->questionOneLikert, $request->questionTwoLikert, $request->questionThreeLikert,
+            $request->questionFourLikert, $request->questionFiveLikert, $request->questionSixLikert, $request->questionSevenLikert,
+            $request->questionEightLikert, $request->questionNineLikert];
+
+        $this->participants = [$request->participantOne,
+            $request->participantTwo,
+            $request->participantThree,
+            $request->participantFour,
+            $request->participantFive
         ];
     }
 
-    public function createAggregate() {
+    public function createAggregate(
+        Object $modelSurveyList = null,
+        Object $modelSurveyUserList = null,
+        Object $modelQuestions = null,
+        Object $modelAnswers = null
+        ) {
 
-        $this->SurveyListDTO = new SurveyListDTO($this->request);
-        $this->SurveyListDTO->create();
+        if($modelSurveyList === null)
+            $modelSurveyList = new SurveyList();
+        if($modelQuestions === null)
+            $modelQuestions = new Questions();
+        if($modelAnswers === null)
+            $modelAnswers = new Answers();
+
+        $this->SurveyListDTO = new SurveyListDTO($this->surveyName, $this->programStartDate);
+        $this->SurveyListDTO->create($modelSurveyList);
 
         foreach ($this->participants as $participant) {
             $idx = 0;
             foreach ($this->questionDescriptions as $QuestionDescription) {
-                $newQuestionDTO = new QuestionsDTO($this->request, $QuestionDescription, $this->SurveyListDTO);
+                $newQuestionDTO = new QuestionsDTO($QuestionDescription, $this->SurveyListDTO);
                 $this->QuestionsArray[$idx] = $newQuestionDTO;
-                $questionsModel = new Questions();
-                $this->QuestionsArray[$idx]->create($questionsModel);
+
+                $this->QuestionsArray[$idx]->create($modelQuestions);
                 $newAnswerDTO = new AnswersDTO($participant, $this->QuestionsArray[$idx]);
                 $this->AnswersDTO[$idx] = $newAnswerDTO;
-                $this->AnswersDTO[$idx] = $this->AnswersDTO[$idx]->create();
+                $this->AnswersDTO[$idx] = $this->AnswersDTO[$idx]->create($modelAnswers);
                 $idx++;
             }
         }

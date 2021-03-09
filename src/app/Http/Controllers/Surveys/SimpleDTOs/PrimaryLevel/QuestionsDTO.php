@@ -13,9 +13,8 @@ class QuestionsDTO
     private $QuestionDescription;
     private $SurveyListDTO;
 
-    public function __construct(Request $request, String $QuestionDescription, $SurveyListDTO)
+    public function __construct(String $QuestionDescription, $SurveyListDTO)
     {
-        $this->request = $request;
         $this->QuestionDescription = $QuestionDescription;
         $this->SurveyListDTO = $SurveyListDTO;
     }

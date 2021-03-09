@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\DataToPopulateSurvey;
 
 use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\SurveyListDTO;
 use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\AvailableSurveysDTO;
@@ -27,10 +26,10 @@ class DataToPopulateSurveysDTO
 
     }
 
-    public function create($AvailableSurveysDTO) {
+    public function create($AvailableSurveysDTO, $DataToPopulateSurvey) {
 
         $now = date('Y-m-d H:i:s') . '';
-        $this->DataToPopulateSurveysDTO = DataToPopulateSurvey::create([
+        $this->DataToPopulateSurveysDTO = $DataToPopulateSurvey::create([
             'updated_at' => $now,
             'QuestionNum' => $this->QuestionNum,
             'QuestionDescription' => $this->QuestionDescription,
