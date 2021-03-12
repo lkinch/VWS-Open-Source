@@ -56,6 +56,11 @@ class SurveyController extends Controller
         return view("dashboard.researchSurvey");
     }
 
+    public function availableSurveys()
+    {
+        return view("dashboard.availableSurveys");
+    }
+
     public function showDistributeSurvey() {
         return view('dashboard/distributeSurvey');
     }
