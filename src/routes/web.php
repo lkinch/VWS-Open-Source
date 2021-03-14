@@ -44,7 +44,7 @@ Route::post('/dashboard/surveys/appendices/patientHealthSurvey', [PatientHealthC
 Route::get('/dashboard/surveys/appendices/surveyAppendixT', [AppendixTController::class,'index'])->name('AppendixT');
 Route::post('/dashboard/surveys/appendices/surveyAppendixT', [AppendixTController::class,'store']);
 
-Route::get('/dashboard/surveys/appendices/surveyAppendixS', [AppendixSController::class,'index'])->name('AppendixS');
+Route::get('/dashboard/surveys/appendices/surveyAppendixS/{id}', [AppendixSController::class,'index'])->name('AppendixS');
 Route::post('/dashboard/surveys/appendices/surveyAppendixS', [AppendixSController::class,'store']);
 
 Route::get('/dashboard/surveys/appendices/surveyAppendixR', [AppendixRController::class,'index'])->name('AppendixR');
@@ -82,6 +82,7 @@ Route::post('/loginresearcher', [LoginController::class, 'storeresearcher']);
 Route::get('/registerresearcher', [RegisterController::class, 'indexresearcher'])->name('registerresearcher');
 Route::post('/registerresearcher', [RegisterController::class, 'storeresearcher']);
 
-Route::get('/userProfilePage/{id}', [GeneralWebsiteController::class, 'showProfileData']);
-Route::post('/userProfilePage',[GeneralWebsiteController::class, 'updateProfile']);
+Route::get('/userProfilePage/{id}', [LoginController::class, 'showProfileData']);
+Route::post('/userProfilePage',[LoginController::class, 'updateProfile']);
 
+Route::get('/logoutSuccessPage', function(){return view('logoutSuccessPage');});
