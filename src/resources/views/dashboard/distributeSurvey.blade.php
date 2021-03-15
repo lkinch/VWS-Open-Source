@@ -90,43 +90,75 @@
                 <div class="input-group mb-3">
                     <input
                     name="questionOne" id="questionOne"
-                    value="How confident do you feel that you can keep the fatigue caused by your disease from interfering with the things you want to do?"
+                    value="1) Little interest or pleasure in doing things"
                     type="text" class="form-control" placeholder="Question Description" aria-label="question description">
                     <input type="text"
                     name="questionOneLikert" id="questionOneLikert"
-                    class="form-control" value="5" placeholder="Highest Likert Number" aria-label="highest likert number">
+                    class="form-control" value="4" placeholder="Highest Likert Number" aria-label="highest likert number">
                 </div>
                 <div class="input-group mb-3">
                     <input
                     name="questionTwo" id="questionTwo"
-                    value="How confident do you feel that you can keep the physical discomfort or pain of your disease from interfering with the things you want to do?"
+                    value="2) Feeling down, depressed, or hopeless"
                     type="text" class="form-control" placeholder="Question Description" aria-label="question description">
                     <input type="text"
-                    name="questionTwoLikert" id="questionTwoLikert" class="form-control" value="5" placeholder="Highest Likert Number" aria-label="highest likert number">
+                    name="questionTwoLikert" id="questionTwoLikert" class="form-control" value="4" placeholder="Highest Likert Number" aria-label="highest likert number">
                 </div>
                 <div class="input-group mb-3">
                     <input
                     name="questionThree" id="questionThree"
-                    value="How confident do you feel that you can keep the emotional distress caused by your disease from interfering with the things you want to do?"
+                    value="3) Trouble falling or staying asleep, or sleeping too much"
                     type="text" class="form-control" placeholder="Question Description" aria-label="question description">
                     <input type="text"
-                    name="questionThreeLikert" id="questionThreeLikert" class="form-control" value="5" placeholder="Highest Likert Number" aria-label="highest likert number">
+                    name="questionThreeLikert" id="questionThreeLikert" class="form-control" value="4" placeholder="Highest Likert Number" aria-label="highest likert number">
                 </div>
                 <div class="input-group mb-3">
                     <input
                     name="questionFour" id="questionFour"
-                    value="How confident do you feel that you can keep any other symptoms or health problems you have from interfering with the things you want to do?"
+                    value="4) Feeling tired or having little energy"
                     type="text" class="form-control" placeholder="Question Description" aria-label="question description">
                     <input type="text"
-                    name="questionFourLikert" id="questionFourLikert" class="form-control" value="5" placeholder="Highest Likert Number" aria-label="highest likert number">
+                    name="questionFourLikert" id="questionFourLikert" class="form-control" value="4" placeholder="Highest Likert Number" aria-label="highest likert number">
                 </div>
                 <div class="input-group mb-3">
                     <input
                     name="questionFive" id="questionFive"
-                    value="How confident do you feel that you can the different tasks and activities needed to manage your health condition so as to reduce your need to see a doctor?"
+                    value="5) Poor appetite or overeating"
                     type="text" class="form-control" placeholder="Question Description" aria-label="question description">
                     <input type="text"
-                    name="questionFiveLikert" id="questionFiveLikert" class="form-control" value="5" placeholder="Highest Likert Number" aria-label="highest likert number">
+                    name="questionFiveLikert" id="questionFiveLikert" class="form-control" value="4" placeholder="Highest Likert Number" aria-label="highest likert number">
+                </div>
+                <div class="input-group mb-3">
+                    <input
+                    name="questionSix" id="questionSix"
+                    value="6) Feeling bad about yourself – or that you are a failure or have let yourself or your family down"
+                    type="text" class="form-control" placeholder="Question Description" aria-label="question description">
+                    <input type="text"
+                    name="questionSixLikert" id="questionSixLikert" class="form-control" value="4" placeholder="Highest Likert Number" aria-label="highest likert number">
+                </div>
+                <div class="input-group mb-3">
+                    <input
+                    name="questionSeven" id="questionSeven"
+                    value="7) Trouble concentrating on things, such as reading the newspaper or watching television"
+                    type="text" class="form-control" placeholder="Question Description" aria-label="question description">
+                    <input type="text"
+                    name="questionSevenLikert" id="questionSevenLikert" class="form-control" value="4" placeholder="Highest Likert Number" aria-label="highest likert number">
+                </div>
+                <div class="input-group mb-3">
+                    <input
+                    name="questionEight" id="questionEight"
+                    value="8) Moving or speaking so slowly that other people could have noticed? Or the opposite – being so fidgety or restless that you have been moving around a lot more than usual"
+                    type="text" class="form-control" placeholder="Question Description" aria-label="question description">
+                    <input type="text"
+                    name="questionEightLikert" id="questionEightLikert" class="form-control" value="4" placeholder="Highest Likert Number" aria-label="highest likert number">
+                </div>
+                <div class="input-group mb-3">
+                    <input
+                    name="questionNine" id="questionNine"
+                    value="9) Thoughts that you would be better off dead or of hurting yourself in some way"
+                    type="text" class="form-control" placeholder="Question Description" aria-label="question description">
+                    <input type="text"
+                    name="questionNineLikert" id="questionNineLikert" class="form-control" value="4" placeholder="Highest Likert Number" aria-label="highest likert number">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
