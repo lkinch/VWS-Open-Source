@@ -30,15 +30,40 @@ class RegisterController extends Controller
             'password' => 'required|confirmed',
         ]);
 
-        //
-        //dd($request);
+        $newUser = ParticipantUser::create([ //stores the user in that table
+            'name'=> $request->name,
+            'username'=> $request->username,
+            'email'=> $request->email,
+            'password'=> Hash::make($request->password),
+        ]);
+        $newUser->assign('participant');
+
+        auth()->attempt($request->only('email', 'password'));
+
+        return redirect()->route('dashboard');
+    }
+
+    public function indexresearcher()
+    {
+        return view('registerpageresearcher');
+    }
+
+    public function storeresearcher(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'username' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'password' => 'required|confirmed',
+        ]);
+
         $newUser = User::create([ //stores the user in that table
             'name'=> $request->name,
             'username'=> $request->username,
             'email'=> $request->email,
-            'password'=> Hash::make($request-> password),
+            'password'=> Hash::make($request->password),
         ]);
-        $newUser->assign('participant');
+        $newUser->assign('admin');
 
         auth()->attempt($request->only('email', 'password'));
 

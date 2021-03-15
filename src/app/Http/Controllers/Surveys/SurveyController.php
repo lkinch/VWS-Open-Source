@@ -46,6 +46,10 @@ class SurveyController extends Controller
 
         return redirect()->route('dashboard');
     }
+    public function researchSurvey()
+    {
+        return view("dashboard.researchSurvey");
+    }
 
     public function showDistributeSurvey() {
         return view('dashboard/distributeSurvey');
@@ -69,7 +73,7 @@ class SurveyController extends Controller
         $this->validate($request, [
             'surveyName' => 'required|max:255',
             'deliveryfrequency' => 'required|max:255',
-            'programstartdate' => 'required|max:255',
+            'programstartdate' => 'required|date',
             'chooseSurvey' => 'required|max:255',
             'participantOne' => 'required|max:255',
             'participantTwo' => 'required|max:255',

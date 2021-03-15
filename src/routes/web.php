@@ -64,13 +64,27 @@ Route::post('/dashboard/surveys/appendices/SocialWorkoutSurvey', [SocialWorkoutC
 Route::get('/dashboard/sampleSurvey', [SurveyController::class, 'index'])->name('SampleSurveyindex');
 Route::post('/dashboard/sampleSurvey', [SurveyController::class, 'store'])->name('SampleSurveystore');
 
+Route::get('/dashboard/researchSurvey', [SurveyController::class, 'researchSurvey'])->name('researchSurvey');
 Route::get('/dashboard/distributeSurvey', [SurveyController::class, 'showDistributeSurvey'])->name('DistributeSurveyIndex');
 Route::post('/dashboard/distributeSurvey', [SurveyController::class, 'DistributeSurveyStore'])->name('DistributeSurveyStore');
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/dashboard/surveyNav', [SurveyNavController::class, 'index'])->name('SurveyNav');
+Route::post('/dashboard/surveyNav', [SurveyNavController::class, 'store']);
+Route::get('/loginresearcher', [LoginController::class, 'indexresearcher'])->name('loginresearcher');
+Route::post('/loginresearcher', [LoginController::class, 'storeresearcher']);
+
+Route::get('/registerresearcher', [RegisterController::class, 'indexresearcher'])->name('registerresearcher');
+Route::post('/registerresearcher', [RegisterController::class, 'storeresearcher']);
+
+Route::get('/userProfilePage/{id}', [GeneralWebsiteController::class, 'showProfileData']);
+Route::post('/userProfilePage',[GeneralWebsiteController::class, 'updateProfile']);
+

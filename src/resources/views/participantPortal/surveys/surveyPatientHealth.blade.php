@@ -89,6 +89,8 @@
                      </div>
  			</div>
 
+             <div class="sliderCount"></div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script>
@@ -99,6 +101,13 @@
             let outputDiv = getAllQuestions[i].querySelector('.output');
             let currentLikertValue = getAllQuestions[i].querySelector('.form-range').value;
             outputDiv.innerText = currentLikertValue;
+        }
+
+        for (let i = 0; i <getAllQuestions; i++)
+        {
+            let sliderCountDiv = getAllQuestions[i].querySelector('.output');
+            let sliderTemp = sliderTemp + getAllQuestions[i].querySelector('.form-range').value;
+            sliderCountDiv.innerText = sliderTemp;
         }
 
         function updateQuestion(questionNum) {

@@ -40,9 +40,9 @@
 
                 <div class="input-group mb-3">
                     <label for="programstartdate" class="form-label">Program start date: </label><br>
-                    <input type="text"
+                    <input type="date"
                     name="programstartdate" id="programstartdate"
-                    class="form-control" value="01/01/2021" placeholder="DD/MM/YYYY" aria-label="Study date first delivery">
+                    class="form-control" aria-label="Study date first delivery">
                 </div>
 
                 <label for="survey-send-out" class="form-label">Please choose a survey to send out to participants</label>
@@ -164,6 +164,10 @@
             </form>
 		</section>
     </div>
+
+    <script>
+        document.getElementById('programstartdate').valueAsDate = new Date(); //this sets program start to default date
+    </script>
 </body>
 
 </html>

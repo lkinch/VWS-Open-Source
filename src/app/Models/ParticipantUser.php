@@ -13,9 +13,6 @@ class ParticipantUser extends Authenticatable
     use HasFactory;
     use HasRolesAndAbilities;
 
-
-
-
     /**
      * The attributes that are mass assignable.
      *
