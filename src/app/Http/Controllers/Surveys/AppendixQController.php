@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Controllers\Surveys\SurveyClass\SurveyRetriever;
+
 class AppendixQController extends Controller
 {
 
@@ -14,8 +16,14 @@ class AppendixQController extends Controller
         $this->middleware(['auth']);
     }
 
-    public function index()
+    public function index(Request $request)
     {
+
+        $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
+        $retrievedSurveyInfo = $SurveyRetriever->displaySurvey();
+
+        dd($retrievedSurveyInfo);
+
         return view('dashboard/appendixQ');
     }
 

@@ -50,7 +50,7 @@ Route::post('/dashboard/surveys/appendices/surveyAppendixS', [AppendixSControlle
 Route::get('/dashboard/surveys/appendices/surveyAppendixR', [AppendixRController::class,'index'])->name('AppendixR');
 Route::post('/dashboard/surveys/appendices/surveyAppendixR', [AppendixRController::class,'store']);
 
-Route::get('/dashboard/surveys/appendices/surveyAppendixQ', [AppendixQController::class,'index'])->name('AppendixQ');
+Route::get('/dashboard/surveys/appendices/surveyAppendixQ/index.html', [AppendixQController::class,'index'])->name('AppendixQ');
 Route::post('/dashboard/surveys/appendices/surveyAppendixQ', [AppendixQController::class,'store']);
 
 
