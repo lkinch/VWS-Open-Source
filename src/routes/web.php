@@ -44,8 +44,8 @@ Route::post('/dashboard/surveys/appendices/patientHealthSurvey', [PatientHealthC
 Route::get('/dashboard/surveys/appendices/surveyAppendixT', [AppendixTController::class,'index'])->name('AppendixT');
 Route::post('/dashboard/surveys/appendices/surveyAppendixT', [AppendixTController::class,'store']);
 
-Route::get('/dashboard/surveys/appendices/surveyAppendixS/{id}', [AppendixSController::class,'index'])->name('AppendixS');
-Route::post('/dashboard/surveys/appendices/surveyAppendixS', [AppendixSController::class,'store']);
+Route::get('/dashboard/surveys/appendices/surveyAppendixS/{id}', [AppendixSController::class,'index']);
+Route::post('/dashboard/surveys/appendices/surveyAppendixS', [AppendixSController::class,'store'])->name('AppendixS');
 
 Route::get('/dashboard/surveys/appendices/surveyAppendixR', [AppendixRController::class,'index'])->name('AppendixR');
 Route::post('/dashboard/surveys/appendices/surveyAppendixR', [AppendixRController::class,'store']);

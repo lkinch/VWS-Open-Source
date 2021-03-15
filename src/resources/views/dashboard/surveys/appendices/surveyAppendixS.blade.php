@@ -1,16 +1,16 @@
 
 @section('surveyAppendixS')
+@csrf
 <!--not sure which action to use-->
-<form id='surveyForm' action="surveyAppendixS" method="post">
     <!-- THIS IS ASKED PERIODICALLY -->
 	<div class="survey-title">
         <h2>Appendix S: Work Productivity And Activity Impairment Questionnaire General Health (WPAI-GH)</h2>
     </div>
 
 	<div class='survey'>
-		<input type="hidden" name="userId" placeholder="{{$data['id']}}">
+		<input type="hidden" name="userId" placeholder="1">
 		<div class="mb-3" id='surveyQuestion'>
-            <label for="surveyQuestion" class="form-label">{{ $questions[1] }}</label>
+            <label for="surveyQuestion" class="form-label">{{ $questions[0] }}</label>
             <div class="form-check">
                 <input class="form-check-input" onclick="becomeAvailable();" type="radio" name="questionOne" id="questionOneAnswer1" checked>
                 <label class="form-check-label" for="questionOneAnswer1">
@@ -26,28 +26,28 @@
         </div>
 
 		<div class="mb-3"id='surveyQuestion'>
-            <label for="surveyQuestion" class="form-label">{{ $questions[2] }}</label>
-            <input type="text" class="form-control" id="questionTwo" placeholder="(Hours)" aria-describedby="questionTwo">
+            <label for="surveyQuestion" class="form-label">{{ $questions[1] }}</label>
+            <input type="text" class="form-control" name="questionTwo" placeholder="(Hours)" aria-describedby="questionTwo">
         </div>
 
 		<div class="mb-3"id='surveyQuestion'>
-            <label for="surveyQuestion" class="form-label">{{ $questions[3] }}</label>
-            <input type="text" class="form-control" id="questionThree" placeholder="(Hours)" aria-describedby="questionThree">
+            <label for="surveyQuestion" class="form-label">{{ $questions[2] }}</label>
+            <input type="text" class="form-control" name="questionThree" placeholder="(Hours)" aria-describedby="questionThree">
         </div>
 
 		<div class="mb-3" id='surveyQuestion'>
+            <label for="surveyQuestion" class="form-label">{{ $questions[3] }}</label>
+            <input type="text" class="form-control" name="questionFour" placeholder="(Hours)" aria-describedby="questionFour">
+        </div>
+
+		<div class="mb-3"id='surveyQuestion'>
             <label for="surveyQuestion" class="form-label">{{ $questions[4] }}</label>
-            <input type="text" class="form-control" id="questionFour" placeholder="(Hours)" aria-describedby="questionFour">
+            <input type="text" class="form-control" name="questionFive" placeholder="(0-10)" aria-describedby="questionFive">
         </div>
 
 		<div class="mb-3"id='surveyQuestion'>
             <label for="surveyQuestion" class="form-label">{{ $questions[5] }}</label>
-            <input type="text" class="form-control" id="questionFive" placeholder="(0-10)" aria-describedby="questionFive">
-        </div>
-
-		<div class="mb-3"id='surveyQuestion'>
-            <label for="surveyQuestion" class="form-label">{{ $questions[6] }}</label>
-            <input type="text" class="form-control" id="questionSix" placeholder="(0-10)" aria-describedby="questionSix">
+            <input type="text" class="form-control" name="questionSix" placeholder="(0-10)" aria-describedby="questionSix">
         </div>
 	</div>
 
@@ -78,6 +78,4 @@
 			document.getElementById("questionFourHour").readOnly = false;
 		}
 	</script>
-	<button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
-</form>
 @endsection('surveyAppendixS')
