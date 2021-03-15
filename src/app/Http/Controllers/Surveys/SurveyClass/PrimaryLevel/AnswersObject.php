@@ -13,7 +13,7 @@ class AnswersObject //implements IDTO
     private $AnswersObject = null;
     private $participant = "";
 
-    public function __construct($participant, $QuestionsDTO)
+    public function __construct(Int $participant, Object $QuestionsDTO)
     {
         $this->participant = $participant;
         $this->QuestionsDTO = $QuestionsDTO;
