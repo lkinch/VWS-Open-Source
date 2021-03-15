@@ -28,8 +28,8 @@ class DistributeSurveyTest extends TestCase
      */
     public function testUserCanCreateADistributedSurveyTest()
     {
-        $user = new User(array('name' => 'John')); 
-        $this->as($user)->post('/dashboard/distributeSurvey', $this->data());
+        $user = new User(array('name' => 'John'));
+        $this->actingAs($user)->post('/dashboard/distributeSurvey', $this->data());
 
         $availableSurveys = AvailableSurveys::all();
 
@@ -39,16 +39,15 @@ class DistributeSurveyTest extends TestCase
 
     /**
      * A distributed survey.
-     * 
+     *
      * Fails becaues ParticipantUser has too many permissions at the moment
      *
      * @return void
      */
     public function testParticipantUserCannotCreateADistributedSurveyTest()
     {
-        $user = new ParticipantUser(array('name' => 'John')); 
-        $this->be($user);
-        $this->post('/dashboard/distributeSurvey', $this->data());
+        $user = new ParticipantUser(array('name' => 'John'));
+        $this->actingAs($user)->post('/dashboard/distributeSurvey', $this->data());
 
         $availableSurveys = AvailableSurveys::all();
 
