@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel;
+namespace App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,18 +12,36 @@ use App\Models\Questions;
 use App\Models\Answers;
 
 
-use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
+use App\Http\Controllers\Surveys\SurveyClass\IDTO;
 
 class SurveyListObject //implements IDTO
 {
     private $request = null;
     private $SurveyListObject = null;
 
-    public function __construct(String $surveyName, String $programStartDate)
+    public function __construct() {}
+
+    public static function withSurveyNameProgramSD(String $surveyName, String $programStartDate)
     {
-        $this->surveyName = $surveyName;
-        $this->programStartDate = $programStartDate;
-        return $this;
+        $instance = new self();
+        $instance->surveyName = $surveyName;
+        $instance->programStartDate = $programStartDate;
+        return $instance;
+    }
+
+    public static function withSurveyListId(Int $SurveyListId) {
+        $instance = new self();
+        $instance->SurveyListId = $SurveyListId;
+        return $instance;
+    }
+
+    public function display($SurveyList) {
+        $this->SurveyListObject = $SurveyList::find($this->SurveyListId);
+    }
+
+    public function displayAll($SurveyList) {
+        $this->SurveyListObject = $SurveyList::all();
+        return $this->SurveyListObject;
     }
 
     public function create(Object $SurveyList) {

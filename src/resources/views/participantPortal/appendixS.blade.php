@@ -18,13 +18,13 @@
 <body>
     <div class="main">
         @section('leftsidebar')
-            @include('dashboard.leftsidebar')
+            @include('participantPortal.leftsidebar')
         @show
 
         <section class="right-panel" >
             <form id='surveyForm' action="{{ route('AppendixS') }}" method="post">
                 @section('surveyAppendixS')
-                    @include('dashboard.surveys.appendices.surveyAppendixS')
+                    @include('participantPortal.surveys.appendices.surveyAppendixS')
                 @show
             <button type="submit" class="btn btn-primary" style="width: 150px;">Submit</button>
             </form>

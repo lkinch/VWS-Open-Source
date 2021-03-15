@@ -11,8 +11,8 @@ use App\Models\SurveyList;
 use App\Models\Questions;
 use App\Models\Answers;
 
-use App\Http\Controllers\Surveys\SimpleDTOs\QuestionAnswerCreator;
-use App\Http\Controllers\Surveys\SimpleDTOs\SurveyCreator;
+use App\Http\Controllers\Surveys\SurveyBuilder\QuestionAnswerCreator;
+use App\Http\Controllers\Surveys\SurveyBuilder\SurveyCreator;
 class DistributeSurvey
 {
     private $request = null;

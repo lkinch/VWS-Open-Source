@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel;
+namespace App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +11,7 @@ use App\Models\SurveyList;
 use App\Models\Questions;
 use App\Models\Answers;
 
-use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
+use App\Http\Controllers\Surveys\SurveyClass\IDTO;
 
 class SurveyUserListObject //implements IDTO
 {

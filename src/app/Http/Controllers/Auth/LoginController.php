@@ -8,10 +8,10 @@ use App\models\User;
 
 class LoginController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['guest']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware(['guest']);
+    // }
 
     public function index()
     {

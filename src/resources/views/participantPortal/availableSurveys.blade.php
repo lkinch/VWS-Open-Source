@@ -11,45 +11,44 @@
 	<link rel="stylesheet" href="/css/dashboard/surveyrightbar.css" />
 
 	<script src="https://kit.fontawesome.com/555936ed9c.js" crossorigin="anonymous"></script>
-    <title>Researcher Survey Page</title>
+    <title>Available Surveys</title>
 
 </head>
 
 <body>
     <div class="main">
         @section('leftsidebar')
-            @include('dashboard.leftsidebar')
+            @include('participantPortal.leftsidebar')
         @show
 
         <section class="right-panel" >
-        <h1>Good Morning Researcher,</h1>
+        <h1>Good Morning</h1>
         <br>
         <p>Here are a list of Surveys available</p>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Surveys</th>
-                    <th scope="col">Responses</th>
-                    <th scope="col">Completion Rate</th>
-                    <th scope="col">Program Date</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
 
+        <div class="complete">
+            <h2>Completed Surveys</h2>
+            <div class="completeRow">
+
+            </div>
+        </div>
+
+        <div class="incomplete">
+            <h2>Not Completed Surveys</h2>
             @foreach($SurveysAvailable as $Survey)
-                <tr>
-                     <th scope="row">1</th>
-                     <td>{{ $Survey['SurveyName'] }}</td>
-                     <td>0</td>
-                     <td>0%</td>
-                     <td>{{ $Survey['DeliveryDate'] }}</td>
-                     <td><button type="edit" class="btn btn-success" style="width: 150px;">Edit</button></td>
-                </tr>
+            <div class="incompleteRow">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $Survey['SurveyName'] }}</h5>
+                            <p class="card-text">Click the button below to start the Appendix O Survey</p>
+                            <a href="{{ route('RetrieveSurvey', ['SurveyList' => $Survey['id']]) }}" class="btn btn-primary">Start Survey</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @endforeach
-            </tbody>
-        </table>
+        </div>
         </section>
     </div>
 </body>

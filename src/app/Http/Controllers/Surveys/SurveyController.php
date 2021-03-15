@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Surveys;
 use App\Models\AppendixO;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Surveys\SurveyAggregate\DistributeSurvey;
+use App\Http\Controllers\Surveys\SurveyClass\SurveyRetriever;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -17,10 +17,21 @@ class SurveyController extends Controller
         $this->middleware(['auth']);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('dashboard/sampleSurvey');
+
+        $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
+        $retrievedSurveyInfo = $SurveyRetriever->displaySurvey();
+
+        for ($idx = 0; $idx < count($retrievedSurveyInfo); $idx++) {
+            // dd($retrievedSurveyInfo[$idx]);
+            $questions[$idx] = $retrievedSurveyInfo[$idx]->QuestionDescription;
+        }
+
+
+        return view('participantPortal/appendixS', ['questions' => $questions]);
     }
+
 
     public function store(Request $request)
     {
@@ -46,18 +57,31 @@ class SurveyController extends Controller
 
         return redirect()->route('dashboard');
     }
-    public function researchSurvey()
+    public function researchSurvey(Request $request)
     {
-        return view("dashboard.researchSurvey");
+        $SurveyRetriever = new SurveyRetriever(1);
+        $retrievedSurveyInfo = $SurveyRetriever->displaySurveyList();
+        return view("dashboard.researchSurvey", ['SurveysAvailable' => $retrievedSurveyInfo]);
     }
 
-    public function availableSurveys()
+    public function availableSurveys(Request $request)
     {
-        return view("dashboard.availableSurveys");
+
+        //List of all possible surveys
+        $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
+        $retrievedSurveyInfo = $SurveyRetriever->displaySurveyList();
+
+        //TODO: Get the list of surveys completed for this user, something like:
+        // $SurveyRetriever = new SurveyRetriever::withUser(auth::user()->id);
+        // $completedSurveys = $SurveyRetriever->displaySurveyComplete();
+        // Loop through to determine the surveys they haven't done, and save that in $incompleteSurveys
+        // and produce both on the page.
+
+        return view('participantPortal/availableSurveys', ['SurveysAvailable' => $retrievedSurveyInfo]);
     }
 
     public function showDistributeSurvey() {
-        return view('dashboard/distributeSurvey');
+        return view('dashboard.distributeSurvey');
     }
 
     public function DistributeSurveyStore(Request $request) {

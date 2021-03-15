@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Surveys\SimpleDTOs;
+namespace App\Http\Controllers\Surveys\SurveyClass;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\AvailableSurveysObject;
-use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\DataToPopulateSurveysObject;
-use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\SurveyUserListObject;
+use App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel\AvailableSurveysObject;
+use App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel\DataToPopulateSurveysObject;
+use App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel\SurveyUserListObject;
 
 use App\Models\AvailableSurveys;
 use App\Models\Answers;
@@ -62,7 +62,7 @@ class SurveyCreator
         $this->SurveyUserListObject->create($modelSurveyUserList);
 
         for ($i = 0; $i < 9; $i++) {
-            $this->DataToPopulateSurveyDTO[$i] = new DataToPopulateSurveysObject($i, $this->questionDescriptions[$i], $this->answerDescriptions[$i]);
+            $this->DataToPopulateSurveyDTO[$i] = DataToPopulateSurveysObject::withQuestionAnswer($i, $this->questionDescriptions[$i], $this->answerDescriptions[$i]);
             $this->DataToPopulateSurveyDTO[$i]->create($this->AvailableSurveysObject, $modelDataToPopulateSurvey);
         }
 

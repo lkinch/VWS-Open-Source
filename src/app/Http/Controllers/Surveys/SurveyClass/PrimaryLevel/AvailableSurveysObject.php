@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel;
+namespace App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\AvailableSurveys;
 
-use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
+use App\Http\Controllers\Surveys\SurveyClass\IDTO;
 class AvailableSurveysObject //implements IDTO
 {
     private $AvailableSurveysObject = null;

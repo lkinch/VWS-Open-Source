@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Surveys\SimpleDTOs;
+namespace App\Http\Controllers\Surveys\SurveyClass;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\SurveyListObject;
-use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\QuestionsObject;
-use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\AnswersObject;
+use App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel\SurveyListObject;
+use App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel\QuestionsObject;
+use App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel\AnswersObject;
 
 use App\Models\Questions;
 use App\Models\Answers;
@@ -67,7 +67,7 @@ class QuestionAnswerCreator implements ICreateSurveyItems
         if($modelAnswers === null)
             $modelAnswers = new Answers();
 
-        $this->SurveyListObject = new SurveyListObject($this->surveyName, $this->programStartDate);
+        $this->SurveyListObject = SurveyListObject::withSurveyNameProgramSD($this->surveyName, $this->programStartDate);
         $this->SurveyListObject->create($modelSurveyList);
 
         foreach ($this->participants as $participant) {
