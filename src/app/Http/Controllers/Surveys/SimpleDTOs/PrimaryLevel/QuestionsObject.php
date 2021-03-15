@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Questions;
 
-class QuestionsDTO
+class QuestionsObject
 {
     private $request = null;
-    private $QuestionsDTO = null;
+    private $QuestionsObject = null;
     private $QuestionDescription;
     private $SurveyListDTO;
 
@@ -22,20 +22,20 @@ class QuestionsDTO
 
         $now = date('Y-m-d H:i:s') . '';
 
-        $this->QuestionsDTO = $Questions::create([
+        $this->QuestionsObject = $Questions::create([
             'updated_at' => $now,
             'Description' => $this->QuestionDescription,
             'isAnsweredRepeatedly' => false,
             'survey_lists_id' => $this->SurveyListDTO->getId()
         ]);
-        return $this->QuestionsDTO;
+        return $this->QuestionsObject;
     }
 
     public function getUpdatedAt() {
-        return $this->QuestionsDTO->updated_at;
+        return $this->QuestionsObject->updated_at;
     }
 
     public function getId() {
-        return $this->QuestionsDTO->id;
+        return $this->QuestionsObject->id;
     }
 }

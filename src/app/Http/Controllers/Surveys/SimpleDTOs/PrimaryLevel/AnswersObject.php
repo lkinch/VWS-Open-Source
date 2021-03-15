@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
 
-class AnswersDTO //implements IDTO
+class AnswersObject //implements IDTO
 {
     private $request = null;
-    private $AnswersDTO = null;
+    private $AnswersObject = null;
     private $participant = "";
 
     public function __construct($participant, $QuestionsDTO)
@@ -20,12 +20,12 @@ class AnswersDTO //implements IDTO
     }
     public function create($Answers) {
 
-        $AnswersDTO = $Answers::create([
+        $AnswersObject = $Answers::create([
             'updated_at' => $this->QuestionsDTO->getUpdatedAt(),
             'answerValue' => 'default',
             'question_id' => $this->QuestionsDTO->getId(),
             'participant_user_id' => 7
         ]);
-        return $this;
+        return $AnswersObject;
     }
 }

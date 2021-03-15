@@ -14,10 +14,10 @@ use App\Models\Answers;
 
 use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
 
-class SurveyListDTO //implements IDTO
+class SurveyListObject //implements IDTO
 {
     private $request = null;
-    private $SurveyListDTO = null;
+    private $SurveyListObject = null;
 
     public function __construct(String $surveyName, String $programStartDate)
     {
@@ -30,15 +30,15 @@ class SurveyListDTO //implements IDTO
 
         $now = date('Y-m-d H:i:s') . '';
 
-        $this->SurveyListDTO = $SurveyList::create([
+        $this->SurveyListObject = $SurveyList::create([
             'SurveyName' => $this->surveyName,
             'created_at' => $now,
             'DeliveryDate' => $this->programStartDate, // FIXME: This only works for the first program, should be calculated
         ]);
-        return $this->SurveyListDTO;
+        return $this->SurveyListObject;
     }
 
     public function getId() {
-        return $this->SurveyListDTO->id;
+        return $this->SurveyListObject->id;
     }
 }

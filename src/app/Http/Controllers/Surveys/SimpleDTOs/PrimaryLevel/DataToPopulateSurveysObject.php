@@ -10,7 +10,7 @@ use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\AvailableSurveysDTO;
 use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\QuestionsDTO;
 use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\AnswersDTO;
 
-class DataToPopulateSurveysDTO
+class DataToPopulateSurveysObject
 {
     private $request = null;
     private $PopulateSurveysAggregate;
@@ -29,7 +29,7 @@ class DataToPopulateSurveysDTO
     public function create($AvailableSurveysDTO, $DataToPopulateSurvey) {
 
         $now = date('Y-m-d H:i:s') . '';
-        $this->DataToPopulateSurveysDTO = $DataToPopulateSurvey::create([
+        $this->DataToPopulateSurveysObject = $DataToPopulateSurvey::create([
             'updated_at' => $now,
             'QuestionNum' => $this->QuestionNum,
             'QuestionDescription' => $this->QuestionDescription,

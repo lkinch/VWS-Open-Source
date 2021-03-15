@@ -13,10 +13,10 @@ use App\Models\Answers;
 
 use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
 
-class SurveyUserListDTO //implements IDTO
+class SurveyUserListObject //implements IDTO
 {
     private $request = null;
-    private $SurveyUserListDTO = null;
+    private $SurveyUserListObject = null;
 
     public function __construct(Int $authId, Int $AvailableSurveysID, String $ProgramStartDate)
     {
@@ -27,7 +27,7 @@ class SurveyUserListDTO //implements IDTO
 
     public function create($SurveyUserList) {
 
-        $this->SurveyUserListDTO = $SurveyUserList::create([
+        $this->SurveyUserListObject = $SurveyUserList::create([
             'updated_at' => date('Y-m-d H:i:s') . '',
             'isCompleted' => false,
             'user_id' => $this->authId,
@@ -35,7 +35,7 @@ class SurveyUserListDTO //implements IDTO
             'ProgramStartDate' => $this->ProgramStartDate
         ]);
 
-        return $this->SurveyUserListDTO;
+        return $this->SurveyUserListObject;
 
     }
 }

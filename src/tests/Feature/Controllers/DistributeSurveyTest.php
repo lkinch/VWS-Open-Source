@@ -29,8 +29,7 @@ class DistributeSurveyTest extends TestCase
     public function testUserCanCreateADistributedSurveyTest()
     {
         $user = new User(array('name' => 'John')); 
-        $this->be($user);
-        $this->post('/dashboard/distributeSurvey', $this->data());
+        $this->as($user)->post('/dashboard/distributeSurvey', $this->data());
 
         $availableSurveys = AvailableSurveys::all();
 

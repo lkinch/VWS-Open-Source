@@ -7,13 +7,14 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\AvailableSurveys;
 
 use App\Http\Controllers\Surveys\SimpleDTOs\IDTO;
-class AvailableSurveysDTO //implements IDTO
+class AvailableSurveysObject //implements IDTO
 {
-    private $AvailableSurveysDTO = null;
+    private $AvailableSurveysObject = null;
 
     public function __construct(String $SurveyName, String $DeliveryFreq, String $programStartDate)
     {
-        $this->updated_at = date('Y-m-d H:i:s') . '';
+        $now = date('Y-m-d H:i:s') . '';
+        $this->updated_at = $now;
         $this->SurveyName = $SurveyName;
         $this->DeliveryFreq = $DeliveryFreq;
         $this->programStartDate = $programStartDate;
@@ -21,18 +22,18 @@ class AvailableSurveysDTO //implements IDTO
 
     public function create($AvailableSurveys) {
 
-        $this->AvailableSurveysDTO = $AvailableSurveys::create([
+        $this->AvailableSurveysObject = $AvailableSurveys::create([
             'updated_at' => $this->updated_at,
             'SurveyName' => $this->SurveyName,
             'DeliveryFreq' => $this->DeliveryFreq,
             'ProgramStartDate' => $this->programStartDate
         ]);
 
-        return $this->AvailableSurveysDTO;
+        return $this->AvailableSurveysObject;
     }
 
     public function getId() {
-        return $this->AvailableSurveysDTO->id;
+        return $this->AvailableSurveysObject->id;
     }
 
 }

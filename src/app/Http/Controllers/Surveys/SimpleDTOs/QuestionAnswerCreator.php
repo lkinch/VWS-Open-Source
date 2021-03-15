@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Surveys\SimpleDTOs;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\SurveyListDTO;
-use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\QuestionsDTO;
-use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\AnswersDTO;
+use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\SurveyListObject;
+use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\QuestionsObject;
+use App\Http\Controllers\Surveys\SimpleDTOs\PrimaryLevel\AnswersObject;
 
 use App\Models\Questions;
 use App\Models\Answers;
 use App\Models\SurveyList;
 
-interface ICreateAggregate {
+interface ICreateSurveyItems {
     public function createAggregate();
 }
 
@@ -21,11 +21,11 @@ interface IDTO {
     public function create();
 }
 
-class PopulateSurveysAggregate implements ICreateAggregate
+class QuestionAnswerCreator implements ICreateSurveyItems
 {
     private $request = null;
     private $DataToPopulateSurveysDTO = null;
-    private $SurveyListDTO;
+    private $SurveyListObject;
     private $QuestionsArray = Array();
     public $questionDescriptions;
     public $answerDescriptions;
@@ -53,7 +53,7 @@ class PopulateSurveysAggregate implements ICreateAggregate
         ];
     }
 
-    public function createAggregate(
+    public function createSurvey(
         Object $modelSurveyList = null,
         Object $modelSurveyUserList = null,
         Object $modelQuestions = null,
@@ -67,19 +67,19 @@ class PopulateSurveysAggregate implements ICreateAggregate
         if($modelAnswers === null)
             $modelAnswers = new Answers();
 
-        $this->SurveyListDTO = new SurveyListDTO($this->surveyName, $this->programStartDate);
-        $this->SurveyListDTO->create($modelSurveyList);
+        $this->SurveyListObject = new SurveyListObject($this->surveyName, $this->programStartDate);
+        $this->SurveyListObject->create($modelSurveyList);
 
         foreach ($this->participants as $participant) {
             $idx = 0;
             foreach ($this->questionDescriptions as $QuestionDescription) {
-                $newQuestionDTO = new QuestionsDTO($QuestionDescription, $this->SurveyListDTO);
+                $newQuestionDTO = new QuestionsObject($QuestionDescription, $this->SurveyListObject);
                 $this->QuestionsArray[$idx] = $newQuestionDTO;
 
                 $this->QuestionsArray[$idx]->create($modelQuestions);
-                $newAnswerDTO = new AnswersDTO($participant, $this->QuestionsArray[$idx]);
-                $this->AnswersDTO[$idx] = $newAnswerDTO;
-                $this->AnswersDTO[$idx] = $this->AnswersDTO[$idx]->create($modelAnswers);
+                $newAnswerDTO = new AnswersObject($participant, $this->QuestionsArray[$idx]);
+                $this->AnswersObject[$idx] = $newAnswerDTO;
+                $this->AnswersObject[$idx] = $this->AnswersObject[$idx]->create($modelAnswers);
                 $idx++;
             }
         }
