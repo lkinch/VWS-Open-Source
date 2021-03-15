@@ -27,4 +27,5 @@ jobs:
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: |
         cd ./src
+        set('git_tty', false)
         php artisan test --testsuite=unit
