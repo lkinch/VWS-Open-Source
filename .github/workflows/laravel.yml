@@ -30,4 +30,3 @@ jobs:
         touch database/database.sqlite
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       run: php artisan test
-      run: vendor/bin/phpunit
