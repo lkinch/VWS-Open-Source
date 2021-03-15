@@ -32,7 +32,7 @@ class DataToPopulateSurveysObject
     }
 
     public function display($DataToPopulateSurvey) {
-        $this->DataToPopulateSurveysObject = $DataToPopulateSurvey::where([
+        $this->DataToPopulateSurveysObject = $DataToPopulateSurvey::table('data_to_populate_surveys')->where([
                 'survey_id' => $this->SurveyId
             ])->get();
 

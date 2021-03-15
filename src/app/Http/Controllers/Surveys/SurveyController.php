@@ -23,7 +23,13 @@ class SurveyController extends Controller
         $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
         $retrievedSurveyInfo = $SurveyRetriever->displaySurvey();
 
-        return view('participantPortal/appendixQ', ["SurveyList" => 1]);
+        for ($idx = 0; $idx < count($retrievedSurveyInfo); $idx++) {
+            // dd($retrievedSurveyInfo[$idx]);
+            $questions[$idx] = $retrievedSurveyInfo[$idx]->QuestionDescription;
+        }
+
+
+        return view('participantPortal/appendixS', ['questions' => $questions]);
     }
 
 
@@ -51,14 +57,27 @@ class SurveyController extends Controller
 
         return redirect()->route('dashboard');
     }
-    public function researchSurvey()
+    public function researchSurvey(Request $request)
     {
-        return view("dashboard.researchSurvey");
+        $SurveyRetriever = new SurveyRetriever(1);
+        $retrievedSurveyInfo = $SurveyRetriever->displaySurveyList();
+        return view("dashboard.researchSurvey", ['SurveysAvailable' => $retrievedSurveyInfo]);
     }
 
-    public function availableSurveys()
+    public function availableSurveys(Request $request)
     {
-        return view("participantPortal/availableSurveys");
+
+        //List of all possible surveys
+        $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
+        $retrievedSurveyInfo = $SurveyRetriever->displaySurveyList();
+
+        //TODO: Get the list of surveys completed for this user, something like:
+        // $SurveyRetriever = new SurveyRetriever::withUser(auth::user()->id);
+        // $completedSurveys = $SurveyRetriever->displaySurveyComplete();
+        // Loop through to determine the surveys they haven't done, and save that in $incompleteSurveys
+        // and produce both on the page.
+
+        return view('participantPortal/availableSurveys', ['SurveysAvailable' => $retrievedSurveyInfo]);
     }
 
     public function showDistributeSurvey() {

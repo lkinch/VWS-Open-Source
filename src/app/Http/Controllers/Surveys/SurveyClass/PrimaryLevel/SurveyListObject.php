@@ -39,6 +39,11 @@ class SurveyListObject //implements IDTO
         $this->SurveyListObject = $SurveyList::find($this->SurveyListId);
     }
 
+    public function displayAll($SurveyList) {
+        $this->SurveyListObject = $SurveyList::all();
+        return $this->SurveyListObject;
+    }
+
     public function create(Object $SurveyList) {
 
         $now = date('Y-m-d H:i:s') . '';

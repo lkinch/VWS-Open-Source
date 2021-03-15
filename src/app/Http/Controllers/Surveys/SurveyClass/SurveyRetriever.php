@@ -10,6 +10,7 @@ use App\Http\Controllers\Surveys\SurveyClass\PrimaryLevel\DataToPopulateSurveysO
 
 use App\Models\SurveyList;
 use App\Models\DataToPopulateSurvey;
+use Illuminate\Support\Facades\DB;
 
 class SurveyRetriever
 {
@@ -29,11 +30,20 @@ class SurveyRetriever
         $retrieveSurvey = $SurveyList->display($modelSurveyList);
 
         $DataToPopulateSurveys = DataToPopulateSurveysObject::withSurveyId($this->SurveyListId);
-        $modelDataToPopulateSurveys = new DataToPopulateSurvey();
+        $modelDataToPopulateSurveys = new DB();
         $retrievedQuestionData = $DataToPopulateSurveys->display($modelDataToPopulateSurveys);
 
 
         return $retrievedQuestionData;
+    }
+
+    public function displaySurveyList() {
+        $SurveyList = SurveyListObject::withSurveyListId($this->SurveyListId);
+
+        $modelSurveyList = new SurveyList();
+        $retrieveSurvey = $SurveyList->displayAll($modelSurveyList);
+
+        return $retrieveSurvey;
     }
 
 }
