@@ -41,7 +41,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Appendix O</h5>
                             <p class="card-text">Click the button below to start the Appendix O Survey</p>
-                            <a href="{{ route('RetrieveSurvey', ['SurveyListId' => '1']) }}" class="btn btn-primary">Start Survey</a>
+                            <a href="{{ route('RetrieveSurvey', ['SurveyList' => '1']) }}" class="btn btn-primary">Start Survey</a>
                         </div>
                     </div>
                 </div>

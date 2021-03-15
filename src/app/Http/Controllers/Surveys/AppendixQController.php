@@ -16,17 +16,6 @@ class AppendixQController extends Controller
         $this->middleware(['auth']);
     }
 
-    public function index(Request $request)
-    {
-
-        $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
-        $retrievedSurveyInfo = $SurveyRetriever->displaySurvey();
-
-        dd($retrievedSurveyInfo);
-
-        return view('dashboard/appendixQ');
-    }
-
     public function store(Request $request)
     {
         $this->validate($request, [

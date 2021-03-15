@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Surveys;
 use App\Models\AppendixO;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Surveys\SurveyAggregate\DistributeSurvey;
+use App\Http\Controllers\Surveys\SurveyClass\SurveyRetriever;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -17,10 +17,15 @@ class SurveyController extends Controller
         $this->middleware(['auth']);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('dashboard/sampleSurvey');
+
+        $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
+        $retrievedSurveyInfo = $SurveyRetriever->displaySurvey();
+
+        return view('participantPortal/appendixQ', ["SurveyList" => 1]);
     }
+
 
     public function store(Request $request)
     {
@@ -53,11 +58,11 @@ class SurveyController extends Controller
 
     public function availableSurveys()
     {
-        return view("dashboard.availableSurveys");
+        return view("participantPortal/availableSurveys");
     }
 
     public function showDistributeSurvey() {
-        return view('dashboard/distributeSurvey');
+        return view('dashboard.distributeSurvey');
     }
 
     public function DistributeSurveyStore(Request $request) {
