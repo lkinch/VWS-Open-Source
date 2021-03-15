@@ -28,4 +28,4 @@ jobs:
       run: |
         cd ./src
         set('git_tty', false)
-        php artisan test --testsuite=unit
+        php artisan test
