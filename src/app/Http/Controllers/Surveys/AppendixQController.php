@@ -16,7 +16,14 @@ class AppendixQController extends Controller
 
     public function index()
     {
-        return view('dashboard/appendixQ');
+        $questions = ['How confident do you feel that you can keep the fatigue caused by your disease from interfering with the things you want to do?',
+                    'How confident do you feel that you can keep the physical discomfort or pain of your disease from interfering with the things you want to do?',
+                    'How confident do you feel that you can keep the emotional distress caused by your disease from interfering with the things you want to do?',
+                    'How confident do you feel that you can keep any other symptoms or health problems you have from interfering with the things you want to do?',
+                    'How confident do you feel that you can the different tasks and activities needed to manage your health condition so as to reduce your need to see a doctor?',
+                    'How confident do you feel that you can do things other than just taking medication to reduce how much your illness affects your everyday life?'
+                    ];
+        return view('dashboard/appendixQ', compact('questions'));
     }
 
     public function store(Request $request)
