@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Cache;
 
 class GeneralWebsiteController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+
     public function get()
     {
         return view('landing');
