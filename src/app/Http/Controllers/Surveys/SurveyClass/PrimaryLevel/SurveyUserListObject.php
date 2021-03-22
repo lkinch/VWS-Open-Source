@@ -18,11 +18,22 @@ class SurveyUserListObject //implements IDTO
     private $request = null;
     private $SurveyUserListObject = null;
 
-    public function __construct(Int $authId, Int $AvailableSurveysID, String $ProgramStartDate)
+    public function __construct()
     {
-        $this->authId = $authId;
-        $this->AvailableSurveysID = $AvailableSurveysID;
-        $this->ProgramStartDate = $ProgramStartDate;
+    }
+
+    public static function withAuthIdAvailableSurveysIdProgramStartDate(Int $authId, Int $AvailableSurveysID, String $ProgramStartDate)
+    {
+        $instance = new self();
+        $instance->authId = $authId;
+        $instance->AvailableSurveysID = $AvailableSurveysID;
+        $instance->ProgramStartDate = $ProgramStartDate;
+    }
+
+    public static function withUserId(Int $userId) {
+        $instance = new self();
+        $instance->userId = $userId;
+        return $instance;
     }
 
     public function create($SurveyUserList) {
@@ -37,5 +48,12 @@ class SurveyUserListObject //implements IDTO
 
         return $this->SurveyUserListObject;
 
+    }
+
+    public function displaySurveyUserList($modelSurveyUserList) {
+
+        $this->SurveyUserListObject = $modelSurveyUserList::where('user_id', $this->userId)->get();
+
+        return $this->SurveyUserListObject;
     }
 }
