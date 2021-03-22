@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\models\User;
+use Bouncer;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -30,8 +32,13 @@ class LoginController extends Controller
             return back()->with('status', 'Invalid login details');
         }
 
+        $isParticipant = Bouncer::is(Auth::user())->an('participant');
 
-        return redirect()->route('dashboard');
+        if ($isParticipant)
+            return redirect()->route('surveylisted');
+        else
+            return redirect()->route('dashboard');
+
     }
 
     public function indexresearcher()
@@ -56,7 +63,8 @@ class LoginController extends Controller
             return back()->with('status', 'Invalid login details');
         }
 
-        $isAdmin = auth()->user()->isAdmin();
+
+        $isAdmin = Bouncer::is($user)->an('admin');
 
         //This if statement ultimately shouldn't exist as-is
         if ($isAdmin) {
@@ -67,7 +75,7 @@ class LoginController extends Controller
         }
 
     }
-    
+
     //Next two function is for user profile page.
     public function showProfileData($id){
         //take data from database and pass to user profile page by using user id.

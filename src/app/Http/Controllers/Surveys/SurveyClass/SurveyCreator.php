@@ -57,7 +57,7 @@ class SurveyCreator
         $this->AvailableSurveysObject->create($modelAvailableSurveys);
 
         $authId = Auth::id();
-        $this->SurveyUserListObject = new SurveyUserListObject($authId, $this->AvailableSurveysObject->getId(), $this->programStartDate);
+        $this->SurveyUserListObject = SurveyUserListObject::withAuthIdAvailableSurveysIdProgramStartDate($authId, $this->AvailableSurveysObject->getId(), $this->programStartDate);
         $modelSurveyUserList = new SurveyUserList();
         $this->SurveyUserListObject->create($modelSurveyUserList);
 

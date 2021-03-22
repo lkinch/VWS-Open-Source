@@ -68,17 +68,11 @@ class SurveyController extends Controller
     public function availableSurveys(Request $request)
     {
 
-        //List of all possible surveys
-        $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
-        $retrievedSurveyInfo = $SurveyRetriever->displaySurveyList();
-
         //TODO: Get the list of surveys not completed for this user, something like:
-        // $SurveyRetriever = new SurveyRetriever::withUser(auth::user()->id);
-        // $completedSurveys = $SurveyRetriever->displaySurveyComplete();
-        // Loop through to determine the surveys they haven't done, and save that in $incompleteSurveys
-        // and produce both on the page.
+        $SurveyRetriever = SurveyRetriever::withEmptyConstructor();
+        $completedSurveys = $SurveyRetriever->displaySurveyUserList();
 
-        return view('participantPortal/availableSurveys', ['SurveysAvailable' => $retrievedSurveyInfo]);
+        return view('participantPortal/availableSurveys', ['SurveysAvailable' => $completedSurveys]);
     }
 
     public function showDistributeSurvey() {
