@@ -66,7 +66,7 @@ Route::get('/dashboard', [ResearcherController::class, 'dashboard'])->name('dash
 Route::get('/dashboard/sampleSurvey', [ResearcherController::class, 'index'])->name('SampleSurveyindex');
 Route::post('/dashboard/sampleSurvey', [ResearcherController::class, 'store'])->name('SampleSurveystore');
 
-Route::get('/dashboard/surveyAssign', [ResearcherController::class, 'surveyAssign'])->name('surveyAssign');
+Route::get('/dashboard/surveyAssigning', [ResearcherController::class, 'surveyAssigning'])->name('surveyAssigning');
 Route::get('/dashboard/researchSurvey', [ResearcherController::class, 'researchSurvey'])->name('researchSurvey');
 Route::get('/dashboard/distributeSurvey', [ResearcherController::class, 'showDistributeSurvey'])->name('DistributeSurveyIndex');
 Route::post('/dashboard/distributeSurvey', [ResearcherController::class, 'DistributeSurveyStore'])->name('DistributeSurveyStore');
