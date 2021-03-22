@@ -91,6 +91,3 @@ Route::get('/userProfilePage/{id}', [LoginController::class, 'showProfileData'])
 Route::post('/userProfilePage',[LoginController::class, 'updateProfile']);
 
 Route::get('/', [LoginController::class, 'index'])->name('homeindex');
-Route::get('/logoutSuccessPage', function(){
-    return view('logoutSuccessPage');
-});
