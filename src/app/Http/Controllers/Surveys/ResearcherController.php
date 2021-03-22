@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Surveys;
 
 use App\Models\AppendixO;
+use App\Models\ParticipantUser;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Surveys\SurveyClass\SurveyRetriever;
@@ -112,13 +113,17 @@ class ResearcherController extends Controller
         return redirect()->route('dashboard');
     }
 
-    public function surveyAssign($request)
+    public function surveyAssigning(Request $request)
     {
         $isAdmin = Bouncer::is(Auth::user())->an('admin');
         $isParticipant = Bouncer::is(Auth::user())->an('participant');
         if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
-        return view("dashboard.surveyAssign");
+        $participants = ParticipantUser::all();
+
+        return view("dashboard.surveyAssigning",["participants"=>$participants]);
     }
+
+    
 
     private function validateSurveyStore($request) {
         //TODO: add more questions (they should go up to 9 for current default values)
