@@ -11,7 +11,8 @@ use App\Http\Controllers\Surveys\AppendixQController;
 use App\Http\Controllers\Surveys\AppendixRController;
 use App\Http\Controllers\Surveys\AppendixSController;
 use App\Http\Controllers\Surveys\AppendixTController;
-use App\Http\Controllers\Surveys\SurveyController;
+use App\Http\Controllers\Surveys\ParticipantController;
+use App\Http\Controllers\Surveys\ResearcherController;
 use App\Http\Controllers\Surveys\SocialWorkoutController;
 use App\Http\Controllers\Surveys\SocialEatingController;
 use App\Http\Controllers\Surveys\PatientHealthController;
@@ -28,14 +29,10 @@ use App\Http\Controllers\Surveys\PatientHealthController;
 
 Route::get('/home', [LoginController::class, 'index'])->name('home');
 Route::get('/about', [GeneralWebsiteController::class, 'about'])->name('about');
-Route::get('/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/landing', function(){
     return view('landing');
 });
-
-Route::get('/participant-portal/available-surveys/index.html', [SurveyController::class, 'index'])->name('RetrieveSurvey');
-Route::get('/participant-portal/available-surveys.html', [SurveyController::class, 'availableSurveys'])->name('surveylisted');
 
 Route::get('/dashboard/surveys/appendices/socialEatingSurvey', [SocialEatingController::class,'index'])->name('SocialEating');
 Route::post('/dashboard/surveys/appendices/socialEatingSurvey', [SocialEatingController::class,'store']);
@@ -62,13 +59,16 @@ Route::post('/dashboard/surveys/appendices/surveyAppendixO', [AppendixOControlle
 Route::get('/dashboard/surveys/appendices/SocialWorkoutSurvey', [SocialWorkoutController::class,'index'])->name('SocialWorkout');
 Route::post('/dashboard/surveys/appendices/SocialWorkoutSurvey', [SocialWorkoutController::class,'store']);
 
+Route::get('/participant-portal/available-surveys/index.html', [ParticipantController::class, 'index'])->name('RetrieveSurvey');
+Route::get('/participant-portal/available-surveys.html', [ParticipantController::class, 'availableSurveys'])->name('surveylisted');
 
-Route::get('/dashboard/sampleSurvey', [SurveyController::class, 'index'])->name('SampleSurveyindex');
-Route::post('/dashboard/sampleSurvey', [SurveyController::class, 'store'])->name('SampleSurveystore');
+Route::get('/dashboard', [ResearcherController::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard/sampleSurvey', [ResearcherController::class, 'index'])->name('SampleSurveyindex');
+Route::post('/dashboard/sampleSurvey', [ResearcherController::class, 'store'])->name('SampleSurveystore');
 
-Route::get('/dashboard/researchSurvey', [SurveyController::class, 'researchSurvey'])->name('researchSurvey');
-Route::get('/dashboard/distributeSurvey', [SurveyController::class, 'showDistributeSurvey'])->name('DistributeSurveyIndex');
-Route::post('/dashboard/distributeSurvey', [SurveyController::class, 'DistributeSurveyStore'])->name('DistributeSurveyStore');
+Route::get('/dashboard/researchSurvey', [ResearcherController::class, 'researchSurvey'])->name('researchSurvey');
+Route::get('/dashboard/distributeSurvey', [ResearcherController::class, 'showDistributeSurvey'])->name('DistributeSurveyIndex');
+Route::post('/dashboard/distributeSurvey', [ResearcherController::class, 'DistributeSurveyStore'])->name('DistributeSurveyStore');
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');

@@ -63,10 +63,12 @@ class LoginController extends Controller
         }
 
         $isAdmin = Bouncer::is(Auth::user())->an('admin');
-
+        $isParticipant = Bouncer::is(Auth::user())->an('participant');
         //This if statement ultimately shouldn't exist as-is
         if ($isAdmin) {
             return redirect()->route('dashboard');
+        } else if ($isParticipant) {
+            return redirect()->route('surveylisted');
         } else {
             return back()->with('status', 'You are not an administrator');
         }
