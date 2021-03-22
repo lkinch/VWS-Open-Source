@@ -37,7 +37,7 @@ class ParticipantController extends Controller
 
     public function index(Request $request)
     {
-        if(strcmp($this->checkUserPermissions(), 'admin')) return redirect()->route('dashboard');
+        if(strcmp($this->checkUserPermissions(), 'admin') === 0) return redirect()->route('dashboard');
 
         $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
         $retrievedSurveyInfo = $SurveyRetriever->displaySurvey();
@@ -52,7 +52,7 @@ class ParticipantController extends Controller
 
     public function availableSurveys(Request $request)
     {
-        if($this->checkUserPermissions() === 'admin') return redirect()->route('dashboard');
+        if(strcmp($this->checkUserPermissions(), 'admin') === 0) return redirect()->route('dashboard');
 
         $SurveyRetriever = SurveyRetriever::withEmptyConstructor();
         $completedSurveys = $SurveyRetriever->displaySurveyUserList();

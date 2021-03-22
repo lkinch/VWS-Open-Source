@@ -19,9 +19,7 @@ class ResearcherController extends Controller
         $this->middleware(['auth']);
     }
 
-    public function checkUserPermissions() {
-        $isAdmin = Bouncer::is(Auth::user())->an('admin');
-        $isParticipant = false;//Bouncer::is(Auth::user())->an('participant');
+    public function checkUserPermissions($isAdmin, $isParticipant) {
         //This if statement ultimately shouldn't exist as-is
         if ($isAdmin) {
             return 'admin';
@@ -32,14 +30,18 @@ class ResearcherController extends Controller
         }
     }
     public function dashboard() {
-        if(strcmp($this->checkUserPermissions(), 'participant')) return redirect()->route('surveylisted');
+        $isAdmin = Bouncer::is(Auth::user())->an('admin');
+        $isParticipant = Bouncer::is(Auth::user())->an('participant');
+        if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
 
         return view('dashboard.index');
     }
 
     public function store(Request $request)
     {
-        if(strcmp($this->checkUserPermissions(), 'participant')) return redirect()->route('surveylisted');
+        $isAdmin = Bouncer::is(Auth::user())->an('admin');
+        $isParticipant = Bouncer::is(Auth::user())->an('participant');
+        if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
 
         $this->validate($request, [
             'inputAge' => 'required|max:255',
@@ -65,7 +67,9 @@ class ResearcherController extends Controller
     }
     public function researchSurvey(Request $request)
     {
-        if(strcmp($this->checkUserPermissions(), 'participant')) return redirect()->route('surveylisted');
+        $isAdmin = Bouncer::is(Auth::user())->an('admin');
+        $isParticipant = Bouncer::is(Auth::user())->an('participant');
+        if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
 
         $SurveyRetriever = new SurveyRetriever(1);
         $retrievedSurveyInfo = $SurveyRetriever->displaySurveyList();
@@ -74,7 +78,9 @@ class ResearcherController extends Controller
 
     public function availableSurveys(Request $request)
     {
-        if(strcmp($this->checkUserPermissions(), 'participant')) return redirect()->route('surveylisted');
+        $isAdmin = Bouncer::is(Auth::user())->an('admin');
+        $isParticipant = Bouncer::is(Auth::user())->an('participant');
+        if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
 
         $SurveyRetriever = SurveyRetriever::withEmptyConstructor();
         $completedSurveys = $SurveyRetriever->displaySurveyUserList();
@@ -83,13 +89,17 @@ class ResearcherController extends Controller
     }
 
     public function showDistributeSurvey() {
-        if(strcmp($this->checkUserPermissions(), 'participant')) return redirect()->route('surveylisted');
+        $isAdmin = Bouncer::is(Auth::user())->an('admin');
+        $isParticipant = Bouncer::is(Auth::user())->an('participant');
+        if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
 
         return view('dashboard.distributeSurvey');
     }
 
     public function DistributeSurveyStore(Request $request) {
-        if(strcmp($this->checkUserPermissions(), 'participant')) return redirect()->route('surveylisted');
+        $isAdmin = Bouncer::is(Auth::user())->an('admin');
+        $isParticipant = Bouncer::is(Auth::user())->an('participant');
+        if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
 
         //Validate the data
         $this->validateSurveyStore($request);
@@ -100,6 +110,14 @@ class ResearcherController extends Controller
         $DistributionSurvey->create();
 
         return redirect()->route('dashboard');
+    }
+
+    public function surveyAssign($request)
+    {
+        $isAdmin = Bouncer::is(Auth::user())->an('admin');
+        $isParticipant = Bouncer::is(Auth::user())->an('participant');
+        if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
+        return view("dashboard.surveyAssign");
     }
 
     private function validateSurveyStore($request) {
@@ -128,4 +146,6 @@ class ResearcherController extends Controller
 
         return true;
     }
+
+
 }
