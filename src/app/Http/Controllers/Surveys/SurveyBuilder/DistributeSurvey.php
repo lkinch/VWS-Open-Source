@@ -33,7 +33,7 @@ class DistributeSurvey
     public function create() {
 
 
-        $result[0] = new SurveyCreator($this->request);
+        $result[0] = new QuestionAnswerCreator($this->request);
         $result[1] = new SurveyCreator($this->request);
 
         $result[0]->createSurvey();

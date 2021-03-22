@@ -6,6 +6,7 @@ use App\Models\AppendixO;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Surveys\SurveyClass\SurveyRetriever;
+use App\Http\Controllers\Surveys\SurveyBuilder\DistributeSurvey;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -71,7 +72,7 @@ class SurveyController extends Controller
         $SurveyRetriever = new SurveyRetriever($request['SurveyList']);
         $retrievedSurveyInfo = $SurveyRetriever->displaySurveyList();
 
-        //TODO: Get the list of surveys completed for this user, something like:
+        //TODO: Get the list of surveys not completed for this user, something like:
         // $SurveyRetriever = new SurveyRetriever::withUser(auth::user()->id);
         // $completedSurveys = $SurveyRetriever->displaySurveyComplete();
         // Loop through to determine the surveys they haven't done, and save that in $incompleteSurveys
