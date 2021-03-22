@@ -59,16 +59,13 @@ class LoginController extends Controller
         $isNotAuthenticated = !auth()->attempt($request->only('email', 'password'), $request->remember);
 
         if ($isNotAuthenticated) {
-
             return back()->with('status', 'Invalid login details');
         }
 
-
-        $isAdmin = Bouncer::is($user)->an('admin');
+        $isAdmin = Bouncer::is(Auth::user())->an('admin');
 
         //This if statement ultimately shouldn't exist as-is
         if ($isAdmin) {
-
             return redirect()->route('dashboard');
         } else {
             return back()->with('status', 'You are not an administrator');
