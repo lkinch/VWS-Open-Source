@@ -27,17 +27,22 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if (!auth()->attempt($request->only('email', 'password'), $request->remember)) {
+        $isNotAuthenticated = !auth()->attempt($request->only('email', 'password'), $request->remember);
 
+        if ($isNotAuthenticated) {
             return back()->with('status', 'Invalid login details');
         }
 
+        $isAdmin = Bouncer::is(Auth::user())->an('admin');
         $isParticipant = Bouncer::is(Auth::user())->an('participant');
-
-        if ($isParticipant)
-            return redirect()->route('surveylisted');
-        else
+        //This if statement ultimately shouldn't exist as-is
+        if ($isAdmin) {
             return redirect()->route('dashboard');
+        } else if ($isParticipant) {
+            return redirect()->route('surveylisted');
+        } else {
+            return back()->with('status', 'You are not an administrator');
+        }
 
     }
 
