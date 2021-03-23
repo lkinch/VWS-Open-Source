@@ -93,11 +93,12 @@ class ResearcherController extends Controller
         $isAdmin = Bouncer::is(Auth::user())->an('admin');
         $isParticipant = Bouncer::is(Auth::user())->an('participant');
         if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
-
-        return view('dashboard.distributeSurvey');
+        $participants = ParticipantUser::all();
+        return view('dashboard.distributeSurvey', ["participants"=>$participants]);
     }
 
     public function DistributeSurveyStore(Request $request) {
+
         $isAdmin = Bouncer::is(Auth::user())->an('admin');
         $isParticipant = Bouncer::is(Auth::user())->an('participant');
         if(strcmp($this->checkUserPermissions($isAdmin, $isParticipant), 'participant') === 0) return redirect()->route('surveylisted');
@@ -123,7 +124,7 @@ class ResearcherController extends Controller
         return view("dashboard.surveyAssigning",["participants"=>$participants]);
     }
 
-    
+
 
     private function validateSurveyStore($request) {
         //TODO: add more questions (they should go up to 9 for current default values)
