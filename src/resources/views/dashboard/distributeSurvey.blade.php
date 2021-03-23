@@ -58,52 +58,53 @@
                     <option value="SurveyWorkout">Survey Workout</option>
                 </select>
 
-                <h2>List the Participants of the Study</h2>
-                <form id="participantForm">
-                <div class="input-group mb-3">
-                    <select class="form-select" name="participantOne" id="participantOne" placeholder="Username of Participant" >
-                        <option selected>Select Participant</option>
-                        @foreach ($participants as $participant)
-                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
-                        @endforeach
-                    </select>
-                </div>
+                <div id="list-participants-for-the-study">
+                    <h2>List the Participants of the Study</h2>
+                    <div class="input-group mb-3" id="participant-1-group">
+                        <select class="form-select" name="participantOne" id="participantOne" placeholder="Username of Participant" >
+                            <option selected>Select Participant</option>
+                            @foreach ($participants as $participant)
+                                <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
-                <div class="input-group mb-3">
-                    <select class="form-select" name="participantTwo" id="participantTwo" placeholder="Username of Participant" >
-                        <option selected>Select Participant</option>
-                        @foreach ($participants as $participant)
-                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
-                        @endforeach
-                    </select>
+                    <div class="input-group mb-3" id="participant-2-group">
+                        <select class="form-select" name="participantTwo" id="participantTwo" placeholder="Username of Participant" >
+                            <option selected>Select Participant</option>
+                            @foreach ($participants as $participant)
+                                <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="input-group mb-3" id="participant-3-group">
+                        <select class="form-select" name="participantThree" id="participantThree" placeholder="Username of Participant" >
+                            <option selected>Select Participant</option>
+                            @foreach ($participants as $participant)
+                                <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="input-group mb-3" id="participant-4-group">
+                        <select class="form-select" name="participantFour" id="participantFour" placeholder="Username of Participant" >
+                            <option selected>Select Participant</option>
+                            @foreach ($participants as $participant)
+                                <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="input-group mb-3" id="participant-5-group">
+                        <select class="form-select" name="participantFive" id="participantFive" placeholder="Username of Participant" >
+                            <option selected>Select Participant</option>
+                            @foreach ($participants as $participant)
+                                <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-                <div class="input-group mb-3">
-                    <select class="form-select" name="participantThree" id="participantThree" placeholder="Username of Participant" >
-                        <option selected>Select Participant</option>
-                        @foreach ($participants as $participant)
-                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="input-group mb-3">
-                    <select class="form-select" name="participantFour" id="participantFour" placeholder="Username of Participant" >
-                        <option selected>Select Participant</option>
-                        @foreach ($participants as $participant)
-                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="input-group mb-3">
-                    <select class="form-select" name="participantFive" id="participantFive" placeholder="Username of Participant" >
-                        <option selected>Select Participant</option>
-                        @foreach ($participants as $participant)
-                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                </form>
                 <!--A button that use to add participant dynamically-->
-                <button type='button' value='add' class="btn btn-primary" onclick="javascript:add_field();">Add another participant</button>
+                <button type='button' value='add' class="btn btn-primary" onclick="add_field()">Add another participant</button>
+                <button type='button' value='remove' class="btn btn-primary" onclick="remove_field()">Remove another participant</button>
 
                 <h2>List the Questions & Answers for the Study</h2>
                 <div class="input-group mb-3">
@@ -197,30 +198,39 @@
             div.removeChild(field);
         }
 
+        function remove_field() {
+            let inputGroup = document.getElementById('list-participants-for-the-study');
+            
+            if (reqs_id < 2 || reqs_id > 10) return;
+            console.log(reqs_id);
+            console.log(inputGroup.children[reqs_id])
+            //remove last child node
+            inputGroup.removeChild(inputGroup.children[reqs_id]);
+            reqs_id--;
+
+        }
+
         function add_field() {
+            let numbersInText = ["Zero", "One", "Two", "Three", "Four", "Five", "Six",
+            "Seven", "Eight", "Nine", "Ten"];
+
+            if (reqs_id < 2 || reqs_id > 9) return;
             reqs_id++; // increment reqs_id to get a unique ID for the new element
 
-            //create text
-            var input = document.createElement('input');
-            input.type = "text";
-            input.setAttribute("class", "form-control");
-            input.setAttribute('id', 'participant' + reqs_id);
-            input.setAttribute('value', reqs_id);
-            input.setAttribute('placeholder', "Username of Participant");
-            input.setAttribute('aria-label', "Example text with button addon");
-            input.setAttribute('aria-describedby', "button-addon1");
-            var reqs = document.getElementById("reqs");
-            //create remove button
-            var remove = document.createElement('button');
-            remove.setAttribute('id', 'participant' + reqs_id);
-            remove.onclick = function(e) {
-                removeElement(e)
-            };
-            remove.setAttribute("type", "button");
-            remove.innerHTML = "Remove" + reqs_id;
-            //append elements
-            reqs.appendChild(input);
-            reqs.appendChild(remove);
+            //get the first group div
+            let inputGroup = document.getElementById('participant-1-group').cloneNode(true);
+            console.log(inputGroup)
+            inputGroup.setAttribute("id", "participant-" + reqs_id + "-group");
+
+            //get the first child node
+            let selectGroup = inputGroup.children[0];
+            selectGroup.setAttribute("id", "participant" + numbersInText[reqs_id]);
+            selectGroup.setAttribute("class", "participant" + numbersInText[reqs_id]);
+            selectGroup.setAttribute("name", "participant" + numbersInText[reqs_id]);
+
+            //get the group of nodes to append
+            let inputNode = document.getElementById('list-participants-for-the-study');
+            inputNode.appendChild(inputGroup);
         }
     </script>
 </body>
