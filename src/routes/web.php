@@ -34,6 +34,9 @@ Route::get('/landing', function(){
     return view('landing');
 });
 
+Route::get('/participant-portal/available-surveys/index.html', [SurveyController::class, 'index'])->name('RetrieveSurvey');
+Route::get('/participant-portal/available-surveys.html', [SurveyController::class, 'availableSurveys'])->name('surveylisted');
+
 Route::get('/dashboard/surveys/appendices/socialEatingSurvey', [SocialEatingController::class,'index'])->name('SocialEating');
 Route::post('/dashboard/surveys/appendices/socialEatingSurvey', [SocialEatingController::class,'store']);
 
@@ -91,4 +94,10 @@ Route::post('/registerresearcher', [RegisterController::class, 'storeresearcher'
 Route::get('/userProfilePage/{id}', [LoginController::class, 'showProfileData']);
 Route::post('/userProfilePage',[LoginController::class, 'updateProfile']);
 
-Route::get('/', [LoginController::class, 'index'])->name('homeindex');
+Route::get('/logoutSuccessPage', function(){return view('logoutSuccessPage');});
+
+Route::get('/searchUserPage', [SearchController::class,'index']);
+Route::post('/searchUserPage', [SearchController::class,'search']);
+
+Route::get('/searchedUserProfilePage/{id}', [SearchController::class,'showProfileData']);
+Route::post('/searchedUserProfilePage', [SearchController::class,'search']);
