@@ -26,7 +26,6 @@ use App\Http\Controllers\Surveys\PatientHealthController;
 |
 */
 
-Route::get('/', [LoginController::class, 'index'])->name('index');
 Route::get('/home', [LoginController::class, 'index'])->name('home');
 Route::get('/about', [GeneralWebsiteController::class, 'about'])->name('about');
 Route::get('/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('dashboard');
@@ -34,6 +33,9 @@ Route::get('/dashboard', [GeneralWebsiteController::class, 'dashboard'])->name('
 Route::get('/landing', function(){
     return view('landing');
 });
+
+Route::get('/participant-portal/available-surveys/index.html', [SurveyController::class, 'index'])->name('RetrieveSurvey');
+Route::get('/participant-portal/available-surveys.html', [SurveyController::class, 'availableSurveys'])->name('surveylisted');
 
 Route::get('/dashboard/surveys/appendices/socialEatingSurvey', [SocialEatingController::class,'index'])->name('SocialEating');
 Route::post('/dashboard/surveys/appendices/socialEatingSurvey', [SocialEatingController::class,'store']);
@@ -50,7 +52,7 @@ Route::post('/dashboard/surveys/appendices/surveyAppendixS', [AppendixSControlle
 Route::get('/dashboard/surveys/appendices/surveyAppendixR', [AppendixRController::class,'index'])->name('AppendixR');
 Route::post('/dashboard/surveys/appendices/surveyAppendixR', [AppendixRController::class,'store']);
 
-Route::get('/dashboard/surveys/appendices/surveyAppendixQ', [AppendixQController::class,'index'])->name('AppendixQ');
+Route::get('/dashboard/surveys/appendices/surveyAppendixQ/index.html', [AppendixQController::class,'index'])->name('AppendixQ');
 Route::post('/dashboard/surveys/appendices/surveyAppendixQ', [AppendixQController::class,'store']);
 
 
@@ -69,10 +71,10 @@ Route::get('/dashboard/distributeSurvey', [SurveyController::class, 'showDistrib
 Route::post('/dashboard/distributeSurvey', [SurveyController::class, 'DistributeSurveyStore'])->name('DistributeSurveyStore');
 
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
-Route::get('/logout', [LogoutController::class, 'store'])->name('logout');
+Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'store']);
+Route::post('/login', [LoginController::class, 'store'])->name('login');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
@@ -88,3 +90,10 @@ Route::post('/registerresearcher', [RegisterController::class, 'storeresearcher'
 Route::get('/userProfilePage/{id}', [GeneralWebsiteController::class, 'showProfileData']);
 Route::post('/userProfilePage',[GeneralWebsiteController::class, 'updateProfile']);
 
+Route::get('/logoutSuccessPage', function(){return view('logoutSuccessPage');});
+
+Route::get('/searchUserPage', [SearchController::class,'index']);
+Route::post('/searchUserPage', [SearchController::class,'search']);
+
+Route::get('/searchedUserProfilePage/{id}', [SearchController::class,'showProfileData']);
+Route::post('/searchedUserProfilePage', [SearchController::class,'search']);

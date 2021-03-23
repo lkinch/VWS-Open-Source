@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="/css/dashboard/mainrightbar.css" />
 
 	<script src="https://kit.fontawesome.com/555936ed9c.js" crossorigin="anonymous"></script>
-    <title>Distribute Survey</title>
+    <title>About VWS</title>
 
 </head>
 
@@ -59,36 +59,32 @@
                 </select>
 
                 <h2>List the Participants of the Study</h2>
-                <form id="participantForm">
                 <div class="input-group mb-3">
                     <input type="text"
-                    name="participantOne" id="participant1"
+                    name="participantOne" id="participantOne"
                     class="form-control" value="tim" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 </div>
 
                 <div class="input-group mb-3">
                     <input type="text"
-                    name="participantTwo" id="participant2"
+                    name="participantTwo" id="participantTwo"
                     class="form-control" value="john" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <input type="text"
-                    name="participantThree" id="participant3"
+                    name="participantThree" id="participantThree"
                     class="form-control" value="dave" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <input type="text"
-                    name="participantFour" id="participant4"
+                    name="participantFour" id="participantFour"
                     class="form-control" value="ferris" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <input type="text"
-                    name="participantFive" id="participant5"
+                    name="participantFive" id="participantFive"
                     class="form-control" value="spencer" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 </div>
-                </form>
-                <!--A button that use to add participant dynamically-->
-                <button type='button' value='add' class="btn btn-primary" onclick="javascript:add_field();">Add another participant</button>
 
                 <h2>List the Questions & Answers for the Study</h2>
                 <div class="input-group mb-3">
@@ -171,42 +167,6 @@
 
     <script>
         document.getElementById('programstartdate').valueAsDate = new Date(); //this sets program start to default date
-        //reqs_id use to keep track the number of participants
-        var reqs_id = 5;
-
-        function removeElement(ev) {
-            var button = ev.target;
-            var field = button.previousSibling;
-            var div = button.parentElement;
-            div.removeChild(button);
-            div.removeChild(field);
-        }
-
-        function add_field() {
-            reqs_id++; // increment reqs_id to get a unique ID for the new element
-
-            //create text
-            var input = document.createElement('input');
-            input.type = "text";
-            input.setAttribute("class", "form-control");
-            input.setAttribute('id', 'participant' + reqs_id);
-            input.setAttribute('value', reqs_id);
-            input.setAttribute('placeholder', "Username of Participant");
-            input.setAttribute('aria-label', "Example text with button addon");
-            input.setAttribute('aria-describedby', "button-addon1");
-            var reqs = document.getElementById("reqs");
-            //create remove button
-            var remove = document.createElement('button');
-            remove.setAttribute('id', 'participant' + reqs_id);
-            remove.onclick = function(e) {
-                removeElement(e)
-            };
-            remove.setAttribute("type", "button");
-            remove.innerHTML = "Remove" + reqs_id;
-            //append elements
-            reqs.appendChild(input);
-            reqs.appendChild(remove);
-        }
     </script>
 </body>
 
