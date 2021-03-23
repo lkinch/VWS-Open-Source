@@ -20,7 +20,7 @@ class SurveyUserListTest extends TestCase
      */
     public function testSurveyUserListObjectCanCreateAFake()
     {
-        $given = new SurveyUserListObject(1, 1, "01/01/2021");
+        $given = SurveyUserListObject::withAuthIdAvailableSurveysIdProgramStartDate(1, 1, "01/01/2021");
 
         $injectedClass = new MyFakeCreateFindAllModel();
 
