@@ -28,6 +28,7 @@ class SurveyUserListObject //implements IDTO
         $instance->authId = $authId;
         $instance->AvailableSurveysID = $AvailableSurveysID;
         $instance->ProgramStartDate = $ProgramStartDate;
+        return $instance;
     }
 
     public static function withUserId(Int $userId) {
@@ -36,12 +37,12 @@ class SurveyUserListObject //implements IDTO
         return $instance;
     }
 
-    public function create($SurveyUserList) {
+    public function create($SurveyUserList, $participant) {
 
         $this->SurveyUserListObject = $SurveyUserList::create([
             'updated_at' => date('Y-m-d H:i:s') . '',
             'isCompleted' => false,
-            'user_id' => $this->authId,
+            'user_id' => $participant,
             'survey_id' => $this->AvailableSurveysID,
             'ProgramStartDate' => $this->ProgramStartDate
         ]);

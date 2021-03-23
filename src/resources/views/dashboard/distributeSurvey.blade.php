@@ -60,30 +60,45 @@
 
                 <h2>List the Participants of the Study</h2>
                 <div class="input-group mb-3">
-                    <input type="text"
-                    name="participantOne" id="participantOne"
-                    class="form-control" value="tim" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <select class="form-select" name="participantOne" id="participantOne" placeholder="Username of Participant" >
+                        <option selected>Select Participant</option>
+                        @foreach ($participants as $participant)
+                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="text"
-                    name="participantTwo" id="participantTwo"
-                    class="form-control" value="john" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <select class="form-select" name="participantTwo" id="participantTwo" placeholder="Username of Participant" >
+                        <option selected>Select Participant</option>
+                        @foreach ($participants as $participant)
+                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text"
-                    name="participantThree" id="participantThree"
-                    class="form-control" value="dave" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <select class="form-select" name="participantThree" id="participantThree" placeholder="Username of Participant" >
+                        <option selected>Select Participant</option>
+                        @foreach ($participants as $participant)
+                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text"
-                    name="participantFour" id="participantFour"
-                    class="form-control" value="ferris" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <select class="form-select" name="participantFour" id="participantFour" placeholder="Username of Participant" >
+                        <option selected>Select Participant</option>
+                        @foreach ($participants as $participant)
+                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="text"
-                    name="participantFive" id="participantFive"
-                    class="form-control" value="spencer" placeholder="Username of Participant" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <select class="form-select" name="participantFive" id="participantFive" placeholder="Username of Participant" >
+                        <option selected>Select Participant</option>
+                        @foreach ($participants as $participant)
+                            <option value="{{$participant['id']}}">{{ $participant["name"] }}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <h2>List the Questions & Answers for the Study</h2>
